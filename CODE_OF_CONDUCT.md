@@ -7,7 +7,6 @@ include:
 
 - Going golfing this weekend
 - Hitting balls at the range
-- Zyns
 
 Examples of unacceptable behavior by participants include:
 
