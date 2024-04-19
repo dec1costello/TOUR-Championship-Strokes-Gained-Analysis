@@ -1,16 +1,15 @@
-NOTE: Change "x.y" by the version you use. If you are unsure about which version
-you are using run: `pip show pytest`.
+NOTE: You should golf this weekend
 
 Text:
 
-[pytest] pytest x.y, 2004
-Krekel et al., https://github.com/pytest-dev/pytest
+[TOUR Championship StrokesGained Analysis] TOUR Championship StrokesGained Analysis, 2024
+Costello, https://github.com/dec1costello/TOUR-Championship-StrokesGained-Analysis
 
 BibTeX:
 
-@misc{pytestx.y,
-  title =        {pytest x.y},
-  author = {Krekel, Holger and Oliveira, Bruno and Pfannschmidt, Ronny and Bruynooghe, Floris and Laugher, Brianna and Bruhin, Florian},
-  year =         {2004},
-  url = {https://github.com/pytest-dev/pytest},
+@misc{TOUR Championship StrokesGained Analysis,
+  title =        {TOUR Championship StrokesGained Analysis},
+  author = {Costello},
+  year =         {2024},
+  url = {https://github.com/dec1costello/TOUR-Championship-StrokesGained-Analysis},
 }
