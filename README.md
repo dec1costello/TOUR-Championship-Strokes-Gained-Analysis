@@ -245,7 +245,7 @@ Now that we have a reliable model, we can use it to identify a player's strength
 
 * Excited to document the number of shots from each condition as well as the mean distance and standard deviation to the hole for each Shot Type bucket (plan to label it in the plot). This way we could see if he truely underperform from the rough from that 150 – 200 yardage or did he just have only a few shots and they ended up being in the top end of the bucket
 <p align="left">
-<img src="https://github.com/dec1costello/Golf/assets/79241861/7e3214b1-106f-41c1-b767-748872b7f00d"/>
+<img height="120" width="155" src="https://github.com/dec1costello/Golf/assets/79241861/7e3214b1-106f-41c1-b767-748872b7f00d"/>
 </p>
 <div align="center">
   <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
