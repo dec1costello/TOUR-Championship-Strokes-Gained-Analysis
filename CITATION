@@ -2,14 +2,14 @@ NOTE: You should golf this weekend
 
 Text:
 
-[TOUR Championship StrokesGained Analysis] TOUR Championship StrokesGained Analysis, 2024
-Costello, https://github.com/dec1costello/TOUR-Championship-StrokesGained-Analysis
+[TOUR Championship Strokes Gained Analysis] TOUR Championship StrokesGained Analysis, 2024
+Costello, https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis
 
 BibTeX:
 
-@misc{TOUR Championship StrokesGained Analysis,
-  title =        {TOUR Championship StrokesGained Analysis},
+@misc{TOUR Championship Strokes Gained Analysis,
+  title =        {TOUR Championship Strokes Gained Analysis},
   author = {Costello},
   year =         {2024},
-  url = {https://github.com/dec1costello/TOUR-Championship-StrokesGained-Analysis},
+  url = {https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis},
 }
