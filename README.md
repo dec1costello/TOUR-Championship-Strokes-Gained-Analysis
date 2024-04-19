@@ -27,7 +27,10 @@
     <li><a href="#Model-Architecture">xS Model Architecture</a></li>
     <li><a href="#Model-Performance">xS Model Performance</a></li>
     </ol>
+    <li><a href="#Applying-xS-Model">Expected Strokes Model</a></li>
+    <ol>
     <li><a href="#SG-per-Shot">SG per Shot</a></li>
+    </ol>
     <li><a href="#Conclusion">Conclusion</a></li>
     <li><a href="#Future-Roadmap">Future Roadmap</a></li>
   </ol>
