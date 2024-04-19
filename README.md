@@ -296,6 +296,6 @@ It was cool to combine my passions for data science and golf into this project, 
 <img height="63" width="139" src="https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350"/>
 </p>
 <p align="center">
-<img height="420" width="100%" src="https://github.com/dec1costello/Golf/assets/79241861/506e2aa2-64e9-4383-83d9-d6e81f4dd5f7"/>
+<img height="390" width="100%" src="https://github.com/dec1costello/Golf/assets/79241861/506e2aa2-64e9-4383-83d9-d6e81f4dd5f7"/>
 </p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
