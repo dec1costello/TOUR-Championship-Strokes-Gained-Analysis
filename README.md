@@ -61,7 +61,7 @@ In this project, a Security Linter, Code Formatting, Type Checking, and Code Lin
 
 ## EDA
 
-I analyze the data, focusing on feature engineering to understand, clean, and refine the dataset. This process guides model selection and validates assumptions, while also uncovering insights through visualization. By addressing data quality and recognizing patterns early on, I establish a solid foundation for the project. For instance, exploring strokes gained (SG) at the round, hole, and drive levels helps us make assumptions for building a model to examine SG on a shot-level basis later.
+I analyze the data, focusing on feature engineering to understand, clean, and refine the dataset. This process guides model selection and validates assumptions, while also uncovering insights through visualization. By addressing data quality and recognizing patterns early on, I establish a solid foundation for the project. For instance, exploring Strokes Gained (SG) at the round, hole, and drive levels helps us make assumptions for building a model to examine SG on a shot-level basis later.
 
 <img align="left" alt="scipi" width="32px" style="padding-right:3px;" src="https://github.com/dec1costello/Golf/assets/79241861/8c1b62d0-b4cb-46ba-82f0-a858508911ae" />
 <img align="left" alt="bokeh" width="34px" style="padding-right:1px;" src="https://github.com/dec1costello/dec1costello/assets/79241861/bfbeaf3f-663e-4191-9e90-a70c322b0bd8" />
@@ -120,7 +120,7 @@ In Part 4, I explore the distribution of Strokes Gained vs Driving Distance Gain
 
 ## Expected Strokes Model
 
-The Stacked Expected Strokes Model leverages the power of ensemble learning by combining predictions from multiple base models to enhance accuracy and robustness. Notably, I've developed separate models for putting and non-putting scenarios, utilizing different input features tailored to each situation. This approach allows for more precise predictions by optimizing the model's focus on specific aspects of gameplay, ultimately leading to improved performance and insights in golf analytics. Furthermore, this model will eventually enable a granular analysis of shot-by-shot strokes gained, a significant departure from previous hole-by-hole and round-by-round evaluations. By harnessing the Stacked Expected Strokes Model's predictive capabilities, I'll unlock the ability to evaluate each shot's impact on overall performance, offering unprecedented insights into golfer performance. Additionally, I'm unconcerned about data leakage since I'll be predicting continuous variables while training on discrete data, ensuring the model's integrity and effectiveness in real-world applications.
+The Stacked Expected Strokes Model leverages the power of ensemble learning by combining predictions from multiple base models to enhance accuracy and robustness. Notably, I've developed separate models for putting and non-putting scenarios, utilizing different input features tailored to each situation. This approach allows for more precise predictions by optimizing the model's focus on specific aspects of gameplay, ultimately leading to improved performance and insights in golf analytics. Furthermore, this model will eventually enable a granular analysis of shot-by-shot Strokes Gained, a significant departure from previous hole-by-hole and round-by-round evaluations. By harnessing the Stacked Expected Strokes Model's predictive capabilities, I'll unlock the ability to evaluate each shot's impact on overall performance, offering unprecedented insights into golfer performance. Additionally, I'm unconcerned about data leakage since I'll be predicting continuous variables while training on discrete data, ensuring the model's integrity and effectiveness in real-world applications.
 
 <img align="left" alt="mlflow" width="28px" style="padding-right:3px;" src="https://github.com/dec1costello/dec1costello/assets/79241861/a59fbc5a-f5ce-47a9-a903-c4e5bb0e2e65" />
 <img align="left" alt="optuna" width="33px" style="padding-right:3px;" src="https://github.com/dec1costello/dec1costello/assets/79241861/3a709d6c-cd1e-4126-bd83-ff0f958f4609" />
@@ -175,7 +175,7 @@ Model hyperparameterization plays a crucial role in optimizing machine learning 
 
 ### Model Explainability
 
-For model explainability, I utilized the [SHap library](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) to analyze the stack model's estimators and base models, offering insights into feature importance. However, to ensure a comprehensive analysis, I also delved into [permutation importance](https://medium.com/@syoussefi600/permutation-importance-vs-impurity-based-feature-importance-1c1a8d027479) as an additional metric in the notebook. This approach allowed for a thorough examination of feature importance from different perspectives, enriching our understanding of the model's predictive behavior. Fianlly, I employed the [Lime library](https://github.com/marcotcr/lime)  to evaluate the complete stacking regressor's feature importance. Below, you'll find a SHap charts for the putting model's LGBMRegressor.
+For model explainability, I utilized the [SHap library](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) to analyze the stack model's estimators and base models, offering insights into feature importance. However, to ensure a comprehensive analysis, I also delved into [permutation importance](https://medium.com/@syoussefi600/permutation-importance-vs-impurity-based-feature-importance-1c1a8d027479) as an additional metric in the notebook. This approach allowed for a thorough examination of feature importance from different perspectives, enriching our understanding of the model's predictive behavior. Finally, I employed the [Lime library](https://github.com/marcotcr/lime)  to evaluate the complete stacking regressor's feature importance. Below, you'll find a SHap charts for the putting model's LGBMRegressor.
 
 #### Key Insight
 * Super surprised to see "Distance to Edge" matters more than "Distance to Pin" for putting, curious if this would be the case if I had a larger dataset
@@ -190,7 +190,7 @@ For model explainability, I utilized the [SHap library](https://shap.readthedocs
 
 ### Model Architecture
 
-In Part 5, I explore the relationship between Distance to the Pin & Lie vs Strokes to hole out at the Tour Championship. I Ensemble the top  performing models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html) to minimize [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) and [Variance](https://x.com/akshay_pachaar/status/1703757251474063861?s=20). This iterative process maximized predictive accuracy of Expected Strokes(xS).
+In Part 5, I explore the relationship between 'Distance to the Pin' & 'Lie' vs 'Strokes to Hole Out' at the Tour Championship. I Ensemble the top  performing models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html) to minimize [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) and [Variance](https://x.com/akshay_pachaar/status/1703757251474063861?s=20). This iterative process maximized predictive accuracy of Expected Strokes(xS).
 
 #### Key Insight
 
@@ -238,7 +238,7 @@ This chart helps evaluate the model by showing how predicted values compare to a
 
 ## Applying xS Model
 
-Now that we have a strokes gained stacked machine learning model for a shot per shot basis, implementing it is crucial for gaining valuable insights into golf performance. Utilizing the model post-training enables golf analysts, coaches, and players to extract actionable insights, optimize strategies, and refine skills. Ultimately, leveraging a strokes gained stacked ML model empowers stakeholders to make informed decisions, enhance performance, and drive success on the golf course.
+Now that we have a stacked SG machine learning model for a shot per shot basis, implementing it is crucial for gaining valuable insights into golf performance. Utilizing the model post-training enables golf analysts, coaches, and players to extract actionable insights, optimize strategies, and refine skills. Ultimately, leveraging a model empowers stakeholders to make informed decisions, enhance performance, and drive success on the golf course.
 
 ### SG per Shot
 
