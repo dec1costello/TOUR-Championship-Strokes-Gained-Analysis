@@ -281,8 +281,8 @@ It was cool to combine my passions for data science and golf into this project, 
 - [ ] Add External Data
     - [ ] Player Course History
     - [ ] [Career Earnings](https://www.spotrac.com/pga/rankings/date/2011-01-01/2011-09-20/)
-    - [ ] Biometrics
     - [ ] Equipment
+    - [ ] Biometrics
     - [ ] [Weather](https://www.wunderground.com/history/daily/KATL/date/2011-9-22)
     - [ ] [HCP](https://pgatour.bluegolf.com/bluegolfw/pgatour22/event/pgatour2210/course/eastlakegc/detailedscorecard.htm)
 - [ ] Data Viz
