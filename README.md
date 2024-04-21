@@ -45,7 +45,7 @@ I hope to contribute meaningful insights to the golf community through this proj
 
 ## **Dataset**
 
-This dataset consists of shot level data from the PGA TOUR Championship. The TOUR Championship differs from other tournaments in that only the top 30 golfers compete and there's no cut after the second round, this ensures us consistent data of high skill golfers across all 4 rounds. Additionally, it's important to acknowledge that the dataset lacks [data from the playoff that occured](https://www.youtube.com/watch?v=vRjNR1T81VE), which is crucial for understanding the tournament's conclusion. The TOUR Championship usually switches locations every year so it is tough to get stats on how golfers previously performed at this course. This time around in 2011, the championship took place at East Lake Golf Club, which was the home course of legendary golfer [Bobby Jones](https://en.wikipedia.org/wiki/Bobby_Jones_(golfer)), making this dataset extra cool. Furthermore, it is important to emphasize that landing in the rough at East Lake doesn't necessarily disadvantage a player. Despite the challenge it presents, the ball could still have a favorable lie, which might have been strategically chosen by the golfer.
+This dataset consists of shot level data from the PGA TOUR Championship. The TOUR Championship differs from other tournaments in that only the top 30 golfers compete and there's no cut after the second round, this ensures consistent data of high skill golfers across all 4 rounds. Additionally, it's important to acknowledge that the dataset lacks [data from the playoff that occurred](https://www.youtube.com/watch?v=vRjNR1T81VE), which is crucial for understanding the tournament's conclusion. The TOUR Championship usually switches locations every year so it is tough to get stats on how golfers previously performed at this course. This time around in 2011, the championship took place at East Lake Golf Club, which was the home course of legendary golfer [Bobby Jones](https://en.wikipedia.org/wiki/Bobby_Jones_(golfer)), making this dataset extra cool. Furthermore, it is important to emphasize that landing in the rough at East Lake doesn't necessarily disadvantage a player. Despite the challenge it presents, the ball could still have a favorable lie, which might have been strategically chosen by the golfer.
 
 ## **Code Quality**
 
@@ -91,8 +91,8 @@ In this analysis, I investigate the distribution of Strokes Gained for each hole
 
 #### Key Insights
 
-* Players appear to contiune to play relative to thier initial performance of round 1
-* Poorly performing players seem to completey give up come the back 9 of round 3
+* Players appear to continue to play relative to their initial performance of round 1
+* Poorly performing players seem to give up come the back 9 of round 3
 
 <div align="center">
   <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
@@ -161,7 +161,7 @@ While the training data is discrete, for continuous predictions, I faced the tas
 
 ### Model Hyper Parameterization
 
-Model hyperparameterization plays a crucial role in optimizing machine learning models for performance and generalization. By systematically searching through the hyperparameter space, we can find the combination of hyperparameters that yields the best model performance on validation data. In this project, I leveraged the [Optuna](https://optuna.org/#dashboard) library for Bayesian optimization, enabling an efficient and automated search for the optimal hyperparameters of the models. This proactive approach ensures that our models are fine-tuned to achieve their highest potential performance, leading to better predictive accuracy and robustness.
+Model hyper parameterization plays a crucial role in optimizing machine learning models for performance and generalization. By systematically searching through the hyperparameter space, we can find the combination of hyperparameters that yields the best model performance on validation data. In this project, I leveraged the [Optuna](https://optuna.org/#dashboard) library for Bayesian optimization, enabling an efficient and automated search for the optimal hyperparameters of the models. This proactive approach ensures that our models are fine-tuned to achieve their highest potential performance, leading to better predictive accuracy and robustness.
 
 #### Key Insight
 * Hyper parameter tuning greatly improved each model of my stacking regressor
@@ -246,7 +246,7 @@ Now that we have a reliable model, we can use it to identify a player's strength
 
 #### Key Insight
 
-* Excited to document the number of shots from each condition as well as the mean distance and standard deviation to the hole for each Shot Type bucket (plan to label it in the plot). This way we could see if he truely underperform from the rough from that 150 – 200 yardage or did he just have only a few shots and they ended up being in the top end of the bucket
+* Excited to document the number of shots from each condition as well as the mean distance and standard deviation to the hole for each Shot Type bucket (plan to label it in the plot). This way we could see if he truly underperform from the rough from that 150 – 200 yardage or did he just have only a few shots and they ended up being in the top end of the bucket
 <p align="left">
 <img height="120" width="155" src="https://github.com/dec1costello/Golf/assets/79241861/7e3214b1-106f-41c1-b767-748872b7f00d"/>
 </p>
@@ -268,7 +268,7 @@ It was cool to combine my passions for data science and golf into this project, 
 ## Future Roadmap
 
 - [ ] xS Stack Model Refinement
-    - [x] Create seperate putting model
+    - [x] Create Putting Model
     - [ ] Model Registry
         - [x] [Refer To](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f)
         - [x] [Watch](https://www.youtube.com/watch?v=-7XegzgjgM0&list=PLQqR_3C2fhUUkoXAcomOxcvfPwRn90U-g&index=8)
@@ -282,7 +282,7 @@ It was cool to combine my passions for data science and golf into this project, 
     - [ ] Player Course History
     - [ ] [Career Earnings](https://www.spotrac.com/pga/rankings/date/2011-01-01/2011-09-20/)
     - [ ] Biometrics
-    - [ ] Equitment
+    - [ ] Equipment
     - [ ] [Weather](https://www.wunderground.com/history/daily/KATL/date/2011-9-22)
     - [ ] [HCP](https://pgatour.bluegolf.com/bluegolfw/pgatour22/event/pgatour2210/course/eastlakegc/detailedscorecard.htm)
 - [ ] Data Viz
