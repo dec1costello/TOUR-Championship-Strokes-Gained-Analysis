@@ -284,6 +284,7 @@ It was cool to combine my passions for data science and golf into this project, 
     - [ ] Equipment
     - [ ] Biometrics
     - [ ] [Weather](https://www.wunderground.com/history/daily/KATL/date/2011-9-22)
+    - [ ] [SVGs](https://pgatour.bluegolf.com/bluegolfw/pgatour22/event/pgatour2210/course/eastlakegc/overview.htm)
     - [ ] [HCP](https://pgatour.bluegolf.com/bluegolfw/pgatour22/event/pgatour2210/course/eastlakegc/detailedscorecard.htm)
 - [ ] Data Viz
     - [ ] [SG Distributions](https://baseballsavant.mlb.com/visuals/statcast-pitch-distribution)
