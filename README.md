@@ -27,7 +27,7 @@
     <li><a href="#Model-Architecture">xS Model Architecture</a></li>
     <li><a href="#Model-Performance">xS Model Performance</a></li>
     </ol>
-    <li><a href="#Applying-xS-Model">Expected Strokes Model</a></li>
+    <li><a href="#Applying-xS-Model">Applying xS Model</a></li>
     <ol>
     <li><a href="#SG-per-Shot">SG per Shot</a></li>
     </ol>
@@ -103,7 +103,7 @@ In this analysis, I investigate the distribution of Strokes Gained for each hole
 
 ### SG per Drive
 
-In Part 4, I explore the distribution of Strokes Gained vs Driving Distance Gained (DG) and Driving Accuracy Gained (AG) for each drive of the Championship. Both DG and SG are normalized per hole before totalling. Happy to say my analysis aligns with [Data Golf's Course Fit Tool.](https://datagolf.com/course-fit-tool)
+Here I explore the distribution of Strokes Gained vs Driving Distance Gained (DG) and Driving Accuracy Gained (AG) for each drive of the Championship. Both DG and SG are normalized per hole before totalling. Happy to say my analysis aligns with [Data Golf's Course Fit Tool.](https://datagolf.com/course-fit-tool)
 
 #### Key Insights
 
@@ -190,7 +190,7 @@ For model explainability, I utilized the [SHap library](https://shap.readthedocs
 
 ### Model Architecture
 
-In Part 5, I explore the relationship between 'Distance to the Pin' & 'Lie' vs 'Strokes to Hole Out' at the Tour Championship. I Ensemble the top  performing models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html) to minimize [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) and [Variance](https://x.com/akshay_pachaar/status/1703757251474063861?s=20). This iterative process maximized predictive accuracy of Expected Strokes(xS).
+Here I explore the relationship between 'Distance to the Pin' & 'Lie' vs 'Strokes to Hole Out' at the Tour Championship. I Ensemble the top  performing models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html) to minimize [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) and [Variance](https://x.com/akshay_pachaar/status/1703757251474063861?s=20). This iterative process maximized predictive accuracy of Expected Strokes(xS).
 
 #### Key Insight
 
