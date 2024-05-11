@@ -1,6 +1,6 @@
 ## **GOLF-UTIL INSTALL**
 
-### Navigate to GOLF-UTILS in the terminal, run these commands to create the wheel file:
+### Navigate to GOLF-UTILS in the terminal to create the wheel file:
 ```console
 python3 -m pip install build
 ```
@@ -9,7 +9,7 @@ python3 -m pip install build
 python3 -m build
 ```
 
-### In your ipynb file, install and use locallly with these commands:
+### Install and use in a local notebook:
 ```console
 pip install golfutils-1.0-py2.py3-none-any.whl
 ```
