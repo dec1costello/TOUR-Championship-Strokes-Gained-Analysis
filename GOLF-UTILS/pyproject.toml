@@ -1,0 +1,14 @@
+[build-system]
+requires = ["poetry-core>=1.00"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "golfutils"
+version = "1.0"
+authors = [
+    "Declan Costello <dec1costello@gmail.com>"
+]
+description = "golf tools."
+packages = [
+    { include = "golfutils" }
+]
