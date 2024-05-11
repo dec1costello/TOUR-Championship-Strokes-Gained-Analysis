@@ -1,6 +1,7 @@
 ## **GOLF-UTIL INSTALL**
 
 ### Navigate to GOLF-UTILS in the terminal to create the wheel file:
+- delete this README.md beforehand
 ```console
 python3 -m pip install build
 ```
