@@ -10,7 +10,7 @@ python3 -m pip install build
 python3 -m build
 ```
 
-### Install and use in a local notebook:
+### Place the newly created wheel file in your desried directory and finish install:
 ```console
 pip install golfutils-1.0-py2.py3-none-any.whl
 ```
