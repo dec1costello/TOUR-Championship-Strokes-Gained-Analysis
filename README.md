@@ -11,6 +11,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#Objectives">Objectives</a></li>
+    <li><a href="#Repo-Overview">Repo Overview</a></li>
     <li><a href="#Dataset">Dataset</a></li>
     <li><a href="#Code-Quality">Code Quality</a></li>
     <li><a href="#EDA">EDA</a></li>
@@ -45,7 +46,7 @@ I hope to contribute meaningful insights to the golf community through this proj
 
 ## **Repo Overview**
 
-The contents of this Repo is organised as follows:
+The Repo is organised as follows:
 
 
     📂 TOUR-Championship-Strokes-Gained-Analysis/ 📍⛳
