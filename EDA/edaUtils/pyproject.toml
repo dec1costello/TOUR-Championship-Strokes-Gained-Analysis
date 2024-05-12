@@ -1,0 +1,14 @@
+[build-system]
+requires = ["poetry-core>=1.00"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "edaUtils"
+version = "1.2"
+authors = [
+    "Declan Costello <dec1costello@gmail.com>"
+]
+description = "EDA tools."
+packages = [
+    { include = "edaUtils" }
+]
