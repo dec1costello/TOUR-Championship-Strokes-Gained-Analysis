@@ -43,6 +43,41 @@ Welcome to my analysis of the 2011 TOUR Championship at East Lake Golf Club, the
 
 I hope to contribute meaningful insights to the golf community through this project. Although the 2011 TOUR Championship took place over a decade ago and the tournament's rules have since changed, its extensive shot-level dataset remains a valuable resource. If you happen to come across another complete shot-level dataset, I would greatly appreciate it if you could share it with me! I encourage you to check out the js visuals on [NBViewer!](https://nbviewer.org/github/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/tree/main/)
 
+## **Repo Overview**
+
+The contents of this Repo is organised as follows:
+
+
+    📂 TOUR-Championship-Strokes-Gained-Analysis/ 📍⛳
+    │
+    ├── 📂 Applying Model/
+    │   └── TODO!
+    │
+    ├── 📂 Creating Model/
+    │   ├── Final_Putting_Model.ipynb
+    │   └── LazyPredict.ipynb
+    │ 
+    ├── 📂 Data/
+    │   ├── Assessing_Golfer_Performance_on_the_PGA_TOUR.pdf
+    │   ├── Event Detail Field Defs.pdf
+    │   ├── Hole Detail Field Defs.pdf
+    │   ├── Round Detail Field Defs.pdf
+    │   └── Shot Detail Field Defs.pdf
+    │ 
+    ├── 📂EDA/
+    │   ├── 📂edaUtils/
+    │   ├── EDA.ipynb
+    │   ├── FeatureEngineering.ipynb
+    │   ├── SGperDrive.ipynb
+    │   ├── SGperHole.ipynb
+    │   ├── SGperRound.ipynb
+    │   └── edautils-1.2-py2.py3-none-any.whl
+    │
+    ├── CITATION
+    ├── CODE_OF_CONDUCT.md
+    ├── README.md
+    └── xSG.ipynb (Currently Refactoring)
+
 ## **Dataset**
 
 This dataset consists of shot level data from the PGA TOUR Championship. The TOUR Championship differs from other tournaments in that only the top 30 golfers compete and there's no cut after the second round, this ensures consistent data of high skill golfers across all 4 rounds. Additionally, it's important to acknowledge that the dataset lacks [data from the playoff that occurred](https://www.youtube.com/watch?v=vRjNR1T81VE), which is crucial for understanding the tournament's conclusion. Furthermore, it is important to emphasize that landing in the rough at East Lake doesn't necessarily disadvantage a player. Despite the challenge it presents, the ball could still have a favorable lie, which might have been strategically chosen by the golfer.
