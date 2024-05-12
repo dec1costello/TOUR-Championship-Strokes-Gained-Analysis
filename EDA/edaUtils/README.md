@@ -1,4 +1,4 @@
-<!-- REPOSITORY STRUCTURE -->
+<!-- STRUCTURE -->
 <h2 id="Util-Structure"> 🌵 Util Overview</h2>
 
 The contents of this package is organised as follows:
