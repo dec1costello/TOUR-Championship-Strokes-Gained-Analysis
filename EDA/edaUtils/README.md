@@ -5,11 +5,11 @@ The contents of this package is organised as follows:
 
     📂 EDA/edaUtils 📍⛳
     │
-    ├── 📂 featureEngineering/
+    ├── 📂 edaUtils/featureEngineering/
     │   ├── __init__.py 
     │   └── featureEngineering.py
     │
-    ├── 📂 geoAnalysis/
+    ├── 📂edaUtils/geoAnalysis/
     │   ├── __init__.py        
     │   └── geoAnalysis.py
     ├── README.md
