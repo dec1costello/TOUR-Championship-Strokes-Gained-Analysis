@@ -1,6 +1,6 @@
-## **GOLF-UTIL INSTALL**
+## **edaUtils Install**
 
-### Navigate to GOLF-UTILS in the terminal to create the wheel file:
+### Navigate to edaUtils in the terminal to create the wheel file:
 
 ```console
 python3 -m build
@@ -11,7 +11,7 @@ python3 -m build
 pip install golfutils-1.0-py2.py3-none-any.whl
 ```
 
-### Use GOLF-UTILS!
+### Use edaUtils!
 
 ```console
 from golfutils import util_funcs
