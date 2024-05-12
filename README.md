@@ -49,7 +49,7 @@ I hope to contribute meaningful insights to the golf community through this proj
 The Repo is organised as follows:
 
 
-    📂 TOUR-Championship-Strokes-Gained-Analysis/ 📍⛳
+    📂 TOUR-Championship-Strokes-Gained-Analysis/ 📍
     │
     ├── 📂 Applying Model/
     │   └── TODO!
