@@ -46,7 +46,7 @@ I hope to contribute meaningful insights to the golf community through this proj
 
 ## **🌵 Repo Structure**
 
-The Repo is organized as follows:
+This repo is organized as follows:
 
     📂 TOUR-Championship-Strokes-Gained-Analysis 📍
     │
