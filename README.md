@@ -57,7 +57,7 @@ This repo is organized as follows:
     │
     ├── 📂 EDA
     │   ├── EDA.ipynb
-    │   ├── 📂edaUtils
+    │   ├── 📂 edaUtils
     │   ├── SGperHole.ipynb
     │   ├── SGperRound.ipynb
     │   ├── SGperDrive.ipynb
