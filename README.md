@@ -57,12 +57,12 @@ This repo is organized as follows:
     │
     ├── 📂 EDA
     │   ├── EDA.ipynb
-    │   ├── 📂 edaUtils
+    │   ├── 📂 EDAUtils
     │   ├── SGperHole.ipynb
     │   ├── SGperRound.ipynb
     │   ├── SGperDrive.ipynb
     │   ├── FeatureEngineering.ipynb
-    │   └── EdaUtils-1.2-py2.py3-none-any.whl
+    │   └── EDAUtils-1.2-py2.py3-none-any.whl
     │
     ├── 📂 Creating Model
     │   ├── LazyPredict.ipynb 
