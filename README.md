@@ -146,7 +146,7 @@ Here I explore the distribution of Strokes Gained vs Driving Distance Gained (DG
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## 🎨 Expected Strokes Model
+## 🎨  Expected Strokes Model
 
 The Stacked Expected Strokes Model leverages the power of ensemble learning by combining predictions from multiple base models to enhance accuracy and robustness. Notably, I've developed separate models for putting and non-putting scenarios, utilizing different input features tailored to each situation. This approach allows for more precise predictions by optimizing the model's focus on specific aspects of gameplay, ultimately leading to improved performance and insights in golf analytics. Furthermore, this model will eventually enable a granular analysis of shot-by-shot Strokes Gained, a significant departure from previous hole-by-hole and round-by-round evaluations. By harnessing the Stacked Expected Strokes Model's predictive capabilities, I'll unlock the ability to evaluate each shot's impact on overall performance, offering unprecedented insights into golfer performance. Additionally, I'm unconcerned about data leakage since I'll be predicting continuous variables while training on discrete data, ensuring the model's integrity and effectiveness in real-world applications.
 
@@ -285,7 +285,7 @@ Now that we have a reliable model, we can use it to identify a player's strength
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Conclusion
+## 🎬 Conclusion
 
 It was cool to combine my passions for data science and golf into this project, wish I knew about Strokes Gained back when I was a caddy! Hope to do more golf projects in the future. Thanks for reading big dog.
 
@@ -298,7 +298,7 @@ It was cool to combine my passions for data science and golf into this project, 
 
 
 <!-- ROADMAP -->
-## Future Roadmap
+## 🗺️ Future Roadmap
 
 - [ ] xS Stack Model Refinement
     - [x] Create Putting Model
