@@ -62,7 +62,7 @@ This repo is organized as follows:
     │   ├── SGperRound.ipynb
     │   ├── SGperDrive.ipynb
     │   ├── FeatureEngineering.ipynb
-    │   └── edautils-1.2-py2.py3-none-any.whl
+    │   └── EdaUtils-1.2-py2.py3-none-any.whl
     │
     ├── 📂 Creating Model
     │   ├── LazyPredict.ipynb 
