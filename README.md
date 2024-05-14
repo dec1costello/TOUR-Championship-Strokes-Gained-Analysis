@@ -53,7 +53,7 @@ The Repo is organized as follows:
     ├── 📂 Data
     ├── CITATION
     ├── README.md
-    └── CODE_OF_CONDUCT.md
+    ├── CODE_OF_CONDUCT.md
     │
     ├── 📂EDA
     │   ├── EDA.ipynb
