@@ -44,40 +44,32 @@ Welcome to my analysis of the 2011 TOUR Championship at East Lake Golf Club, the
 
 I hope to contribute meaningful insights to the golf community through this project. Although the 2011 TOUR Championship took place over a decade ago and the tournament's rules have since changed, its extensive shot-level dataset remains a valuable resource. If you happen to come across another complete shot-level dataset, I would greatly appreciate it if you could share it with me! I encourage you to check out the js visuals on [NBViewer!](https://nbviewer.org/github/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/tree/main/)
 
-## **Repo Overview**
+## **Repo Structure**
 
-The Repo is organised as follows:
+The Repo is organized as follows:
 
-
-    📂 TOUR-Championship-Strokes-Gained-Analysis/ 📍
+    📂 TOUR-Championship-Strokes-Gained-Analysis 📍
     │
-    ├── 📂 Applying Model/
-    │   └── TODO!
+    ├── 📂 Data
+    ├── CITATION
+    ├── README.md
+    └── CODE_OF_CONDUCT.md
     │
-    ├── 📂 Creating Model/
-    │   ├── Final_Putting_Model.ipynb
-    │   └── LazyPredict.ipynb
-    │ 
-    ├── 📂 Data/
-    │   ├── Assessing_Golfer_Performance_on_the_PGA_TOUR.pdf
-    │   ├── Event Detail Field Defs.pdf
-    │   ├── Hole Detail Field Defs.pdf
-    │   ├── Round Detail Field Defs.pdf
-    │   └── Shot Detail Field Defs.pdf
-    │ 
-    ├── 📂EDA/
-    │   ├── 📂edaUtils/
+    ├── 📂EDA
     │   ├── EDA.ipynb
-    │   ├── FeatureEngineering.ipynb
-    │   ├── SGperDrive.ipynb
+    │   ├── 📂edaUtils
     │   ├── SGperHole.ipynb
     │   ├── SGperRound.ipynb
+    │   ├── SGperDrive.ipynb
+    │   ├── FeatureEngineering.ipynb
     │   └── edautils-1.2-py2.py3-none-any.whl
     │
-    ├── CITATION
-    ├── CODE_OF_CONDUCT.md
-    ├── README.md
-    └── xSG.ipynb (Currently Refactoring)
+    ├── 📂 Creating Model
+    │   ├── LazyPredict.ipynb 
+    │   └── Final_Putting_Model.ipynb
+    │
+    └── 📂 Applying Model
+        └── xSG.ipynb
 
 ## **Code Quality**
 
