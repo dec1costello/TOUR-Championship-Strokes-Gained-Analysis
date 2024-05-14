@@ -55,7 +55,7 @@ The Repo is organized as follows:
     ├── README.md
     ├── CODE_OF_CONDUCT.md
     │
-    ├── 📂EDA
+    ├── 📂 EDA
     │   ├── EDA.ipynb
     │   ├── 📂edaUtils
     │   ├── SGperHole.ipynb
