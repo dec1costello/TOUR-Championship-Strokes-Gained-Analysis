@@ -1,7 +1,7 @@
 <!-- STRUCTURE -->
 <h2 id="Util-Structure"> 🌵 Util Overview</h2>
 
-The contents of this package is organZsed as follows:
+The contents of this package is organized as follows:
 
     📂 EDA/EDAUtils 📍
     │
