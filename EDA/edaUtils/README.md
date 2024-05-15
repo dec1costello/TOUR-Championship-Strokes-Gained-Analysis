@@ -3,16 +3,16 @@
 
 The contents of this package is organised as follows:
 
-    📂 EDA/edaUtils 📍
+    📂 EDA/EDAUtils 📍
     │
     ├── README.md
     ├── pyproject.toml
     │
-    ├── 📂 edaUtils/featureEngineering
+    ├── 📂 EDAUtils/featureEngineering
     │   ├── featureEngineering.py 
     │   └── __init__.py 
     │   
-    └── 📂 edaUtils/geoAnalysis
+    └── 📂 EDAUtils/geoAnalysis
         ├── geoAnalysis.py 
         └── __init__.py 
      
