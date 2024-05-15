@@ -6,6 +6,9 @@
 
 <h1 align="center">TOUR Championship Analysis</h1>
 
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/HEAD)
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/Index.ipynb)
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
