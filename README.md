@@ -13,7 +13,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#Objectives">Objectives</a></li>
+    <li><a href="#🎯-Objectives">Objectives</a></li>
     <li><a href="#Repo-Overview">Repo Overview</a></li>
     <li><a href="#Code-Quality">Code Quality</a></li>
     <li><a href="#Dataset">Dataset</a></li>
