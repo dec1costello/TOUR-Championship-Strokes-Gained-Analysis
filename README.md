@@ -304,7 +304,10 @@ It was cool to combine my passions for data science and golf into this project, 
 ## 🗺️ Future Roadmap
 
 - [ ] xS Stack Model Refinement
-    - [x] Create Putting Model
+    - [ ] CI Orchestration
+        - [ ] [CML](https://cml.dev/)
+    - [ ] Feature Store
+        - [ ] [Feast](https://feast.dev/)
     - [ ] Model Registry
         - [x] [Refer To](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f)
         - [x] [Watch](https://www.youtube.com/watch?v=-7XegzgjgM0&list=PLQqR_3C2fhUUkoXAcomOxcvfPwRn90U-g&index=8)
@@ -312,8 +315,8 @@ It was cool to combine my passions for data science and golf into this project, 
     - [ ] Drift Detection
         - [ ] [Evidently](https://www.youtube.com/watch?v=L4Pv6ExBQPM)
         - [ ] [Whylogs](https://github.com/whylabs/whylogs)
-    - [ ] CI Orchestration
-        - [ ] [CML](https://cml.dev/)
+    - [ ] Deploy
+        - [ ] [AWS](https://sagemaker-examples.readthedocs.io/en/latest/sagemaker-python-sdk/scikit_learn_randomforest/Sklearn_on_SageMaker_end2end.html)
 - [ ] Add External Data
     - [ ] Player Course History
     - [ ] [Career Earnings](https://www.spotrac.com/pga/rankings/date/2011-01-01/2011-09-20/)
@@ -331,7 +334,6 @@ It was cool to combine my passions for data science and golf into this project, 
     - [x] [Refer To](https://colab.research.google.com/github/AllenDowney/ThinkBayes2/blob/master/examples/hockey.ipynb#scrollTo=B-c6bb9wO-Cs)
     - [x] [Watch](https://www.youtube.com/watch?v=Zi6N3GLUJmw)
     - [ ] [Utilize](https://colab.research.google.com/github/AllenDowney/ThinkBayes2/)
-- [ ] [Dockerize & Deploy](https://sagemaker-examples.readthedocs.io/en/latest/sagemaker-python-sdk/scikit_learn_randomforest/Sklearn_on_SageMaker_end2end.html)
 <p align="center">
 <img height="63" width="139" src="https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350"/>
 </p>
