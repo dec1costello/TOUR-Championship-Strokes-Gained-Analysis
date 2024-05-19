@@ -303,7 +303,7 @@ It was cool to combine my passions for data science and golf into this project, 
 <!-- ROADMAP -->
 ## 🗺️ Future Roadmap
 
-- [ ] xS Stack Model Refinement
+- [ ] Model Refinement
     - [ ] CI Orchestration
         - [ ] [CML](https://cml.dev/)
     - [ ] Feature Store
