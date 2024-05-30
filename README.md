@@ -199,7 +199,7 @@ Model hyper parameterization plays a crucial role in optimizing machine learning
 
 <div align="center">
   <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
-    <img src="https://github.com/dec1costello/Golf/assets/79241861/5bc25537-9d24-455b-98f5-5faa1722e88b" alt="Event Scatter" style="width:100%">
+    <img src="https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/assets/79241861/41b80a09-04c1-4788-9a2f-d485e9d2d38c" alt="Event Scatter" style="width:100%">
   </a>
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
