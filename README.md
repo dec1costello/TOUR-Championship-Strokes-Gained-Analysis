@@ -305,14 +305,9 @@ It was cool to combine my passions for data science and golf into this project, 
 
 - [ ] Model Refinement
     - [ ] [CI Orchestration](https://cml.dev/)
-    - [ ] Model Registry
-        - [x] [Refer To](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f)
-        - [x] [Watch](https://www.youtube.com/watch?v=-7XegzgjgM0&list=PLQqR_3C2fhUUkoXAcomOxcvfPwRn90U-g&index=8)
-        - [ ] [Utilize](https://community.cloud.databricks.com/?o=5379878152283690)
+    - [ ] [Model Registry](https://community.cloud.databricks.com/?o=5379878152283690)
     - [ ] [Feature Store](https://feast.dev/) 
-    - [ ] Drift Detection
-        - [ ] [Evidently](https://www.youtube.com/watch?v=L4Pv6ExBQPM)
-        - [ ] [Whylogs](https://github.com/whylabs/whylogs)
+    - [ ] [Drift Detection](https://www.youtube.com/watch?v=L4Pv6ExBQPM)
     - [ ] [Deploy](https://sagemaker-examples.readthedocs.io/en/latest/sagemaker-python-sdk/scikit_learn_randomforest/Sklearn_on_SageMaker_end2end.html)
 - [ ] Add External Data
     - [ ] Player Course History
