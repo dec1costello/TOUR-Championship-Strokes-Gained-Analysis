@@ -309,7 +309,7 @@ It was cool to combine my passions for data science and golf into this project, 
     - [ ] [Feature Store](https://feast.dev/) 
     - [ ] [Drift Detection](https://www.youtube.com/watch?v=L4Pv6ExBQPM)
     - [ ] [Deploy](https://sagemaker-examples.readthedocs.io/en/latest/sagemaker-python-sdk/scikit_learn_randomforest/Sklearn_on_SageMaker_end2end.html)
-- [ ] Add External Data
+- [ ] External Data
     - [ ] Player Course History
     - [ ] [Career Earnings](https://www.spotrac.com/pga/rankings/date/2011-01-01/2011-09-20/)
     - [ ] Equipment
