@@ -73,7 +73,7 @@ This repo is organized as follows:
     │   ├── PuttingModel.ipynb
     │   ├── ApproachModel.ipynb 
     │   ├── 📂 OptimizingUtils
-    │   └── optimizingutils-1.2-py2.py3-none-any.whl
+    │   └── OptimizingUtils-1.2-py2.py3-none-any.whl
     │
     └── 📂 Applying Model
         └── xSG.ipynb
