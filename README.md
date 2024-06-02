@@ -60,16 +60,20 @@ This repo is organized as follows:
     │
     ├── 📂 EDA
     │   ├── EDA.ipynb
-    │   ├── 📂 EDAUtils
     │   ├── SGperHole.ipynb
     │   ├── SGperRound.ipynb
     │   ├── SGperDrive.ipynb
     │   ├── FeatureEngineering.ipynb
+    │   ├── 📂 EDAUtils
     │   └── EDAUtils-1.2-py2.py3-none-any.whl
     │
     ├── 📂 Creating Model
+    │   ├── SHap.ipynb  
     │   ├── LazyPredict.ipynb 
-    │   └── Final_Putting_Model.ipynb
+    │   ├── PuttingModel.ipynb
+    │   ├── ApproachModel.ipynb 
+    │   ├── 📂 OptimizingUtils
+    │   └── optimizingutils-1.2-py2.py3-none-any.whl
     │
     └── 📂 Applying Model
         └── xSG.ipynb
