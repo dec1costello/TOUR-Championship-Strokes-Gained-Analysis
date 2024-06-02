@@ -229,20 +229,14 @@ Here I explore the relationship between 'Distance to the Pin' & 'Lie' vs 'Stroke
 
 ```mermaid
 graph TB
-      FeatureEngineeredData --> CategoricalTransformer;
-      FeatureEngineeredData --> NumericTransformer;
-      CategoricalTransformer --> OneHotEncoder;
-      OneHotEncoder --> Stratify;
-      NumericTransformer --> RobustScaler;
-      RobustScaler --> Stratify;
+      FeatureEngineeredData --> Stratify;
+
 
       Stratify-->RandomForestRegressor;
       Stratify-->MLPRegressor;
       Stratify-->GradientBoostingRegressor;
       Stratify--> AdaBoostRegressor;
-      Stratify--> LGBMRegressor;
 
-      LGBMRegressor-->GBR_StackingRegressor;
       AdaBoostRegressor-->GBR_StackingRegressor;
       GradientBoostingRegressor-->GBR_StackingRegressor;
       RandomForestRegressor-->GBR_StackingRegressor;
