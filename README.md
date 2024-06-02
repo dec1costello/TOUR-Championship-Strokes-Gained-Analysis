@@ -225,7 +225,7 @@ Here I explore the relationship between 'Distance to the Pin' & 'Lie' vs 'Stroke
 
 #### Key Insight
 
-* Excited to use [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) to test out the performance of different model architectures
+* Used [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) as a model registry to track all Optuna results I found. I used Optuna to not only tune each model's parameters, but also find custom data preprocessing scalers and encoders for all base models being fed inot the final estimator. I took advantage of Optuna by using nested cross validation to prune biased trials. Finally I chose Optuna's Covariance Matrix Adaptation Evolution Strategy Sampler for robust and efficient exploration of the search space without the need for gradient information
 
 ```mermaid
 graph TB
