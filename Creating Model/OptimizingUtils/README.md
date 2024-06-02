@@ -14,7 +14,7 @@ The contents of this package is organized as follows:
 
 <h2 id="Install-Instructions"> ⬇️ Install Instructions</h2>
 
-Navigate to edaUtils in the terminal and create the wheel file:
+Navigate to OptmizingUtils in the terminal and create the wheel file:
 
 ```console
 python3 -m build
