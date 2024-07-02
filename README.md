@@ -265,7 +265,7 @@ This chart helps evaluate the model by showing how predicted values compare to a
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 📝 Applying xS Model
+## 🏌🏻 Applying xS Model
 
 Now that we have a stacked SG machine learning model for a shot per shot basis, implementing it is crucial for gaining valuable insights into golf performance. Utilizing the model post-training enables golf analysts, coaches, and players to extract actionable insights, optimize strategies, and refine skills. Ultimately, leveraging a model empowers stakeholders to make informed decisions, enhance performance, and drive success on the golf course.
 
