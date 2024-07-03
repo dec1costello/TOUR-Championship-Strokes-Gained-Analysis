@@ -112,15 +112,15 @@ def get_encoder(trial):
     if encoder_type == 'onehot':
         return OneHotEncoder(handle_unknown='ignore', drop='first', sparse_output=False)
     elif encoder_type == 'ordinal':
-        return OrdinalEncoder()
+        return OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1)
     elif encoder_type == 'target':
-        return TargetEncoder()
+        return TargetEncoder(handle_missing='value', handle_unknown='value')
     elif encoder_type == 'binary':
-        return BinaryEncoder()
+        return BinaryEncoder(handle_unknown='value', handle_missing='value')
     elif encoder_type == 'hashing':
-        return HashingEncoder()
+        return HashingEncoder()  # HashingEncoder inherently handles unknowns by design
     elif encoder_type == 'helmert':
-        return HelmertEncoder()
+        return HelmertEncoder(handle_unknown='value', handle_missing='value')
     else:
         raise ValueError("Unknown encoder type")
 
