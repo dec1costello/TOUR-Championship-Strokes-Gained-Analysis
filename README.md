@@ -241,12 +241,12 @@ graph TB
       Stratify-->GradientBoostingRegressor;
       Stratify--> AdaBoostRegressor;
 
-      AdaBoostRegressor-->GBR_StackingRegressor;
-      GradientBoostingRegressor-->GBR_StackingRegressor;
-      RandomForestRegressor-->GBR_StackingRegressor;
-      MLPRegressor-->GBR_StackingRegressor;
+      AdaBoostRegressor-->StackingRegressor;
+      GradientBoostingRegressor-->StackingRegressor;
+      RandomForestRegressor-->StackingRegressor;
+      MLPRegressor-->StackingRegressor;
 
-      GBR_StackingRegressor --> Expected Strokes to Hole Out;
+      StackingRegressor --> ExpectedStrokesPrediction;
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
