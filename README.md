@@ -246,7 +246,7 @@ graph TB
       RandomForestRegressor-->GBR_StackingRegressor;
       MLPRegressor-->GBR_StackingRegressor;
 
-      GBR_StackingRegressor --> Prediction;
+      GBR_StackingRegressor --> Expected Strokes to Hole Out;
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
