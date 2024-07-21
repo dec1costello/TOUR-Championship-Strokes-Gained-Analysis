@@ -73,7 +73,8 @@ This repo is organized as follows:
     │   └── 📂 OptimizingUtils
     │
     └── 📂 Applying Model
-        └── xSG.ipynb
+        ├── SGCreation.ipynb 
+        └── SGAnalysis.ipynb
 
 ## **⭐ Code Quality**
 
