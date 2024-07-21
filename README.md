@@ -64,15 +64,13 @@ This repo is organized as follows:
     │   ├── SGperRound.ipynb
     │   ├── SGperDrive.ipynb
     │   ├── FeatureEngineering.ipynb
-    │   ├── 📂 EDAUtils
-    │   └── EDAUtils-1.2-py2.py3-none-any.whl
+    │   └── 📂 EDAUtils
     │
     ├── 📂 Creating Model
     │   ├── LazyPredict.ipynb 
     │   ├── PuttingModel.ipynb
     │   ├── ApproachModel.ipynb 
-    │   ├── 📂 OptimizingUtils
-    │   └── OptimizingUtils-1.2-py2.py3-none-any.whl
+    │   └── 📂 OptimizingUtils
     │
     └── 📂 Applying Model
         └── xSG.ipynb
