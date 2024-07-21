@@ -68,7 +68,6 @@ This repo is organized as follows:
     │   └── EDAUtils-1.2-py2.py3-none-any.whl
     │
     ├── 📂 Creating Model
-    │   ├── SHap.ipynb  
     │   ├── LazyPredict.ipynb 
     │   ├── PuttingModel.ipynb
     │   ├── ApproachModel.ipynb 
