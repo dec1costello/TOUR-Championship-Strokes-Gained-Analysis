@@ -279,7 +279,7 @@ Now that we have a reliable model, we can use it to identify a player's strength
 </p>
 <div align="center">
   <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
-    <img src="https://github.com/dec1costello/Golf/assets/79241861/ba64adb4-aad4-409e-93fa-275227a7702f" alt="Event Scatter" style="width:100%">
+    <img src="https://github.com/user-attachments/assets/7aa9be78-b00f-47cf-8931-b16051c73db1" alt="Event Scatter" style="width:100%">
   </a>
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
