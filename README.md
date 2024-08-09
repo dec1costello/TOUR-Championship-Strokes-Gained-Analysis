@@ -228,24 +228,14 @@ Here I explore the relationship between 'Distance to the Pin' & 'Lie' vs 'Stroke
 #### Key Insight
 
 * Excited to try even more arch types for the stack in my model registry!
+<div align="center">
+  <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
+    <img src="https://github.com/user-attachments/assets/cf5608d2-158b-4add-8be2-c9ab3c486ea6" alt="Event Scatter" style="width:100%">
+  </a>
+</div>
 
-```mermaid
-graph TB
-      FeatureEngineeredData --> Stratify;
 
 
-      Stratify-->RandomForestRegressor;
-      Stratify-->MLPRegressor;
-      Stratify-->GradientBoostingRegressor;
-      Stratify--> AdaBoostRegressor;
-
-      AdaBoostRegressor-->StackingRegressor;
-      GradientBoostingRegressor-->StackingRegressor;
-      RandomForestRegressor-->StackingRegressor;
-      MLPRegressor-->StackingRegressor;
-
-      StackingRegressor --> ExpectedStrokesPrediction;
-```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Model Performance
