@@ -267,7 +267,7 @@ This chart helps evaluate the model by showing how predicted values compare to a
 
 Now that we have a stacked SG machine learning model for a shot per shot basis, implementing it is crucial for gaining valuable insights into golf performance. Utilizing the model post-training enables golf analysts, coaches, and players to extract actionable insights, optimize strategies, and refine skills. Ultimately, leveraging a model empowers stakeholders to make informed decisions, enhance performance, and drive success on the golf course.
 
-### SG per Shot
+### SG per Shot Type
 
 Now that we have a reliable model, we can use it to identify a player's strengths and weaknesses by subtracting Expected Strokes (xS) from the result of each shot to give us true Strokes Gained (SG). This plot displays Baddeley's SG by shot type, providing a clear visualization of his performance across different lies and distances.
 
@@ -280,15 +280,10 @@ Now that we have a reliable model, we can use it to identify a player's strength
     <img src="https://github.com/user-attachments/assets/4d4d9911-3b2e-409f-ac45-63d19b0f3d13" alt="Event Scatter" style="width:100%">
   </a>
 </div>
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### SG Quality per Shot
-
-Now that we have a reliable model, we can use it to identify a player's strengths and weaknesses by subtracting Expected Strokes (xS) from the result of each shot to give us true Strokes Gained (SG). This plot displays Baddeley's SG by shot type, providing a clear visualization of his performance across different lies and distances.
-
-#### Key Insight
+<br />
 
 * Excited to document the number of shots from each condition as well as the mean distance and standard deviation to the hole for each Shot Type bucket (plan to label it in the plot). This way we could see if he truly underperform from the rough from that 150 – 200 yardage or did he just have only a few shots and they ended up being in the top end of the bucket
+<br />
 
 <div align="center">
   <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
