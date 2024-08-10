@@ -197,7 +197,6 @@ While the training data is discrete, for continuous predictions, I faced the tas
 After finding the top performing models, I ensemble the best models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html) to minimize [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) and [Variance](https://x.com/akshay_pachaar/status/1703757251474063861?s=20). In this project, I leveraged the [Optuna](https://optuna.org/#dashboard) not only to tune the stack ensemble model, but also data preprocessing. I utilized [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) as a model registry to track all Optuna trials. Databricks is leveraged to store production ready base and meta models.
 
 <br />
-<br />
 
 <div align="center">
   <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
