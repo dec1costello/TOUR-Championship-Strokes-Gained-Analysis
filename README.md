@@ -192,9 +192,15 @@ While the training data is discrete, for continuous predictions, I faced the tas
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Model Hyper Parameterization
+### Project Architecture
 
-Model hyper parameterization plays a crucial role in optimizing machine learning models for performance and generalization. By systematically searching through the hyperparameter space, we can find the combination of hyperparameters that yields the best model performance on validation data. In this project, I leveraged the [Optuna](https://optuna.org/#dashboard) library for Bayesian optimization, enabling an efficient and automated search for the optimal hyperparameters of the models. This proactive approach ensures that our models are fine-tuned to achieve their highest potential performance, leading to better predictive accuracy.
+After finding the top performing models, I ensemble the best models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html) to minimize [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) and [Variance](https://x.com/akshay_pachaar/status/1703757251474063861?s=20). In this project, I leveraged the [Optuna](https://optuna.org/#dashboard) not only to tune the stack ensemble model, but also data preprocessing. I utilized [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) as a model registry to track all Optuna trials. Databricks is leveraged to store production ready base and meta models.
+
+<div align="center">
+  <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
+    <img src="https://github.com/user-attachments/assets/830d7e21-caea-4561-ac2c-fab6c0ea671c" alt="Event Scatter" style="width:100%">
+  </a>
+</div>
 
 #### Key Insight
 * I utilized [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) as a model registry to track all Optuna trials. I used Optuna to not only tune each model's parameters, but also find custom data preprocessing scalers, encoders, imputers, and feature selectors for all base models being fed into the final estimator. I took advantage of Optuna by using nested cross validation to prune biased trials. Finally I chose Optuna's Covariance Matrix Adaptation Evolution Strategy Sampler for robust and efficient exploration of the search space without the need for gradient information before wrapping the whole tuning process in 'OptimizingUtils' for reproducability.
@@ -219,23 +225,6 @@ For model explainability, I utilized the [SHap library](https://shap.readthedocs
     <img src="https://github.com/dec1costello/Golf/assets/79241861/06baf5fd-bce3-4135-abe3-d9ba3b178d33" alt="Event Scatter" style="width:100%">
   </a>
 </div>
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Model Architecture
-
-Here I explore the relationship between 'Distance to the Pin' & 'Lie' vs 'Strokes to Hole Out' at the Tour Championship. I Ensemble the top  performing models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html) to minimize [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) and [Variance](https://x.com/akshay_pachaar/status/1703757251474063861?s=20). This iterative process maximized predictive accuracy of Expected Strokes(xS).
-
-#### Key Insight
-
-* Excited to try even more arch types for the stack in my model registry!
-<div align="center">
-  <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
-    <img src="https://github.com/user-attachments/assets/cf5608d2-158b-4add-8be2-c9ab3c486ea6" alt="Event Scatter" style="width:100%">
-  </a>
-</div>
-
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Model Performance
