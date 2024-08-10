@@ -25,14 +25,14 @@
     </ol>
     <li><a href="#Expected-Strokes-Model">Expected Strokes Model</a></li>
     <ol>
-    <li><a href="#Model-Selection">xS Model Selection</a></li>
+    <li><a href="#Model-Selection">Model Selection</a></li>
     <li><a href="#Training-Architecture">Training Architecture</a></li>
     <li><a href="#Fighting Bias">Fighting Bias</a></li>
-    <li><a href="#Model-Performance">xS Model Performance</a></li>
+    <li><a href="#Model-Performance">Model Performance</a></li>
     </ol>
     <li><a href="#Applying-xS-Model">Applying xS Model</a></li>
     <ol>
-    <li><a href="#SG-per-Shot">SG per Shot</a></li>
+    <li><a href="#SG-per-Shot-Type">SG per Shot Type</a></li>
     </ol>
     <li><a href="#Conclusion">Conclusion</a></li>
     <li><a href="#Future-Roadmap">Future Roadmap</a></li>
@@ -193,7 +193,7 @@ While the training data is discrete, for continuous predictions, I faced the tas
 
 ### Training Architecture
 
-After finding the top performing models, I ensemble the best models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html) to minimize and [Variance](https://x.com/akshay_pachaar/status/1703757251474063861?s=20). In this project, I leveraged the [Optuna](https://optuna.org/#dashboard) not only to tune the stack ensemble model, but also data preprocessing. I utilized [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) as a model registry to track all Optuna trials. Databricks is leveraged to store production ready base and meta models.I utilized [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) as a model registry to track all Optuna trials. I used Optuna to not only tune each model's parameters, but also find custom data preprocessing scalers, encoders, imputers, and feature selectors for all base models being fed into the final estimator. I took advantage of Optuna by using nested cross validation to prune biased trials. Finally I chose Optuna's Covariance Matrix Adaptation Evolution Strategy Sampler for robust and efficient exploration of the search space without the need for gradient information before wrapping the whole tuning process in 'OptimizingUtils' for reproducability. Feastand wrapped it in Poetry.
+After finding the top performing models, I ensemble the best models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html). In this project, I leveraged [Optuna's](https://optuna.org/#dashboard) CMAES Sampler to not only find the best model settigns in the stack, but also data preprocessing. I utilized [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) as a model registry to track all Optuna trials. Databricks is leveraged to store production ready base and meta models. Finally I chose Optuna's Covariance Matrix Adaptation Evolution Strategy Sampler for robust and efficient exploration of the search space without the need for gradient information before wrapping the whole tuning process in 'OptimizingUtils' for reproducability. Feastand wrapped it in Poetry.
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/c4b0cbb0-290d-4a3a-8572-779a810cc1ed" alt="Event Scatter" style="width:80%">
@@ -202,7 +202,7 @@ After finding the top performing models, I ensemble the best models together usi
 
 ### Fighting [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) 
 
-For model explainability, I utilized the [SHap library](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) to analyze the stack model's estimators and base models, offering insights into feature importance. However, to ensure a comprehensive analysis, I also delved into [permutation importance](https://medium.com/@syoussefi600/permutation-importance-vs-impurity-based-feature-importance-1c1a8d027479) as an additional metric in the notebook. This approach allowed for a thorough examination of feature importance from different perspectives, enriching our understanding of the model's predictive behavior. Finally, I employed the [Lime library](https://github.com/marcotcr/lime)  to evaluate the complete stacking regressor's feature importance. Below, you'll find a SHap charts for the putting model's LGBMRegressor.
+For model explainability, I utilized the [SHap library](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) to analyze the stack model's estimators and base models, offering insights into feature importance. However, to ensure a comprehensive analysis, I also delved into [permutation importance](https://medium.com/@syoussefi600/permutation-importance-vs-impurity-based-feature-importance-1c1a8d027479) as an additional metric in the notebook. This approach allowed for a thorough examination of feature importance from different perspectives, enriching our understanding of the model's predictive behavior. Finally, I employed the [Lime library](https://github.com/marcotcr/lime)  to evaluate the complete stacking regressor's feature importance. Below, you'll find a SHap charts for the putting model's LGBMRegressor. I took advantage of Optuna by using nested cross validation to prune biased trials.
 
 #### Key Insight
 * Super surprised to see "Distance to Edge" matters more than "Distance to Pin" for putting, curious if this would be the case if I had a larger dataset
