@@ -199,9 +199,7 @@ After finding the top performing models, I ensemble the best models together usi
 <br />
 
 <div align="center">
-  <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
-    <img src="https://github.com/user-attachments/assets/82e1185b-b85d-41ab-a56f-02266de1d9a2" alt="Event Scatter" style="width:100%">
-  </a>
+    <img src="https://github.com/user-attachments/assets/c4b0cbb0-290d-4a3a-8572-779a810cc1ed" alt="Event Scatter" style="width:100%">
 </div>
 
 #### Key Insight
