@@ -192,7 +192,7 @@ While the training data is discrete, for continuous predictions, I faced the tas
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Project Architecture
+### Training Architecture
 
 After finding the top performing models, I ensemble the best models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html) to minimize [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) and [Variance](https://x.com/akshay_pachaar/status/1703757251474063861?s=20). In this project, I leveraged the [Optuna](https://optuna.org/#dashboard) not only to tune the stack ensemble model, but also data preprocessing. I utilized [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) as a model registry to track all Optuna trials. Databricks is leveraged to store production ready base and meta models.
 
@@ -212,7 +212,7 @@ After finding the top performing models, I ensemble the best models together usi
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Model Explainability
+### Fighting Bias
 
 For model explainability, I utilized the [SHap library](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) to analyze the stack model's estimators and base models, offering insights into feature importance. However, to ensure a comprehensive analysis, I also delved into [permutation importance](https://medium.com/@syoussefi600/permutation-importance-vs-impurity-based-feature-importance-1c1a8d027479) as an additional metric in the notebook. This approach allowed for a thorough examination of feature importance from different perspectives, enriching our understanding of the model's predictive behavior. Finally, I employed the [Lime library](https://github.com/marcotcr/lime)  to evaluate the complete stacking regressor's feature importance. Below, you'll find a SHap charts for the putting model's LGBMRegressor.
 
