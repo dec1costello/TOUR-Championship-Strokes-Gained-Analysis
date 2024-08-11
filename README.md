@@ -146,7 +146,7 @@ Here I explore the distribution of Strokes Gained vs Driving Distance Gained (DG
 
 ## ⛳ Expected Strokes Model
 
-The Stacked Expected Strokes Model leverages the power of ensemble learning by combining predictions from multiple base models to enhance accuracy and robustness. Notably, I've developed separate models for putting and aproach scenarios, utilizing different input features tailored to each situation. This approach allows for more precise predictions by optimizing the model's focus on specific aspects of gameplay, ultimately leading to improved performance and insights in golf analytics. Furthermore, this model will eventually enable a granular analysis of shot-by-shot Strokes Gained, a significant departure from previous hole-by-hole and round-by-round evaluations. By harnessing the Stacked Expected Strokes Model's predictive capabilities, I'll unlock the ability to evaluate each shot's impact on overall performance, offering unprecedented insights into golfer performance. Additionally, I'm unconcerned about data leakage since I'll be predicting continuous variables while training on discrete data, ensuring the model's integrity and effectiveness in real-world applications.
+The Stacked Expected Strokes Model leverages the power of ensemble learning by combining predictions from multiple base models to enhance accuracy and robustness. Notably, I've developed separate models for putting and approach scenarios, utilizing different input features tailored to each situation. This approach allows for more precise predictions by optimizing the model's focus on specific aspects of gameplay, ultimately leading to improved performance and insights in golf analytics. Furthermore, this model will eventually enable a granular analysis of shot-by-shot Strokes Gained, a significant departure from previous hole-by-hole and round-by-round evaluations. By harnessing the Stacked Expected Strokes Model's predictive capabilities, I'll unlock the ability to evaluate each shot's impact on overall performance, offering unprecedented insights into golfer performance. Additionally, I'm unconcerned about data leakage since I'll be predicting continuous variables while training on discrete data, ensuring the model's integrity and effectiveness in real-world applications.
 
 <img align="left" alt="mlflow" width="28px" style="padding-right:3px;" src="https://github.com/dec1costello/dec1costello/assets/79241861/a59fbc5a-f5ce-47a9-a903-c4e5bb0e2e65" />
 <img align="left" alt="optuna" width="33px" style="padding-right:3px;" src="https://github.com/dec1costello/dec1costello/assets/79241861/3a709d6c-cd1e-4126-bd83-ff0f958f4609" />
@@ -187,7 +187,7 @@ While the training data is discrete, for continuous predictions, I faced the tas
 
 ### Training Architecture
 
-After finding the top performing models, I ensemble the best models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html). In this project, I leveraged [Optuna's](https://optuna.org/#dashboard) CMAES Sampler to not only find the best parameters for each model in the stack, but also data preprocessing scalers and encoders. All trails are fed with appropriate offline trainng data from a [Feast](https://feast.dev/) feature store. I utilized a [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) model registry to track all Optuna trials. Databricks is leveraged to store production ready models. Finally, I wrag this whole tuning process in a Poetry wheel file called 'OptimizingUtils' for reproducability.
+After finding the top performing models, I ensemble the best models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html). In this project, I leveraged [Optuna's](https://optuna.org/#dashboard) CMAES Sampler to not only find the best parameters for each model in the stack, but also data preprocessing scalers and encoders. All trails are fed with appropriate offline training data from a [Feast](https://feast.dev/) feature store. I utilized a [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) model registry to track all Optuna trials. Databricks is leveraged to store production ready models. Finally, I wrapped this whole tuning process in a Poetry wheel file called 'OptimizingUtils' for reproducibility.
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/c4b0cbb0-290d-4a3a-8572-779a810cc1ed" alt="Event Scatter" style="width:88%">
@@ -196,7 +196,7 @@ After finding the top performing models, I ensemble the best models together usi
 
 ### Fighting Bias
 
-I attempted to prevent [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) by stratifying my training data and by using nested cross stratified split validation to prune biased trials. I plan to go a step further by bootstrapping and implementing imbalenced learn libraries. I evaluate model bias that still occurred with [SHap](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) and [Lime](https://github.com/marcotcr/lime), enriching our understanding of the model's predictive behavior. Below, you'll find a SHap chart for the putting model's LGBMRegressor.
+I attempted to prevent [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) by stratifying my training data and by using nested cross stratified split validation to prune biased trials. I plan to go a step further by bootstrapping and implementing imbalanced learning libraries. I evaluate model bias that still occurred with [SHap](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) and [Lime](https://github.com/marcotcr/lime), enriching our understanding of the model's predictive behavior. Below, you'll find a SHap chart for the putting model's LGBMRegressor.
 
 #### Key Insight
 * Super surprised to see "Distance to Edge" matters more than "Distance to Pin" for putting, curious if this would be the case if I had a larger dataset
@@ -238,7 +238,7 @@ Now that we have a reliable model, we can use it to identify a player's strength
 <br />
 
 * By looking at Woodland's SG Percentile, we can see that he truly underperformed from 200+ yards out, opposed to having one or two shots damage his 200+ SG Total
-* Woodland only had six shots within 100-50 yards of the pin, perhaps this was by design to avoid putting himself in a position where he consistantly underperforms
+* Woodland only had six shots within 100-50 yards of the pin, perhaps this was by design to avoid putting himself in a position where he consistently underperforms
 
 
 <div align="center">
@@ -248,7 +248,7 @@ Now that we have a reliable model, we can use it to identify a player's strength
 
 ## 🎬 Conclusion
 
-Wish I knew about Strokes Gained back when I was a caddy! Hope to do more golf projects in the future. Thanks for reading big dog.
+Wish I knew about Strokes Gained back when I was a caddy! Hope to do more golf projects in the future. Thanks for reading, big dog
 
 <p align="center">
 <img width="300" src="https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/assets/79241861/face184d-8ef1-4afb-a670-bfcfd62edae9"/>
