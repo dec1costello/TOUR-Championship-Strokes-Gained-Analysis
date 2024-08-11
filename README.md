@@ -196,7 +196,7 @@ After finding the top performing models, I ensemble the best models together usi
 
 ### Fighting [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) 
 
-I attempted to prevent Bias by stratifying my training data and by using nested cross stratified split validation to prune biased trials. I plan to go a step further by bootstrapping my models and using imbalenced learn libraries in the future to further stratify my training data. I evaluate model bias that still occurred with [SHap](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) and [Lime](https://github.com/marcotcr/lime), enriching our understanding of the model's predictive behavior. Below, you'll find a SHap charts for the putting model's LGBMRegressor.
+I attempted to prevent Bias by stratifying my training data and by using nested cross stratified split validation to prune biased trials. I plan to go a step further by bootstrapping my models and using imbalenced learn libraries in the future to further stratify my training data. I evaluate model bias that still occurred with [SHap](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) and [Lime](https://github.com/marcotcr/lime), enriching our understanding of the model's predictive behavior. Below, you'll find a SHap chart for the putting model's LGBMRegressor.
 
 #### Key Insight
 * Super surprised to see "Distance to Edge" matters more than "Distance to Pin" for putting, curious if this would be the case if I had a larger dataset
