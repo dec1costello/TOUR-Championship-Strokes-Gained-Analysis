@@ -226,7 +226,7 @@ Now that we have a stacked SG machine learning model for a shot per shot basis, 
 
 ### SG per Shot Type
 
-Now that we have a reliable model, we can use it to identify a player's strengths and weaknesses by subtracting Expected Strokes (xS) from the result of each shot to give us true Strokes Gained (SG). The plots below displays Woodlands's Total SG and SG Percentile by shot type, providing a clear visualization of his performance across different lies and distances.
+Now that we have a reliable model, we can use it to identify a player's strengths and weaknesses by subtracting Expected Strokes (xS) from the result of each shot to give us true Strokes Gained (SG). The plots below display Woodlands's Total SG and SG Percentile by shot type, providing a clear visualization of his performance across different lies and distances.
 
 #### Key Insight
 
