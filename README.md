@@ -194,9 +194,9 @@ After finding the top performing models, I ensemble the best models together usi
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Fighting [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) 
+### Fighting Bias
 
-I attempted to prevent Bias by stratifying my training data and by using nested cross stratified split validation to prune biased trials. I plan to go a step further by bootstrapping and implementing imbalenced learn libraries. I evaluate model bias that still occurred with [SHap](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) and [Lime](https://github.com/marcotcr/lime), enriching our understanding of the model's predictive behavior. Below, you'll find a SHap chart for the putting model's LGBMRegressor.
+I attempted to prevent [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) by stratifying my training data and by using nested cross stratified split validation to prune biased trials. I plan to go a step further by bootstrapping and implementing imbalenced learn libraries. I evaluate model bias that still occurred with [SHap](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) and [Lime](https://github.com/marcotcr/lime), enriching our understanding of the model's predictive behavior. Below, you'll find a SHap chart for the putting model's LGBMRegressor.
 
 #### Key Insight
 * Super surprised to see "Distance to Edge" matters more than "Distance to Pin" for putting, curious if this would be the case if I had a larger dataset
@@ -240,20 +240,10 @@ Now that we have a reliable model, we can use it to identify a player's strength
 * By looingk at Woodland's SG Percentile, we can see that he truly underperformed from 200+ yards out, opposed to having one or two shots damage his 200+ SG Total
 * Woodland only had six shots within 100-50 yards of the pin, perhaps this was by design to avoid putting himself in a position where he consistantly underperforms
 
-<br />
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/f90faaed-113d-407b-97fc-bc41fcfffb58" alt="Event Scatter" style="width:100%">
 </div>
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Course Factors
-
-I delved into [permutation importance](https://medium.com/@syoussefi600/permutation-importance-vs-impurity-based-feature-importance-1c1a8d027479) as an additional metric in the notebook for a thorough examination of feature importance. From a quick cat xgboost model projecting finish based on medium shot percentile.
-
-#### Key Insight
-
-* Look how much putting matters from this distance~~~~
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🎬 Conclusion
