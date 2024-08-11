@@ -222,22 +222,22 @@ This chart helps evaluate the model by showing how predicted values compare to a
 
 ## 🏌🏻 Applying xS Model
 
-Now that we have a stacked SG machine learning model for a shot per shot basis, implementing it is crucial for gaining valuable insights into golf performance. Utilizing the model post-training enables golf analysts, coaches, and players to extract actionable insights, optimize strategies, and refine skills. Ultimately, leveraging a model empowers stakeholders to make informed decisions, enhance performance, and drive success on the golf course.
+Now that we have a stacked SG machine learning model for a shot per shot basis, we can use it to gain valuable insights into golfer performance. Utilizing the model post-training enables golf analysts, coaches, and players to extract actionable insights, optimize strategies, and refine skills. Ultimately, leveraging a model empowers stakeholders to make informed decisions, enhance performance, and drive success on the golf course.
 
 ### SG per Shot Type
 
-Now that we have a reliable model, we can use it to identify a player's strengths and weaknesses by subtracting Expected Strokes (xS) from the result of each shot to give us true Strokes Gained (SG). This plot displays Baddeley's SG by shot type, providing a clear visualization of his performance across different lies and distances.
+Now that we have a reliable model, we can use it to identify a player's strengths and weaknesses by subtracting Expected Strokes (xS) from the result of each shot to give us true Strokes Gained (SG). The plots below displays Woodlands's Total SG and SG Percentile by shot type, providing a clear visualization of his performance across different lies and distances.
 
 #### Key Insight
 
-* Excited to document the number of shots from each condition as well as the mean distance and standard deviation to the hole for each Shot Type bucket (plan to label it in the plot). This way we could see if he truly underperform from the rough from that 150 – 200 yardage or did he just have only a few shots and they ended up being in the top end of the bucket
+* Woodland was very successful gaining strokes on the green
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/4d4d9911-3b2e-409f-ac45-63d19b0f3d13" alt="Event Scatter" style="width:100%">
 </div>
 <br />
 
-* Excited to document the number of shots from each condition as well as the mean distance and standard deviation to the hole for each Shot Type bucket (plan to label it in the plot). This way we could see if he truly underperform from the rough from that 150 – 200 yardage or did he just have only a few shots and they ended up being in the top end of the bucket
+* By looingk at Woodland's SG Percentile, we can see that he truly underperformed from 200+ yards out, opposed to having one shot skew his 200+ SG Total down
 <br />
 
 <div align="center">
@@ -245,9 +245,9 @@ Now that we have a reliable model, we can use it to identify a player's strength
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### East Lake Course Factors
+### Course Factors
 
-I delved into [permutation importance](https://medium.com/@syoussefi600/permutation-importance-vs-impurity-based-feature-importance-1c1a8d027479) as an additional metric in the notebook for a thorough examination of feature importance.
+I delved into [permutation importance](https://medium.com/@syoussefi600/permutation-importance-vs-impurity-based-feature-importance-1c1a8d027479) as an additional metric in the notebook for a thorough examination of feature importance. From a quick cat xgboost model projecting finish based on medium shot percentile.
 
 #### Key Insight
 
