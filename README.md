@@ -187,7 +187,7 @@ While the training data is discrete, for continuous predictions, I faced the tas
 
 ### Training Architecture
 
-After finding the top performing models, I ensemble the best models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html). In this project, I leveraged [Optuna's](https://optuna.org/#dashboard) CMAES Sampler to not only find the best parameters for each model in the stack, but also data preprocessing scalers and encoders. All trails are fed with appropriate offline traiing data from a [Feast](https://feast.dev/) feature store. I utilized [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) as a model registry to track all Optuna trials. Databricks is leveraged to store production models. Finally, I wrag this whole tuning process in Poetry wheel file called 'OptimizingUtils' for reproducability.
+After finding the top performing models, I ensemble the best models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html). In this project, I leveraged [Optuna's](https://optuna.org/#dashboard) CMAES Sampler to not only find the best parameters for each model in the stack, but also data preprocessing scalers and encoders. All trails are fed with appropriate offline trainng data from a [Feast](https://feast.dev/) feature store. I utilized a [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) model registry to track all Optuna trials. Databricks is leveraged to store production models. Finally, I wrag this whole tuning process in Poetry wheel file called 'OptimizingUtils' for reproducability.
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/c4b0cbb0-290d-4a3a-8572-779a810cc1ed" alt="Event Scatter" style="width:88%">
@@ -196,7 +196,7 @@ After finding the top performing models, I ensemble the best models together usi
 
 ### Fighting [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) 
 
-For model explainability, I utilized [SHap](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) to analyze the stack model's estimators and base models, offering insights into feature importance. However, to ensure a comprehensive analysis, I also delved into [permutation importance](https://medium.com/@syoussefi600/permutation-importance-vs-impurity-based-feature-importance-1c1a8d027479) as an additional metric in the notebook. This approach allowed for a thorough examination of feature importance from different perspectives, enriching our understanding of the model's predictive behavior. Finally, I employed [Lime](https://github.com/marcotcr/lime)  to evaluate the complete stacking regressor's feature importance. Below, you'll find a SHap charts for the putting model's LGBMRegressor. I took advantage of Optuna by using nested cross validation to prune biased trials.
+I attempted to prevent Bias by stratifying my training data and by using nested cross stratified split validation to prune biased trials. I plan to go a step further by bootstrapping my models and using imbalenced learn libraries in the future to further stratify my training data. I evaluate model bias that still occurred with [SHap](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) and [Lime](https://github.com/marcotcr/lime), enriching our understanding of the model's predictive behavior. Below, you'll find a SHap charts for the putting model's LGBMRegressor.
 
 #### Key Insight
 * Super surprised to see "Distance to Edge" matters more than "Distance to Pin" for putting, curious if this would be the case if I had a larger dataset
@@ -244,6 +244,14 @@ Now that we have a reliable model, we can use it to identify a player's strength
     <img src="https://github.com/user-attachments/assets/f90faaed-113d-407b-97fc-bc41fcfffb58" alt="Event Scatter" style="width:100%">
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### East Lake Course Factors
+
+I delved into [permutation importance](https://medium.com/@syoussefi600/permutation-importance-vs-impurity-based-feature-importance-1c1a8d027479) as an additional metric in the notebook for a thorough examination of feature importance.
+
+#### Key Insight
+
+* Look how much putting matters from this distance~~~~
 
 ## 🎬 Conclusion
 
