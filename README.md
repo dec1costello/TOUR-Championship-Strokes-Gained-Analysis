@@ -13,7 +13,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#🎯-Objectives">Objectives</a></li>
+    <li><a href="#Objectives">Objectives</a></li>
     <li><a href="#Repo-Overview">Repo Overview</a></li>
     <li><a href="#Code-Quality">Code Quality</a></li>
     <li><a href="#Dataset">Dataset</a></li>
@@ -111,9 +111,7 @@ I analyze the Strokes Gained distribution for each round of the Championship, re
 * Round 3 seemed to be the most chaotic, as there was a significant variance in player performance throughout the day
 
 <div align="center">
-  <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
     <img src="https://github.com/dec1costello/Golf/assets/79241861/275e7705-7748-49e2-b9c1-e7b24d40066d" alt="Event Scatter" style="width80%">
-  </a>
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,9 +125,7 @@ In this analysis, I investigate the distribution of Strokes Gained for each hole
 * Poorly performing players seem to give up come the back 9 of round 3
 
 <div align="center">
-  <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
     <img src="https://github.com/dec1costello/Golf/assets/79241861/5fb76665-1de7-4d00-a42d-370c6fc5a987" alt="Event Scatter" style="width:100%">
-  </a>
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -143,9 +139,7 @@ Here I explore the distribution of Strokes Gained vs Driving Distance Gained (DG
 * DG has only a slight correlation to SG
 
 <div align="center">
-  <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
     <img src="https://github.com/dec1costello/Golf/assets/79241861/2eabd308-cee6-4f72-af2b-6dcea8e6bd86" alt="Event Scatter" style="width:100%">
-  </a>
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -196,22 +190,20 @@ While the training data is discrete, for continuous predictions, I faced the tas
 After finding the top performing models, I ensemble the best models together using a [Stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html). In this project, I leveraged [Optuna's](https://optuna.org/#dashboard) CMAES Sampler to not only find the best model settigns in the stack, but also data preprocessing. I utilized [ML Flow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) as a model registry to track all Optuna trials. Databricks is leveraged to store production ready base and meta models. Finally I chose Optuna's Covariance Matrix Adaptation Evolution Strategy Sampler for robust and efficient exploration of the search space without the need for gradient information before wrapping the whole tuning process in 'OptimizingUtils' for reproducability. Feastand wrapped it in Poetry.
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/c4b0cbb0-290d-4a3a-8572-779a810cc1ed" alt="Event Scatter" style="width:80%">
+    <img src="https://github.com/user-attachments/assets/c4b0cbb0-290d-4a3a-8572-779a810cc1ed" alt="Event Scatter" style="width:88%">
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Fighting [Bias](https://towardsdatascience.com/a-quickstart-guide-to-uprooting-model-bias-f4465c8e84bc) 
 
-For model explainability, I utilized the [SHap library](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) to analyze the stack model's estimators and base models, offering insights into feature importance. However, to ensure a comprehensive analysis, I also delved into [permutation importance](https://medium.com/@syoussefi600/permutation-importance-vs-impurity-based-feature-importance-1c1a8d027479) as an additional metric in the notebook. This approach allowed for a thorough examination of feature importance from different perspectives, enriching our understanding of the model's predictive behavior. Finally, I employed the [Lime library](https://github.com/marcotcr/lime)  to evaluate the complete stacking regressor's feature importance. Below, you'll find a SHap charts for the putting model's LGBMRegressor. I took advantage of Optuna by using nested cross validation to prune biased trials.
+For model explainability, I utilized [SHap](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) to analyze the stack model's estimators and base models, offering insights into feature importance. However, to ensure a comprehensive analysis, I also delved into [permutation importance](https://medium.com/@syoussefi600/permutation-importance-vs-impurity-based-feature-importance-1c1a8d027479) as an additional metric in the notebook. This approach allowed for a thorough examination of feature importance from different perspectives, enriching our understanding of the model's predictive behavior. Finally, I employed [Lime](https://github.com/marcotcr/lime)  to evaluate the complete stacking regressor's feature importance. Below, you'll find a SHap charts for the putting model's LGBMRegressor. I took advantage of Optuna by using nested cross validation to prune biased trials.
 
 #### Key Insight
 * Super surprised to see "Distance to Edge" matters more than "Distance to Pin" for putting, curious if this would be the case if I had a larger dataset
 * "Downhill Slope" and "Elevation Below Ball" are distinct features; Despite their seemingly similar title, they are not the same. To confirm this, a pairwise correlation was done
 
 <div align="center">
-  <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
     <img src="https://github.com/dec1costello/Golf/assets/79241861/06baf5fd-bce3-4135-abe3-d9ba3b178d33" alt="Event Scatter" style="width:100%">
-  </a>
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -224,9 +216,7 @@ This chart helps evaluate the model by showing how predicted values compare to a
 * Excited to see the residuals have a low standard deviation with a mean hovering around 0
 
 <div align="center">
-  <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
     <img src="https://github.com/dec1costello/Golf/assets/79241861/7b95ecab-a449-4770-a57e-eea884f1468b" alt="Event Scatter" style="width:100%">
-  </a>
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -243,9 +233,7 @@ Now that we have a reliable model, we can use it to identify a player's strength
 * Excited to document the number of shots from each condition as well as the mean distance and standard deviation to the hole for each Shot Type bucket (plan to label it in the plot). This way we could see if he truly underperform from the rough from that 150 – 200 yardage or did he just have only a few shots and they ended up being in the top end of the bucket
 
 <div align="center">
-  <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
     <img src="https://github.com/user-attachments/assets/4d4d9911-3b2e-409f-ac45-63d19b0f3d13" alt="Event Scatter" style="width:100%">
-  </a>
 </div>
 <br />
 
@@ -253,9 +241,7 @@ Now that we have a reliable model, we can use it to identify a player's strength
 <br />
 
 <div align="center">
-  <a href="https://nbviewer.org/github/dec1costello/Golf/blob/main/TOUR_Championship_2011/xSG.ipynb">
     <img src="https://github.com/user-attachments/assets/f90faaed-113d-407b-97fc-bc41fcfffb58" alt="Event Scatter" style="width:100%">
-  </a>
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
