@@ -237,7 +237,7 @@ Now that we have a reliable model, we can use it to identify a player's strength
 </div>
 <br />
 
-* By looingk at Woodland's SG Percentile, we can see that he truly underperformed from 200+ yards out, opposed to having one or two shots damage his 200+ SG Total
+* By looking at Woodland's SG Percentile, we can see that he truly underperformed from 200+ yards out, opposed to having one or two shots damage his 200+ SG Total
 * Woodland only had six shots within 100-50 yards of the pin, perhaps this was by design to avoid putting himself in a position where he consistantly underperforms
 
 
