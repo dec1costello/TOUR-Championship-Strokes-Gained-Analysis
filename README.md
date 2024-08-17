@@ -131,12 +131,12 @@ In this analysis, I investigate the distribution of Strokes Gained for each hole
 
 ### SG per Drive
 
-Here I explore the distribution of Strokes Gained vs Driving Distance Gained (DG) and Driving Accuracy Gained (AG) for each drive of the Championship. Both DG and SG are normalized per hole before totalling. Happy to say my analysis aligns with [Data Golf's Course Fit Tool.](https://datagolf.com/course-fit-tool)
+Here I explore the distribution of Strokes Gained vs Driving Distance Gained and Driving Accuracy Gained for each drive of the Championship. Both Driving Distance and Driving Accuracy are normalized per hole before totalling. Happy to say my analysis aligns with [Data Golf's Course Fit Tool.](https://datagolf.com/course-fit-tool)
 
 #### Key Insights
 
-* AG has a strong correlation to SG
-* DG has only a slight correlation to SG
+* Driving Accuracy has a strong correlation to Strokes Gained per Hole
+* Driving Distance has only a slight correlation to Strokes Gained per Hole
 
 <div align="center">
     <img src="https://github.com/dec1costello/Golf/assets/79241861/2eabd308-cee6-4f72-af2b-6dcea8e6bd86" alt="Event Scatter" style="width:100%">
