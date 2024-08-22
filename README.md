@@ -248,10 +248,7 @@ Now that we have a reliable model, we can use it to identify a player's strength
 
 ## 🎬 Conclusion
 
-I wish knew about Strokes Gained back when I was a caddy. I learned SG is more reflective stat of the Hole, while SG Percentiles based on shot location can tell a better story of a golfer's ability. Hope to do more golf projects in the future.
-
-
-
+Looking back, I wish I had known about Strokes Gained during my time as a caddy. I've come to understand that Strokes Gained provides a more accurate reflection of performance on the hole, while SG Percentiles based on shot location offer deeper insights into a golfer's true abilities. I'm excited to explore more golf-related projects in the future.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
