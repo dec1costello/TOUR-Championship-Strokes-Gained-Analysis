@@ -250,9 +250,7 @@ Now that we have a reliable model, we can use it to identify a player's strength
 
 Wish I knew about Strokes Gained back when I was a caddy. Hope to do more golf projects in the future. Thanks for reading, big dog!
 
-<p align="center">
-<img width="300" src="https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/assets/79241861/face184d-8ef1-4afb-a670-bfcfd62edae9"/>
-</p>
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
