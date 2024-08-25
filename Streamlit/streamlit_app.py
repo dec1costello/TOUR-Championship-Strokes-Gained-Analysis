@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-st.set_page_config(page_title="TOUR Championship Player Performance Dashboard", page_icon=":golfball:", initial_sidebar_state="expanded")
+st.set_page_config(page_title="TOUR Championship Player Performance Dashboard", page_icon="⛳", initial_sidebar_state="expanded")
 
 st.sidebar.markdown(" ## About")
 st.sidebar.markdown("This Dashboar offer deeper insights into a golfer's true abilities. The primary aspiration is to contribute meaningful insights to the golf community."  )  
@@ -24,9 +24,9 @@ st.sidebar.markdown(" ## Info")
 st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis).", icon="ℹ️")
 
 
-st.title("The Distance Predictor")
+st.title("Player Performance Dashboard")
 
-tab_ppredictor, tab_faq = st.tabs(["The Distance Predictor", "FAQ"])
+tab_ppredictor, tab_faq = st.tabs(["Player Performance Dashboard", "FAQ"])
 
 with tab_ppredictor:
     
@@ -36,7 +36,7 @@ with tab_ppredictor:
 with tab_faq:
             st.markdown(" ### Frequently Asked Questions 🔎 ")
 
-            expand_faq0 = st.expander(":golfball: What dataset was used?")
+            expand_faq0 = st.expander("⛳ What dataset was used?")
             with expand_faq0:
                         st.write('''This dataset consists of shot level data from the PGA TOUR Championship. The TOUR Championship differs from other tournaments in that only the top 30 golfers compete and there's no cut after the second round, this ensures consistent data of high skill golfers across all 4 rounds. Additionally, it's important to acknowledge that the dataset lacks data from the playoff that occurred, which is crucial for understanding the tournament's conclusion. Furthermore, it is important to emphasize that landing in the rough at East Lake doesn't necessarily disadvantage a player. Despite the challenge it presents, the ball could still have a favorable lie, which might have been strategically chosen by the golfer.''', unsafe_allow_html=True)
 
