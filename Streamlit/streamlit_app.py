@@ -30,7 +30,7 @@ tab_ppredictor, tab_faq = st.tabs(["Player Performance Dashboard", "FAQ"])
 
 with tab_ppredictor:
     
-            st.title("Page 1")
+            st.title("Dashboard")
 
 
 with tab_faq:
