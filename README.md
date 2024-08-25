@@ -73,9 +73,11 @@ This repo is organized as follows:
     │   ├── ApproachModel.ipynb 
     │   └── 📂 OptimizingUtils
     │
-    └── 📂 Applying Model
-        ├── SGCreation.ipynb 
-        └── SGAnalysis.ipynb
+    ├── 📂 Applying Model
+    │   ├── SGCreation.ipynb 
+    │   └── SGAnalysis.ipynb
+    │
+    └── 📂 Streamlit Dashboard
 
 ## **⭐ Code Quality**
 
