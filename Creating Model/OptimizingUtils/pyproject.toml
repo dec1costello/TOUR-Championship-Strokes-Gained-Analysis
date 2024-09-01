@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "OptimizingUtils"
-version = "1.84"
+version = "1.85"
 authors = [
     "Declan Costello <dec1costello@gmail.com>"
 ]
