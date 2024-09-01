@@ -160,11 +160,15 @@ def get_imputer(strategy, fill_value=None):
         return SimpleImputer(strategy=strategy)
 
 
+from sklearn.feature_selection import SelectKBest, f_regression, SelectFromModel, RFE, RFECV, mutual_info_classif
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.ensemble import GradientBoostingRegressor, RandomForestClassifier
+
 def get_feature_selector_and_poly(trial):
     """
     Return the feature selector and polynomial feature generator based on the trial suggestions.
 
-    This function suggests and returns feature selection and polynomial feature generation steps 
+    This function suggests and returns feature selection and polynomial feature generation steps
     to be added to a preprocessing pipeline.
 
     Parameters:
@@ -178,23 +182,39 @@ def get_feature_selector_and_poly(trial):
     
     # Feature selection
     feature_selector_type = trial.suggest_categorical(
-        'feature_selector', ['none', 'kbest', 'model']
-        )
-        
+        'feature_selector', ['none', 'kbest', 'model', 'rfe', 'rfecv', 'mutual_info', 'boruta']
+    )
+
     if feature_selector_type == 'kbest':
         feature_selector = SelectKBest(score_func=f_regression, k=trial.suggest_int('k', 5, 20))
-        transformers.append(('feature_selector', feature_selector, []))  # Add empty list for columns
+        transformers.append(('feature_selector', feature_selector, []))
+
     elif feature_selector_type == 'model':
         feature_selector = SelectFromModel(estimator=GradientBoostingRegressor(n_estimators=50))
-        transformers.append(('feature_selector', feature_selector, []))  # Add empty list for columns
+        transformers.append(('feature_selector', feature_selector, []))
+
+    elif feature_selector_type == 'rfe':
+        feature_selector = RFE(estimator=GradientBoostingRegressor(n_estimators=50), 
+                               n_features_to_select=trial.suggest_int('n_features_to_select', 5, 20))
+        transformers.append(('feature_selector', feature_selector, []))
+
+    elif feature_selector_type == 'rfecv':
+        feature_selector = RFECV(estimator=GradientBoostingRegressor(n_estimators=50), cv=5)
+        transformers.append(('feature_selector', feature_selector, []))
+
+    elif feature_selector_type == 'mutual_info':
+        feature_selector = SelectKBest(score_func=mutual_info_classif, k=trial.suggest_int('k', 5, 20))
+        transformers.append(('feature_selector', feature_selector, []))
+
 
     # Polynomial features
     poly_degree = trial.suggest_int('poly_degree', 1, 3)
     if poly_degree > 1:
         poly_features = PolynomialFeatures(degree=poly_degree, include_bias=False)
-        transformers.append(('poly', poly_features, []))  # Add empty list for columns
+        transformers.append(('poly', poly_features, []))
 
     return transformers
+
 
 
 
