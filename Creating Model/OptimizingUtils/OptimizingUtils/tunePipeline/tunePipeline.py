@@ -41,6 +41,7 @@ from sklearn.preprocessing import (StandardScaler, MinMaxScaler, MaxAbsScaler, R
                                    OneHotEncoder, OrdinalEncoder, PolynomialFeatures, 
                                    QuantileTransformer,  PowerTransformer)
 import mlflow.sklearn
+from sklearn.feature_selection import SelectKBest, f_regression, SelectFromModel
 
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, MaxAbsScaler, RobustScaler, QuantileTransformer, PowerTransformer, OneHotEncoder, OrdinalEncoder
 
@@ -159,6 +160,44 @@ def get_imputer(strategy, fill_value=None):
         return SimpleImputer(strategy=strategy)
 
 
+def get_feature_selector_and_poly(trial):
+    """
+    Return the feature selector and polynomial feature generator based on the trial suggestions.
+
+    This function suggests and returns feature selection and polynomial feature generation steps 
+    to be added to a preprocessing pipeline.
+
+    Parameters:
+        trial (optuna.trial.Trial): The optimization trial object.
+
+    Returns:
+        list: A list of tuples where each tuple contains the name of the transformer, 
+              the transformer itself, and an empty list of columns to which it should be applied.
+    """
+    transformers = []
+    
+    # Feature selection
+    feature_selector_type = trial.suggest_categorical(
+        'feature_selector', ['none', 'kbest', 'model']
+        )
+        
+    if feature_selector_type == 'kbest':
+        feature_selector = SelectKBest(score_func=f_regression, k=trial.suggest_int('k', 5, 20))
+        transformers.append(('feature_selector', feature_selector, []))  # Add empty list for columns
+    elif feature_selector_type == 'model':
+        feature_selector = SelectFromModel(estimator=GradientBoostingRegressor(n_estimators=50))
+        transformers.append(('feature_selector', feature_selector, []))  # Add empty list for columns
+
+    # Polynomial features
+    poly_degree = trial.suggest_int('poly_degree', 1, 3)
+    if poly_degree > 1:
+        poly_features = PolynomialFeatures(degree=poly_degree, include_bias=False)
+        transformers.append(('poly', poly_features, []))  # Add empty list for columns
+
+    return transformers
+
+
+
 
 # Define the objective function with MLflow logging
 def objective(trial, model_class, model_param_suggestion, is_stacking=False, base_models=None, categorical_cols=None, numerical_cols=None, X=None, y=None,strat_col='putting_distance_to_pin_bins'):
@@ -225,22 +264,11 @@ def objective(trial, model_class, model_param_suggestion, is_stacking=False, bas
                 ],
                 remainder='drop'  # Drop columns not specified in transformers
             )
-
-            # Feature selection (optional)
-            feature_selector_type = trial.suggest_categorical('feature_selector', ['none', 'kbest', 'model'])
-            if feature_selector_type == 'kbest':
-                from sklearn.feature_selection import SelectKBest, f_regression
-                feature_selector = SelectKBest(score_func=f_regression, k=trial.suggest_int('k', 5, 20))
-                preprocessor.transformers.append(('feature_selector', feature_selector, []))  # Add empty list for columns
-            elif feature_selector_type == 'model':
-                from sklearn.feature_selection import SelectFromModel
-                feature_selector = SelectFromModel(estimator=GradientBoostingRegressor(n_estimators=50))
-                preprocessor.transformers.append(('feature_selector', feature_selector, []))  # Add empty list for columns
-
-            # Polynomial features (optional)
-            poly_degree = trial.suggest_int('poly_degree', 1, 3)
-            if poly_degree > 1:
-                preprocessor.transformers.append(('poly', PolynomialFeatures(degree=poly_degree, include_bias=False), []))  # Add empty list for columns
+            
+            # Get feature selector and polynomial transformers
+            feature_selector_and_poly_transformers = get_feature_selector_and_poly(trial)
+            for transformer in feature_selector_and_poly_transformers:
+                preprocessor.transformers.append(transformer)
 
             # Suggest hyperparameters for the model
             params = model_param_suggestion(trial)
