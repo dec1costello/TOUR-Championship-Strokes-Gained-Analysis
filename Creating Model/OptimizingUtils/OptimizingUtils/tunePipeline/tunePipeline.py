@@ -164,6 +164,7 @@ from sklearn.feature_selection import SelectKBest, f_regression, SelectFromModel
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.ensemble import GradientBoostingRegressor, RandomForestClassifier
 
+
 def get_feature_selector_and_poly(trial):
     """
     Return the feature selector and polynomial feature generator based on the trial suggestions.
@@ -182,38 +183,65 @@ def get_feature_selector_and_poly(trial):
     
     # Feature selection
     feature_selector_type = trial.suggest_categorical(
-        'feature_selector', ['none', 'kbest', 'model', 'rfe', 'rfecv', 'mutual_info', 'boruta']
+        'feature_selector', ['none', 'kbest', 'model', 'rfe', 'rfecv', 'mutual_info']
     )
 
     if feature_selector_type == 'kbest':
-        feature_selector = SelectKBest(score_func=f_regression, k=trial.suggest_int('k', 5, 20))
+        k = trial.suggest_int('k', 5, 20)
+        score_func = trial.suggest_categorical('score_func', [f_regression, mutual_info_classif])
+        feature_selector = SelectKBest(score_func=score_func, k=k)
         transformers.append(('feature_selector', feature_selector, []))
 
     elif feature_selector_type == 'model':
-        feature_selector = SelectFromModel(estimator=GradientBoostingRegressor(n_estimators=50))
+        model_type = trial.suggest_categorical('model_type', ['gradient_boosting', 'random_forest'])
+        if model_type == 'gradient_boosting':
+            n_estimators_gb = trial.suggest_int('n_estimators_gb', 50, 200)
+            estimator = GradientBoostingRegressor(n_estimators=n_estimators_gb)
+        elif model_type == 'random_forest':
+            n_estimators_rf = trial.suggest_int('n_estimators_rf', 50, 200)
+            estimator = RandomForestClassifier(n_estimators=n_estimators_rf)
+        feature_selector = SelectFromModel(estimator=estimator)
         transformers.append(('feature_selector', feature_selector, []))
 
     elif feature_selector_type == 'rfe':
-        feature_selector = RFE(estimator=GradientBoostingRegressor(n_estimators=50), 
-                               n_features_to_select=trial.suggest_int('n_features_to_select', 5, 20))
+        n_features_to_select = trial.suggest_int('n_features_to_select', 5, 20)
+        model_type = trial.suggest_categorical('model_type_rfe', ['gradient_boosting', 'random_forest'])
+        if model_type == 'gradient_boosting':
+            n_estimators_gb = trial.suggest_int('n_estimators_gb_rfe', 50, 200)
+            estimator = GradientBoostingRegressor(n_estimators=n_estimators_gb)
+        elif model_type == 'random_forest':
+            n_estimators_rf = trial.suggest_int('n_estimators_rf_rfe', 50, 200)
+            estimator = RandomForestClassifier(n_estimators=n_estimators_rf)
+        feature_selector = RFE(estimator=estimator, n_features_to_select=n_features_to_select)
         transformers.append(('feature_selector', feature_selector, []))
 
     elif feature_selector_type == 'rfecv':
-        feature_selector = RFECV(estimator=GradientBoostingRegressor(n_estimators=50), cv=5)
+        model_type = trial.suggest_categorical('model_type_rfecv', ['gradient_boosting', 'random_forest'])
+        if model_type == 'gradient_boosting':
+            n_estimators_gb = trial.suggest_int('n_estimators_gb_rfecv', 50, 200)
+            estimator = GradientBoostingRegressor(n_estimators=n_estimators_gb)
+        elif model_type == 'random_forest':
+            n_estimators_rf = trial.suggest_int('n_estimators_rf_rfecv', 50, 200)
+            estimator = RandomForestClassifier(n_estimators=n_estimators_rf)
+        cv = trial.suggest_int('cv_rfecv', 3, 10)
+        feature_selector = RFECV(estimator=estimator, cv=cv)
         transformers.append(('feature_selector', feature_selector, []))
 
     elif feature_selector_type == 'mutual_info':
-        feature_selector = SelectKBest(score_func=mutual_info_classif, k=trial.suggest_int('k', 5, 20))
+        k = trial.suggest_int('k_mutual_info', 5, 20)
+        feature_selector = SelectKBest(score_func=mutual_info_classif, k=k)
         transformers.append(('feature_selector', feature_selector, []))
 
 
     # Polynomial features
     poly_degree = trial.suggest_int('poly_degree', 1, 3)
     if poly_degree > 1:
-        poly_features = PolynomialFeatures(degree=poly_degree, include_bias=False)
+        include_bias = trial.suggest_categorical('include_bias', [False, True])
+        poly_features = PolynomialFeatures(degree=poly_degree, include_bias=include_bias)
         transformers.append(('poly', poly_features, []))
 
     return transformers
+
 
 
 
