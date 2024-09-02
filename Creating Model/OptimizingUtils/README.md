@@ -26,7 +26,7 @@ Place the newly created wheel file in desried directory and finish install in no
 pip install optimizingutils-1.9-py2.py3-none-any.whl
 ```
 
-<h2 id="Preprocessing"> ⚙️ Preprocessing</h2>
+<h2 id="Preprocessing"> ⚙️ Data Preprocessors Explored</h2>
 
 #### Scalers
 
