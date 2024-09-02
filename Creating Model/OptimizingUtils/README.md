@@ -65,7 +65,7 @@ pip install optimizingutils-1.9-py2.py3-none-any.whl
 #### Feature Selectors
 
 * Kbest
-    * F-regression
+    * F Regression
     * Mutual Info Classif
 * Model
     * Gradient Boosting Regressor
