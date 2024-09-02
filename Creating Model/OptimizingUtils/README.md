@@ -37,6 +37,8 @@ pip install optimizingutils-1.85-py2.py3-none-any.whl
 * Quantile
 * Power
 
+----------------------------------------------------------------
+
 #### Encoders
 
 * OneHot
@@ -45,6 +47,8 @@ pip install optimizingutils-1.85-py2.py3-none-any.whl
 * Binary
 * Hashing
 * Helmert
+
+----------------------------------------------------------------
 
 #### Imputers
 
@@ -55,6 +59,8 @@ pip install optimizingutils-1.85-py2.py3-none-any.whl
     * Constant
 * KNNImputer
 * IterativeImputer
+  
+----------------------------------------------------------------
 
 #### Feature Selector
 
@@ -72,3 +78,5 @@ pip install optimizingutils-1.85-py2.py3-none-any.whl
     * Gradient Boosting Regressor
     * Random Forest Classifier
 * Polynomial Features
+    * Poly Degree
+    * Include Bias
