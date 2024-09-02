@@ -1,3 +1,4 @@
+import os
 import bz2
 import time
 import mlflow
@@ -8,55 +9,26 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import optuna.visualization as ov
-from bokeh.io import export_svgs
-from bokeh.layouts import row, gridplot
-from bokeh.plotting import figure, show
-from bokeh.palettes import viridis, cividis
-from bokeh.models import ColumnDataSource, Range1d
-from sklearn.inspection import PartialDependenceDisplay, permutation_importance
 from sklearn.metrics import mean_squared_error, mean_absolute_error
-from sklearn.ensemble import StackingRegressor, GradientBoostingRegressor, AdaBoostRegressor, RandomForestRegressor, HistGradientBoostingRegressor
+from sklearn.ensemble import StackingRegressor, GradientBoostingRegressor, AdaBoostRegressor, RandomForestRegressor, HistGradientBoostingRegressor, RandomForestClassifier
 from lightgbm import LGBMRegressor
 from sklearn.neural_network import MLPRegressor
 from sklearn.linear_model import RidgeCV
 from sklearn.pipeline import Pipeline
-from sklearn.dummy import DummyRegressor
 from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val_predict, cross_val_score
-from textwrap import wrap
-from matplotlib.cm import get_cmap
-from sklearn.impute import SimpleImputer
+from sklearn.impute import SimpleImputer, KNNImputer, IterativeImputer
 from optuna.exceptions import TrialPruned
-import mlflow
-import mlflow.sklearn
-from urllib.parse import urlparse, unquote
-import os
-from sklearn.impute import SimpleImputer, KNNImputer
-# explicitly require this experimental feature
-from sklearn.experimental import enable_iterative_imputer  # noqa
-# now you can import normally from sklearn.impute
-from sklearn.impute import IterativeImputer
-import ipywidgets
+from sklearn.feature_selection import SelectKBest, f_regression, SelectFromModel, RFE, RFECV, mutual_info_classif
 from sklearn.preprocessing import (StandardScaler, MinMaxScaler, MaxAbsScaler, RobustScaler,
                                    OneHotEncoder, OrdinalEncoder, PolynomialFeatures, 
                                    QuantileTransformer,  PowerTransformer)
-import mlflow.sklearn
-from sklearn.feature_selection import SelectKBest, f_regression, SelectFromModel
-
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, MaxAbsScaler, RobustScaler, QuantileTransformer, PowerTransformer, OneHotEncoder, OrdinalEncoder
-
+from urllib.parse import urlparse, unquote
 from optuna.integration import MLflowCallback
 from sklearn.experimental import enable_hist_gradient_boosting
 from category_encoders import TargetEncoder, BinaryEncoder, HashingEncoder, HelmertEncoder
-
 from tqdm import tqdm
 from mlflow.tracking import MlflowClient
-
-from bokeh.palettes import viridis, cividis
-viridis_palette = viridis(256)
-
-
-
 
 
 def get_scaler(trial):
@@ -160,9 +132,6 @@ def get_imputer(strategy, fill_value=None):
         return SimpleImputer(strategy=strategy)
 
 
-from sklearn.feature_selection import SelectKBest, f_regression, SelectFromModel, RFE, RFECV, mutual_info_classif
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.ensemble import GradientBoostingRegressor, RandomForestClassifier
 
 
 def get_feature_selector_and_poly(trial):
@@ -179,8 +148,16 @@ def get_feature_selector_and_poly(trial):
         list: A list of tuples where each tuple contains the name of the transformer, 
               the transformer itself, and an empty list of columns to which it should be applied.
     """
+    def get_model_estimator(model_type, n_estimators_suffix):
+        if model_type == 'gradient_boosting':
+            n_estimators = trial.suggest_int(f'n_estimators_gb{n_estimators_suffix}', 50, 200)
+            return GradientBoostingRegressor(n_estimators=n_estimators)
+        elif model_type == 'random_forest':
+            n_estimators = trial.suggest_int(f'n_estimators_rf{n_estimators_suffix}', 50, 200)
+            return RandomForestClassifier(n_estimators=n_estimators)
+
     transformers = []
-    
+
     # Feature selection
     feature_selector_type = trial.suggest_categorical(
         'feature_selector', ['none', 'kbest', 'model', 'rfe', 'rfecv', 'mutual_info']
@@ -192,46 +169,20 @@ def get_feature_selector_and_poly(trial):
         feature_selector = SelectKBest(score_func=score_func, k=k)
         transformers.append(('feature_selector', feature_selector, []))
 
-    elif feature_selector_type == 'model':
-        model_type = trial.suggest_categorical('model_type', ['gradient_boosting', 'random_forest'])
-        if model_type == 'gradient_boosting':
-            n_estimators_gb = trial.suggest_int('n_estimators_gb', 50, 200)
-            estimator = GradientBoostingRegressor(n_estimators=n_estimators_gb)
-        elif model_type == 'random_forest':
-            n_estimators_rf = trial.suggest_int('n_estimators_rf', 50, 200)
-            estimator = RandomForestClassifier(n_estimators=n_estimators_rf)
-        feature_selector = SelectFromModel(estimator=estimator)
-        transformers.append(('feature_selector', feature_selector, []))
+    elif feature_selector_type in ['model', 'rfe', 'rfecv']:
+        model_type = trial.suggest_categorical(f'model_type_{feature_selector_type}', ['gradient_boosting', 'random_forest'])
+        estimator = get_model_estimator(model_type, f'_{feature_selector_type}')
+        
+        if feature_selector_type == 'model':
+            feature_selector = SelectFromModel(estimator=estimator)
+        elif feature_selector_type == 'rfe':
+            n_features_to_select = trial.suggest_int('n_features_to_select', 5, 20)
+            feature_selector = RFE(estimator=estimator, n_features_to_select=n_features_to_select)
+        elif feature_selector_type == 'rfecv':
+            cv = trial.suggest_int('cv_rfecv', 3, 10)
+            feature_selector = RFECV(estimator=estimator, cv=cv)
 
-    elif feature_selector_type == 'rfe':
-        n_features_to_select = trial.suggest_int('n_features_to_select', 5, 20)
-        model_type = trial.suggest_categorical('model_type_rfe', ['gradient_boosting', 'random_forest'])
-        if model_type == 'gradient_boosting':
-            n_estimators_gb = trial.suggest_int('n_estimators_gb_rfe', 50, 200)
-            estimator = GradientBoostingRegressor(n_estimators=n_estimators_gb)
-        elif model_type == 'random_forest':
-            n_estimators_rf = trial.suggest_int('n_estimators_rf_rfe', 50, 200)
-            estimator = RandomForestClassifier(n_estimators=n_estimators_rf)
-        feature_selector = RFE(estimator=estimator, n_features_to_select=n_features_to_select)
         transformers.append(('feature_selector', feature_selector, []))
-
-    elif feature_selector_type == 'rfecv':
-        model_type = trial.suggest_categorical('model_type_rfecv', ['gradient_boosting', 'random_forest'])
-        if model_type == 'gradient_boosting':
-            n_estimators_gb = trial.suggest_int('n_estimators_gb_rfecv', 50, 200)
-            estimator = GradientBoostingRegressor(n_estimators=n_estimators_gb)
-        elif model_type == 'random_forest':
-            n_estimators_rf = trial.suggest_int('n_estimators_rf_rfecv', 50, 200)
-            estimator = RandomForestClassifier(n_estimators=n_estimators_rf)
-        cv = trial.suggest_int('cv_rfecv', 3, 10)
-        feature_selector = RFECV(estimator=estimator, cv=cv)
-        transformers.append(('feature_selector', feature_selector, []))
-
-    elif feature_selector_type == 'mutual_info':
-        k = trial.suggest_int('k_mutual_info', 5, 20)
-        feature_selector = SelectKBest(score_func=mutual_info_classif, k=k)
-        transformers.append(('feature_selector', feature_selector, []))
-
 
     # Polynomial features
     poly_degree = trial.suggest_int('poly_degree', 1, 3)
@@ -241,8 +192,6 @@ def get_feature_selector_and_poly(trial):
         transformers.append(('poly', poly_features, []))
 
     return transformers
-
-
 
 
 
