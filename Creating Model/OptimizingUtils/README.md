@@ -60,8 +60,15 @@ pip install optimizingutils-1.85-py2.py3-none-any.whl
 
 * None
 * Kbest
+    * F-regression
+    * Mutual Info Classif
 * Model
-* Rfe
-* Rfecv
-* Mutual Info
+    * Gradient Boosting Regressor
+    * Random Forest Classifier
+* RFE
+    * Gradient Boosting Regressor
+    * Random Forest Classifier
+* RFECV
+    * Gradient Boosting Regressor
+    * Random Forest Classifier
 * Polynomial Features
