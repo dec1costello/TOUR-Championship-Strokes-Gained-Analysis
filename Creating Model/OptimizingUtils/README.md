@@ -55,3 +55,13 @@ pip install optimizingutils-1.85-py2.py3-none-any.whl
     * Constant
 * KNNImputer
 * IterativeImputer
+
+#### Feature Selector
+
+* None
+* Kbest
+* Model
+* Rfe
+* Rfecv
+* Mutual Info
+* Polynomial Features
