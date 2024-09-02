@@ -62,7 +62,7 @@ pip install optimizingutils-1.85-py2.py3-none-any.whl
   
 ----------------------------------------------------------------
 
-#### Feature Selector
+#### Feature Selectors
 
 * None
 * Kbest
