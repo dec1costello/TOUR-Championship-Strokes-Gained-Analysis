@@ -23,7 +23,7 @@ python3 -m build
 Place the newly created wheel file in desried directory and finish install in notebook:
 
 ```console
-pip install optimizingutils-1.85-py2.py3-none-any.whl
+pip install optimizingutils-1.9-py2.py3-none-any.whl
 ```
 
 <h2 id="Preprocessing"> ⚙️ Preprocessing</h2>
