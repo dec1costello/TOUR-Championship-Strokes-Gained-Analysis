@@ -33,7 +33,7 @@ p.line(x, y, legend_label="Trend", line_width=2)
 st.bokeh_chart(p, use_container_width=True)
 
 df = pd.read_csv('https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/blob/main/Streamlit/Rolling_SG_group_by_hole_player.csv')
-
+st.dataframe(df) 
 
 
 
