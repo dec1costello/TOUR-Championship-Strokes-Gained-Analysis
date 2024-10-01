@@ -29,5 +29,5 @@ st.title("Player Performance")
 
 tab_faq = st.tabs(["FAQ"])
 
-
+st.success('''**A Brief Note on Methods:**  
 I developed an expected strokes model to identify player performance, [check it out here!](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis)''')
