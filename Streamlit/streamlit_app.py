@@ -87,7 +87,7 @@ p.yaxis.axis_label_text_font_size = '18pt'
 p.legend.title = 'Player'
 p.title.text_font_size = '18pt'
 p.legend.label_text_font_size = '12pt'
-p.legend.location = "top_left"  # Change the location to top
+p.legend.location = "top_center"  # Change the location to top
 p.legend.orientation = "vertical"  # Change the orientation to vertical
 p.legend.click_policy = "hide"
 
