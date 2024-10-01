@@ -32,8 +32,91 @@ p = figure(title="simple line example", x_axis_label="x", y_axis_label="y")
 p.line(x, y, legend_label="Trend", line_width=2)
 st.bokeh_chart(p, use_container_width=True)
 
-df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
-st.dataframe(df) 
+condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
+st.dataframe(condensed_df) 
+
+player = 'Mickelson'
+condensed_df = condensed_df[condensed_df['last_name'] == player]
+
+
+condensed_df = condensed_df.sort_values(by=['player_id', 'round', 'hole'])
+
+# Calculate the rolling sum for each 'player_id'
+condensed_df['rolling_sum_sg_per_hole_per_round_per_player'] = condensed_df.groupby('player_id')['sg_per_hole_per_round_per_player'].rolling(window=72, min_periods=1).sum().reset_index(level=0, drop=True)
+
+# Create a new column 'round_hole_combination' with a numeric value representing the combination of 'round' and 'hole'
+condensed_df['round_hole_combination'] = (condensed_df['round'] - 1) * 18 + condensed_df['hole']
+# Now condensed_df contains a new column 'round_hole_combination' representing the combination of 'round' and 'hole' as a numeric value ranging from 1 to 72.
+
+original_df = condensed_df[['last_name', 'round_hole_combination', 'sg_per_hole_per_round_per_player', 'rolling_sum_sg_per_hole_per_round_per_player']]
+
+# Create a new DataFrame with additional rows
+extra_rows = pd.DataFrame(columns=original_df.columns)
+
+# Iterate through unique player_ids and add rows with specified conditions
+for player_id in original_df['last_name'].unique():
+    extra_row = pd.DataFrame({'last_name': [player_id], 'round_hole_combination': [0], 'sg_per_hole_per_round_per_player': [0], 'rolling_sum_sg_per_hole_per_round_per_player': [0]})
+    extra_rows = pd.concat([extra_rows, extra_row], ignore_index=True)
+
+new_df = pd.concat([original_df, extra_rows], ignore_index=True)
+
+
+new_df = new_df.sort_values(by='round_hole_combination')
+
+# Pivot the DataFrame
+pivot_df = new_df.pivot_table(index='round_hole_combination', columns='last_name', values='rolling_sum_sg_per_hole_per_round_per_player', fill_value=0)
+
+sorted_series = pivot_df.iloc[-1].sort_values(ascending=False)
+
+desired_order = []
+
+# for i in range(0,30):
+#     desired_order.append(sorted_series.index[i])
+
+desired_order = [player]
+
+pivot_df = pivot_df[desired_order]
+
+# Convert the pivot table to a Bokeh ColumnDataSource
+source = ColumnDataSource(pivot_df)
+
+# Create a Bokeh figure
+p = figure(width=1500, height=850, title='Progress of SG Throughout 2011 TOUR Championship',x_range=(0, 78),
+           x_axis_label='Championship Hole', y_axis_label='Rolling Sum of SG')
+
+# Use a distinct color palette for lines
+line_colors = viridis(30) #winter_palette
+
+
+for i, column in enumerate(desired_order):
+    line_color = line_colors[i % len(line_colors)]
+    #line_color = winter_palette[i]
+    #line_color = winter_palette[i % len(winter_palette)]
+    p.line(x='round_hole_combination', y=column, source=source,
+           line_width=8, line_alpha=0.6, legend_label=column, line_color=line_color)            
+
+# Customize the legend
+p.xaxis.axis_label_text_font_size = '18pt'  # Increase x-axis label font size
+p.yaxis.axis_label_text_font_size = '18pt'
+p.legend.title = 'Player'
+p.title.text_font_size = '25pt'
+p.legend.label_text_font_size = '8pt'
+p.legend.location = "top_right"  # Change the location to top_right
+p.legend.orientation = "vertical"  # Change the orientation to vertical
+p.legend.click_policy = "hide"
+
+st.bokeh_chart(p, use_container_width=True)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
