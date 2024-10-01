@@ -30,5 +30,4 @@ st.title("Player Performance")
 tab_faq = st.tabs(["FAQ"])
 
 
-
-I developed an expected strokes model to identify player performance, [check it out here 😃!](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis)''')
+I developed an expected strokes model to identify player performance, [check it out here!](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis)''')
