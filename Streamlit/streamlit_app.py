@@ -32,7 +32,7 @@ p = figure(title="simple line example", x_axis_label="x", y_axis_label="y")
 p.line(x, y, legend_label="Trend", line_width=2)
 st.bokeh_chart(p, use_container_width=True)
 
-df = pd.read_csv('Rolling_SG_group_by_hole_player.csv')
+df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
 st.dataframe(df) 
 
 
