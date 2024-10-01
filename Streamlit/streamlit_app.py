@@ -29,11 +29,17 @@ st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1c
 st.title("Player Performance")
 
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
-player = 'Mickelson'
-player = st.selectbox("Select Golfer", condensed_df['last_name'].unique())
+# player = 'Mickelson'
+# player = st.selectbox("Select Golfer", condensed_df['last_name'].unique())
 
 
-condensed_df = condensed_df[condensed_df['last_name'] == player]
+player1 = 'Mickelson'
+player1 = st.selectbox("Select Golfer 1", condensed_df['last_name'].unique())
+player2 = 'Stricker'
+player2 = st.selectbox("Select Golfer 2", condensed_df['last_name'].unique())
+condensed_df = condensed_df[condensed_df['last_name'].isin([player1, player2])]
+
+# condensed_df = condensed_df[condensed_df['last_name'] == player]
 # st.dataframe(condensed_df) 
 
 
