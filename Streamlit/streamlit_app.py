@@ -74,7 +74,10 @@ desired_order = []
 # for i in range(0,30):
 #     desired_order.append(sorted_series.index[i])
 
-desired_order = [player]
+desired_order = []
+desired_order.append(player1)
+desired_order.append(player2)
+
 
 pivot_df = pivot_df[desired_order]
 
