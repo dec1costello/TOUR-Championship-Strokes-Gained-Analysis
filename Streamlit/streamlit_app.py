@@ -27,20 +27,18 @@ st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1c
 
 st.title("Player Performance")
 
-tab_ppredictor, tab_faq = st.tabs(["Player Performance", "FAQ"])
+tab_ppredictor, tab_faq = st.tabs([ "FAQ"])
 
-with tab_ppredictor:
+# with tab_ppredictor:
     
-            x = [1, 2, 3, 4, 5]
-            y = [6, 7, 2, 4, 5]
-    
-            p = figure(title="simple line example", x_axis_label="x", y_axis_label="y")
-            p.line(x, y, legend_label="Trend", line_width=2)
-
-            st.bokeh_chart(p, use_container_width=True)
-
+#     x = [1, 2, 3, 4, 5]
+#     y = [6, 7, 2, 4, 5]
+#     p = figure(title="simple line example", x_axis_label="x", y_axis_label="y")
+#     p.line(x, y, legend_label="Trend", line_width=2)
+#     st.bokeh_chart(p, use_container_width=True)
 
 with tab_faq:
+    
             st.markdown(" ### Frequently Asked Questions 🔎 ")
 
             expand_faq0 = st.expander("⛳ What dataset was used?")
