@@ -76,7 +76,7 @@ pivot_df = pivot_df[desired_order]
 source = ColumnDataSource(pivot_df)
 
 # Create a Bokeh figure
-p = figure(width=1500, height=850, title='Progress of SG Throughout 2011 TOUR Championship',x_range=(0, 78),
+p = figure(width=1500, height=850, title='Rolling Sum of Strokes Gained',x_range=(0, 78),
            x_axis_label='Championship Hole', y_axis_label='Rolling Sum of SG')
 
 # Use a distinct color palette for lines
