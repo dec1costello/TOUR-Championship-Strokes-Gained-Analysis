@@ -73,7 +73,7 @@ source = ColumnDataSource(pivot_df)
 p = figure(width=1500, height=850, title='Rolling Sum of Strokes Gained',x_range=(0, 78),
            x_axis_label='Championship Hole', y_axis_label='Rolling Sum of SG')
 
-line_colors = viridis(5) #distinct color palette for lines
+line_colors = viridis(3) #distinct color palette for lines
 for i, column in enumerate(desired_order):
     line_color = line_colors[i % len(line_colors)]
     #line_color = winter_palette[i]
