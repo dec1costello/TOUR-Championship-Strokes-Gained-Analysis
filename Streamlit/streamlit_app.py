@@ -8,7 +8,7 @@ import numpy as np
 st.set_page_config(page_title="TOUR Championship Player Performance Dashboard", page_icon="⛳", initial_sidebar_state="expanded")
 
 st.sidebar.markdown(" ## About")
-st.sidebar.markdown("This Dashboard offers deeper insights into a golfer's true abilities. The primary aspiration is to contribute meaningful insights to the golf community."  )  
+st.sidebar.markdown("This Dashboard offers deeper insights into a golfer's true abilities during the 2011 TOUR Championship. The primary aspiration is to contribute meaningful insights to the golf community."  )  
 
 
 st.sidebar.markdown(" ## Resources")
