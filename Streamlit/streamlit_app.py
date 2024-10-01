@@ -31,7 +31,7 @@ st.title("Player Performance")
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
 player = 'Mickelson'
 condensed_df = condensed_df[condensed_df['last_name'] == player]
-st.dataframe(condensed_df) 
+# st.dataframe(condensed_df) 
 
 
 condensed_df = condensed_df.sort_values(by=['player_id', 'round', 'hole'])
