@@ -33,9 +33,7 @@ condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
 # player = st.selectbox("Select Golfer", condensed_df['last_name'].unique())
 
 
-player1 = 'Mickelson'
 player1 = st.selectbox("Select Golfer 1", condensed_df['last_name'].unique(),placeholder="Select Golfer 1...")
-player2 = 'Stricker'
 player2 = st.selectbox("Select Golfer 2", condensed_df['last_name'].unique(),placeholder="Select Golfer 2...")
 condensed_df = condensed_df[condensed_df['last_name'].isin([player1, player2])]
 
