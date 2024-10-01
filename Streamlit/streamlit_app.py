@@ -1,7 +1,8 @@
 from bokeh.plotting import figure
 import streamlit as st
 import pandas as pd
-import pickle
+import numpy as np
+np.bool = np.bool_
 
 st.set_page_config(page_title="TOUR Championship Player Performance Dashboard", page_icon="⛳", initial_sidebar_state="expanded")
 
