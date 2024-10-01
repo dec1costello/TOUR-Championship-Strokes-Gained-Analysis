@@ -27,18 +27,11 @@ st.sidebar.markdown(" ## Info")
 st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis).", icon="ℹ️")
 
 st.title("Player Performance")
+
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
-
-# player1 = 'Mickelson'
-
 player1 = st.selectbox("Select Golfer 1", condensed_df['last_name'].unique(), placeholder="Select Golfer 1...")
 player2 = st.selectbox("Select Golfer 2", condensed_df['last_name'].unique(), placeholder="Select Golfer 2...")
-
-# Filter the DataFrame based on the selected golfers
 condensed_df_filtered = condensed_df[(condensed_df['last_name'] == player1) | (condensed_df['last_name'] == player2)]
-
-# st.dataframe(condensed_df) 
-
 
 condensed_df = condensed_df.sort_values(by=['player_id', 'round', 'hole'])
 
@@ -60,19 +53,11 @@ for player_id in original_df['last_name'].unique():
     extra_rows = pd.concat([extra_rows, extra_row], ignore_index=True)
 
 new_df = pd.concat([original_df, extra_rows], ignore_index=True)
-
-
 new_df = new_df.sort_values(by='round_hole_combination')
 
 # Pivot the DataFrame
 pivot_df = new_df.pivot_table(index='round_hole_combination', columns='last_name', values='rolling_sum_sg_per_hole_per_round_per_player', fill_value=0)
-
 sorted_series = pivot_df.iloc[-1].sort_values(ascending=False)
-
-desired_order = []
-
-# for i in range(0,30):
-#     desired_order.append(sorted_series.index[i])
 
 desired_order = []
 desired_order.append(player1)
