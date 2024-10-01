@@ -32,13 +32,10 @@ tab_faq = st.tabs(["FAQ"])
 
 
 with tab_faq:
-    
-            st.markdown(" ### Frequently Asked Questions 🔎 ")
-
-            expand_faq0 = st.expander("⛳ What dataset was used?")
-            with expand_faq0:
-                        st.write('''This dataset consists of shot level data from the PGA TOUR Championship. The TOUR Championship differs from other tournaments in that only the top 30 golfers compete and there's no cut after the second round, this ensures consistent data of high skill golfers across all 4 rounds. Additionally, it's important to acknowledge that the dataset lacks data from the playoff that occurred, which is crucial for understanding the tournament's conclusion. Furthermore, it is important to emphasize that landing in the rough at East Lake doesn't necessarily disadvantage a player. Despite the challenge it presents, the ball could still have a favorable lie, which might have been strategically chosen by the golfer.''', unsafe_allow_html=True)
-
-            st.success('''**A Brief Note on Methods:**  
+    st.markdown(" ### Frequently Asked Questions 🔎 ")
+    expand_faq0 = st.expander("⛳ What dataset was used?")
+    with expand_faq0:
+        st.write('''This dataset consists of shot level data from the PGA TOUR Championship. The TOUR Championship differs from other tournaments in that only the top 30 golfers compete and there's no cut after the second round, this ensures consistent data of high skill golfers across all 4 rounds. Additionally, it's important to acknowledge that the dataset lacks data from the playoff that occurred, which is crucial for understanding the tournament's conclusion. Furthermore, it is important to emphasize that landing in the rough at East Lake doesn't necessarily disadvantage a player. Despite the challenge it presents, the ball could still have a favorable lie, which might have been strategically chosen by the golfer.''', unsafe_allow_html=True)
+        st.success('''**A Brief Note on Methods:**  
 
 I developed an expected strokes model to identify player performance, [check it out here 😃!](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis)''')
