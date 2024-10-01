@@ -29,7 +29,7 @@ st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1c
 st.title("Player Performance")
 
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
-# player = 'Mickelson'
+player1 = 'Mickelson'
 # player = st.selectbox("Select Golfer", condensed_df['last_name'].unique())
 
 
