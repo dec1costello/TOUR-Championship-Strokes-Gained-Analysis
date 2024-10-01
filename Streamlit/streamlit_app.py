@@ -27,10 +27,9 @@ st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1c
 
 st.title("Player Performance")
 
-tab_faq = st.tabs(["tab_ppredictor", "FAQ"])
+tab_faq = st.tabs(["FAQ"])
 
-with tab_ppredictor:
-    st.markdown(" ### Frequently Asked Questions 🔎 ")
+
 
 with tab_faq:
     
