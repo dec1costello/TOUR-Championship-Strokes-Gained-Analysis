@@ -74,9 +74,7 @@ p = figure(width=1500, height=850, title='Rolling Sum of Strokes Gained',x_range
            x_axis_label='Championship Hole', y_axis_label='Rolling Sum of SG')
 
 # Use a distinct color palette for lines
-line_colors = viridis(30) #winter_palette
-
-
+line_colors = viridis(2) #winter_palette
 for i, column in enumerate(desired_order):
     line_color = line_colors[i % len(line_colors)]
     #line_color = winter_palette[i]
