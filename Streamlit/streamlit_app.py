@@ -1,5 +1,6 @@
 from bokeh.plotting import figure, show
 from bokeh.models import ColumnDataSource
+from bokeh.palettes import viridis
 import streamlit as st
 import pandas as pd
 import numpy as np
