@@ -1,4 +1,4 @@
-Authour: Declan Costello
+Author: Declan Costello
 <br />
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_red.svg)](https://tour-championship-strokes-gained-analysis.streamlit.app/)
 <br />
