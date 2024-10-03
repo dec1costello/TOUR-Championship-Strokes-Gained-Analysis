@@ -5,11 +5,16 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+
+config_data = toml.load(".streamlit/config.toml")
+theme_config = config_data.get("theme", {})
+
 st.set_page_config(
     page_title="TOUR Championship Player Performance Dashboard", 
     page_icon="⛳", 
     layout="centered",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="expanded",
+    **theme_config
 )
 
 st.sidebar.markdown(" ## About")
