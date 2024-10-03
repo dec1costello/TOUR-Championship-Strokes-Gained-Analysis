@@ -3,4 +3,4 @@ primaryColor = "#FFFFFF"                  # White for contrast on buttons and pr
 backgroundColor = "#076652"               # Dark green as the background color
 secondaryBackgroundColor = "#0E8052"      # Slightly lighter green for secondary areas like sidebar
 textColor = "#FFFFFF"                     # White text for good contrast on the dark background
-font = "sans serif"
+font = "cambria"
