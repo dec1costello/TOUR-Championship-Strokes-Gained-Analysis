@@ -1,3 +1,5 @@
+Authour: Declan Costello
+<br />
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_red.svg)](https://tour-championship-strokes-gained-analysis.streamlit.app/)
 <br />
 [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dec1costello/TOUR-Championship-Strokes-Gained-Analysis)
