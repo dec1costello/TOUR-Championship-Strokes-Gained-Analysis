@@ -5,7 +5,19 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.set_page_config(page_title="TOUR Championship Player Performance Dashboard", page_icon="⛳", initial_sidebar_state="expanded")
+st.set_page_config(
+    page_title="TOUR Championship Player Performance Dashboard", 
+    page_icon="⛳", 
+    layout="centered",
+    initial_sidebar_state="expanded",    
+    theme={
+        'primaryColor': '#79BD72',
+        'backgroundColor': '#B5E3B5',
+        'secondaryBackgroundColor': '#DCEFD7',
+        'textColor': '#31333F',
+        'font': 'sans serif'
+    }
+)
 
 st.sidebar.markdown(" ## About")
 st.sidebar.markdown("This Dashboard offers deeper insights into a golfer's true abilities during the 2011 TOUR Championship. The primary aspiration is to contribute meaningful insights to the golf community."  )  
