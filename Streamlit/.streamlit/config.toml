@@ -1,7 +1,7 @@
 [theme]
 base="light"
-primaryColor="#79BD72"                # Light green for accents (like Masters green)
-backgroundColor="#B5E3B5"             # Soft green for the main background
-secondaryBackgroundColor="#DCEFD7"    # Lighter green for secondary areas (e.g., sidebar)
-textColor="#31333F"                   # Dark gray for text to maintain good contrast
+primaryColor="#79BDF8"
+backgroundColor="#B5DCFF"
+secondaryBackgroundColor="#DCEEFF"
+textColor="#31333F"
 font="sans serif"
