@@ -1,6 +1,6 @@
 [theme]
 primaryColor = "#FFFFFF"                  # White for contrast on buttons and primary elements
 backgroundColor = "#076652"               # Dark green as the background color
-secondaryBackgroundColor = "#48A27C"      # Slightly lighter green for secondary areas like sidebar
+secondaryBackgroundColor = "#18A57B"      # Slightly lighter green for secondary areas like sidebar
 textColor = "#FFFFFF"                     # White text for good contrast on the dark background
 font = "monospace"
