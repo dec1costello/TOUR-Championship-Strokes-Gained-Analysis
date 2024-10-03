@@ -1,7 +1,8 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/HEAD)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_red.svg)](https://tour-championship-strokes-gained-analysis.streamlit.app/)
+<br />
 [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dec1costello/TOUR-Championship-Strokes-Gained-Analysis)
 <br />
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_red.svg)](https://tour-championship-strokes-gained-analysis.streamlit.app/)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/HEAD)
 
 
 <a name="readme-top"></a>
