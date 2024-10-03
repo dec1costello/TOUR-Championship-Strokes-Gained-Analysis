@@ -4,6 +4,7 @@ from bokeh.palettes import viridis
 import streamlit as st
 import pandas as pd
 import numpy as np
+import toml
 
 
 config_data = toml.load(".streamlit/config.toml")
