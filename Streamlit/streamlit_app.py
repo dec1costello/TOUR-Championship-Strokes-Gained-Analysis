@@ -7,7 +7,7 @@ import numpy as np
 import toml
 
 
-config_data = toml.load(".streamlit/config.toml")
+config_data = toml.load("Streamlit/.streamlit/config.toml")
 theme_config = config_data.get("theme", {})
 
 st.set_page_config(
