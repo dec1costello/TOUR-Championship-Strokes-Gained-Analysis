@@ -9,14 +9,7 @@ st.set_page_config(
     page_title="TOUR Championship Player Performance Dashboard", 
     page_icon="⛳", 
     layout="centered",
-    initial_sidebar_state="expanded",    
-    theme={
-        'primaryColor': '#79BD72',
-        'backgroundColor': '#B5E3B5',
-        'secondaryBackgroundColor': '#DCEFD7',
-        'textColor': '#31333F',
-        'font': 'sans serif'
-    }
+    initial_sidebar_state="expanded"
 )
 
 st.sidebar.markdown(" ## About")
