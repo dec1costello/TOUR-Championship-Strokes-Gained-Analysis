@@ -101,24 +101,11 @@ with Comparisons_tab:
 with tab_faqs:
             st.markdown(" ### Frequently Asked Questions 🔎 ")
 
-            expand_faq0 = st.expander("🏌️ What are the parameters for the model?")
-            with expand_faq0:
-                        st.write('''Launch Angle - In baseball, launch angle is the vertical angle at which the ball leaves the player's bat after being struck. It's measured in relation to the ground. A high launch angle means the ball will go further and higher into the air, and a low launch angle means the ball will go lower and not as far.''', unsafe_allow_html=True)
-                        st.markdown(1 * "<br />", unsafe_allow_html=True)
-                        st.write('''Exit Velocity - The speed, in miles per hour (MPH), at which the ball was launched off the bat after contact.''', unsafe_allow_html=True)
-                        st.markdown(1 * "<br />", unsafe_allow_html=True)
-                        st.write('''Pull % - In baseball, a "pull" refers to a batted ball hit primarily to the side of the field where the batter stands, based on their batting stance. For example, a right-handed batter hitting towards left field or a left-handed batter hitting towards right field is considered a "pull." This term is significant because it often indicates a powerful hit, but it can also lead to defensive adjustments by the opposing team.''', unsafe_allow_html=True)
-
-            
-            expand_faq1 = st.expander("🏌️ Where can I see the code for the model?")
-            with expand_faq1:
-                        st.write('''It's all on my [Github](https://github.com/dec1costello/Baseball/tree/main/Distance-Predictor)!''', unsafe_allow_html=True)
-
-            expand_faq2 = st.expander("🏌️ What machine learning model did you use?")
+            expand_faq2 = st.expander("🏌️ What machine learning model did you use and how was it trained?")
             with expand_faq2:    
                 
                 st.write('''I tried various regression models and found that using an XGB regressor as my predictive model gave accurate and meaningful results. An XGBRegressor is a machine learning model that uses the gradient boosting algorithm to predict continuous numerical values. XGBoost stands for eXtreme Gradient Boosting.''')
-                st.image('https://github.com/dec1costello/Baseball/assets/79241861/11a4414a-7b01-4f05-9625-90a3de21c752')
+                st.image('https://github.com/user-attachments/assets/c4b0cbb0-290d-4a3a-8572-779a810cc1ed')
 
 
 
