@@ -98,7 +98,7 @@ with Comparisons_tab:
 
 
 
-with tab_faq:
+with tab_faqs:
             st.markdown(" ### Frequently Asked Questions 🔎 ")
 
             expand_faq0 = st.expander(":baseball: What are the parameters for the model?")
