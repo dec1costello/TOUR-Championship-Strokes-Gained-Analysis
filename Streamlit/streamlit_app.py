@@ -104,7 +104,7 @@ with tab_faqs:
             expand_faq2 = st.expander("🏌️ What machine learning model did you use and how was it trained?")
             with expand_faq2:    
                 
-                st.write('''I tried various regression models and found that using an XGB regressor as my predictive model gave accurate and meaningful results. An XGBRegressor is a machine learning model that uses the gradient boosting algorithm to predict continuous numerical values. XGBoost stands for eXtreme Gradient Boosting.''')
+                st.write('''I ensemble the best models together using a [stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html). In this project, I leveraged [optuna's](https://optuna.org/#dashboard) CMAES Sampler to not only find the best parameters for each model in the stack resulting in minimized MAE, but also [data preprocessing scalers, encoders, imputation, and feature selection methods](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/tree/main/Creating%20Model/OptimizingUtils). All trails are fed with appropriate offline training data from a [feast](https://feast.dev/) feature store. I utilized an [mlflow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) model registry to track all Optuna trials. Databricks is leveraged to store production ready models.''')
                 st.image('https://github.com/user-attachments/assets/c4b0cbb0-290d-4a3a-8572-779a810cc1ed')
 
 
