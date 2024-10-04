@@ -114,6 +114,12 @@ with tab_faq:
             with expand_faq1:
                         st.write('''It's all on my [Github](https://github.com/dec1costello/Baseball/tree/main/Distance-Predictor)!''', unsafe_allow_html=True)
 
+            expand_faq2 = st.expander(":baseball: What machine learning model did you use?")
+            with expand_faq2:    
+                
+                st.write('''I tried various regression models and found that using an XGB regressor as my predictive model gave accurate and meaningful results. An XGBRegressor is a machine learning model that uses the gradient boosting algorithm to predict continuous numerical values. XGBoost stands for eXtreme Gradient Boosting.''')
+                st.image('https://github.com/dec1costello/Baseball/assets/79241861/11a4414a-7b01-4f05-9625-90a3de21c752')
+
 
 
 
