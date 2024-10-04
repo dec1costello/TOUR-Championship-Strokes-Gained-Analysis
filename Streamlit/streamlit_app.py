@@ -28,7 +28,7 @@ st.title("TOUR Championship Analysis")
 #     st.image('https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350')
 
 
-profile_tab, Comparisons_tab, tab_faqs = st.tabs(["Player Profiles, Player Comparisons", "FAQs"])
+profile_tab, Comparisons_tab, tab_faqs = st.tabs(["Player Profiles", "Player Comparisons", "FAQs"])
 
 
 with profile_tab:
