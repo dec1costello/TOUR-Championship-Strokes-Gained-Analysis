@@ -4,6 +4,7 @@ from bokeh.palettes import viridis
 import streamlit as st
 import pandas as pd
 import numpy as np
+from streamlit_player import st_player
 
 
 st.set_page_config(
@@ -106,6 +107,9 @@ with Comparisons_tab:
 
 with tab_faqs:
             st.markdown(" ### Frequently Asked Questions 🔎 ")
+            expand_faq3 = st.expander("🏌️ What are Strokes Gained?")
+            with expand_faq3:
+                st_player("https://youtu.be/CmSKVW1v0xM")
             expand_faq2 = st.expander("🏌️ What machine learning model did you use and how was it trained?")
             with expand_faq2:    
                 st.write('''I ensemble the best performing [lazy predict](https://lazypredict.readthedocs.io/en/latest/) models together using a [stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html). In this project, I leveraged [optuna's](https://optuna.org/#dashboard) CMAES Sampler to not only find the best parameters for each model in the stack resulting in minimized MAE, but also [data preprocessing scalers, encoders, imputation, and feature selection methods](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/tree/main/Creating%20Model/OptimizingUtils). All trails are fed with appropriate offline training data from a [feast](https://feast.dev/) feature store. I utilized an [mlflow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) model registry to track all Optuna trials. Databricks is leveraged to store production ready models.''')
