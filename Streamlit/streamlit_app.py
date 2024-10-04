@@ -101,7 +101,7 @@ with Comparisons_tab:
 with tab_faqs:
             st.markdown(" ### Frequently Asked Questions 🔎 ")
 
-            expand_faq0 = st.expander(":baseball: What are the parameters for the model?")
+            expand_faq0 = st.expander(":golfball: What are the parameters for the model?")
             with expand_faq0:
                         st.write('''Launch Angle - In baseball, launch angle is the vertical angle at which the ball leaves the player's bat after being struck. It's measured in relation to the ground. A high launch angle means the ball will go further and higher into the air, and a low launch angle means the ball will go lower and not as far.''', unsafe_allow_html=True)
                         st.markdown(1 * "<br />", unsafe_allow_html=True)
