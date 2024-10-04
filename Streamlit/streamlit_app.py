@@ -23,15 +23,16 @@ st.sidebar.markdown(" ## Info")
 st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis).", icon="ℹ️")
 
 
-st.title("TOUR Championship Analysis")
 left_co, cent_co,last_co = st.columns(3)
 with cent_co:
+    st.title("TOUR Championship Analysis")
     st.image('https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350')
+
 
 Comparisons_tab, tab_faqs = st.tabs(["Comparisons", "FAQs"])
 
-with Comparisons_tab:
 
+with Comparisons_tab:
     condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
     col1, col2 = st.columns(2)
     with col1:
@@ -100,21 +101,15 @@ with Comparisons_tab:
     st.bokeh_chart(p, use_container_width=True)
 
 
-
 with tab_faqs:
             st.markdown(" ### Frequently Asked Questions 🔎 ")
-
             expand_faq2 = st.expander("🏌️ What machine learning model did you use and how was it trained?")
             with expand_faq2:    
                 st.write('''I ensemble the best performing [lazy predict](https://lazypredict.readthedocs.io/en/latest/) models together using a [stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html). In this project, I leveraged [optuna's](https://optuna.org/#dashboard) CMAES Sampler to not only find the best parameters for each model in the stack resulting in minimized MAE, but also [data preprocessing scalers, encoders, imputation, and feature selection methods](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/tree/main/Creating%20Model/OptimizingUtils). All trails are fed with appropriate offline training data from a [feast](https://feast.dev/) feature store. I utilized an [mlflow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) model registry to track all Optuna trials. Databricks is leveraged to store production ready models.''')
                 st.image('https://github.com/user-attachments/assets/c4b0cbb0-290d-4a3a-8572-779a810cc1ed')
-
             expand_faq1 = st.expander("🏌️ Where can I see the code for the model?")
             with expand_faq1:
                         st.write('''It's all on my [Github](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/tree/main)!''', unsafe_allow_html=True)
-
-
-
 
 
 st.success('''**A Brief Note on Methods:**  
