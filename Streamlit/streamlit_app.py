@@ -23,7 +23,7 @@ st.sidebar.markdown(" ## Info")
 st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis).", icon="ℹ️")
 
 
-st.title("Player Performance")
+st.title("2011 TOUR Championship Analysis")
 
 Comparisons_tab, tab_faqs = st.tabs(["Comparisons", "FAQs"])
 
