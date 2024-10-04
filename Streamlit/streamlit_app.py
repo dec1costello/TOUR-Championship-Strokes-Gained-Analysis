@@ -31,7 +31,7 @@ st.title("TOUR Championship Analysis")
 profile_tab, Comparisons_tab, tab_faqs = st.tabs(["Player Profiles, Player Comparisons", "FAQs"])
 
 
-with Comparisons_tab:
+with profile_tab:
     st.title("Player Profiles")
 
 
