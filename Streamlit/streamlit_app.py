@@ -25,9 +25,9 @@ st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1c
 
 st.title("Player Performance")
 
-tab_ppredictor, tab_faq = st.tabs(["The Distance Predictor", "FAQ"])
+Comparisons_tab, tab_faqs = st.tabs(["Comparisons", "FAQs"])
 
-with tab_ppredictor:
+with Comparisons_tab:
 
     condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
     col1, col2 = st.columns(2)
