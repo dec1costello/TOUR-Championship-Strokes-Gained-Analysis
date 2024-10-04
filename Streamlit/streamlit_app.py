@@ -23,9 +23,9 @@ st.sidebar.markdown(" ## Info")
 st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis).", icon="ℹ️")
 
 st.title("TOUR Championship Analysis")
-left_co, cent_co,last_co = st.columns(3)
-with cent_co:
-    st.image('https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350')
+# left_co, cent_co,last_co = st.columns(3)
+# with cent_co:
+#     st.image('https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350')
 
 
 Comparisons_tab, tab_faqs = st.tabs(["Comparisons", "FAQs"])
