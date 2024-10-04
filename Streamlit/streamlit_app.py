@@ -29,9 +29,9 @@ st.title("Player Performance")
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
 col1, col2 = st.columns(2)
 with col1:
-    player1 = st.selectbox("Select Golfer 1", condensed_df['last_name'].unique(), index=28)
+    player1 = st.selectbox("Select Golfer 1", condensed_df['last_name'].unique(), index=17)
 with col2:
-    player2 = st.selectbox("Select Golfer 2", condensed_df['last_name'].unique(), index=10)
+    player2 = st.selectbox("Select Golfer 2", condensed_df['last_name'].unique(), index=19)
 desired_order = []
 desired_order.append(player1)
 desired_order.append(player2)
@@ -67,7 +67,7 @@ p = figure(width=450,
            title='Rolling Sum of Strokes Gained',
            x_range=(0, 72),
            x_axis_label='Championship Hole', 
-           y_axis_label='Rolling Sum of SG')
+           y_axis_label='Strokes Gained')
 line_colors = viridis(3) #distinct color palette for lines
 for i, column in enumerate(desired_order):
     line_color = line_colors[i % len(line_colors)]
@@ -85,10 +85,10 @@ for i, column in enumerate(desired_order):
 # Customize the legend
 p.xaxis.axis_label_text_font_size = '18pt'  # Increase x-axis label font size
 p.yaxis.axis_label_text_font_size = '18pt'
-p.legend.title = 'Player'
+# p.legend.title = 'Player'
 p.title.text_font_size = '18pt'
 p.legend.label_text_font_size = '12pt'
-p.legend.location = "top_center"  # Change the location to top
+p.legend.location = "top_left" 
 p.legend.orientation = "vertical"  # Change the orientation to vertical
 p.legend.click_policy = "hide"
 st.bokeh_chart(p, use_container_width=True)
