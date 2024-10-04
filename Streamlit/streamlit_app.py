@@ -29,9 +29,9 @@ st.title("Player Performance")
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
 col1, col2 = st.columns(2)
 with col1:
-    player1 = st.selectbox("Select Golfer 1", condensed_df['last_name'].unique(), index=17)
+    player1 = st.selectbox("Select Golfer 1", condensed_df['last_name'].unique(), index=16)
 with col2:
-    player2 = st.selectbox("Select Golfer 2", condensed_df['last_name'].unique(), index=19)
+    player2 = st.selectbox("Select Golfer 2", condensed_df['last_name'].unique(), index=18)
 desired_order = []
 desired_order.append(player1)
 desired_order.append(player2)
