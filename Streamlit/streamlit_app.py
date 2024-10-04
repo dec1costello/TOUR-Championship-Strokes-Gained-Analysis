@@ -4,7 +4,6 @@ from bokeh.palettes import viridis
 import streamlit as st
 import pandas as pd
 import numpy as np
-# from streamlit_player import st_player
 
 
 st.set_page_config(
