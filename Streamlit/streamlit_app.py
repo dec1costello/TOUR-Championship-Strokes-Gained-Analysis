@@ -14,7 +14,7 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="expanded")
 
-
+st.sidebar.image('https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350')
 st.sidebar.markdown(" ## About")
 st.sidebar.markdown("This Dashboard offers deeper insights into a golfer's true abilities during the 2011 TOUR Championship. The primary aspiration is to contribute meaningful insights to the golf community."  )  
 st.sidebar.markdown(" ## Resources")
