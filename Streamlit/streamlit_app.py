@@ -56,9 +56,9 @@ with profile_tab:
 
     col1, col2, col3 = st.columns(3)
     with col2:
-    st.latex(r'''
-    xS - S = SG
-    ''')
+        st.latex(r'''
+        xS - S = SG
+        ''')
 
     description_text_2 = """
      The plot directly below displays a players's 
