@@ -197,6 +197,15 @@ with Comparisons_tab:
     desired_order = []
     desired_order.append(player1)
     desired_order.append(player2)
+
+    st.header("SG Progression")
+
+    description_text_2 = """
+     The plot directly below displays the field's
+    progression of Strokes Gained throughout the 2011 TOUR Championship.
+    """
+    description_2 = st.empty()
+    description_2.write(description_text_2.format("all"))
     
     
     condensed_df_filtered = condensed_df[(condensed_df['last_name'] == player1) | (condensed_df['last_name'] == player2)]
