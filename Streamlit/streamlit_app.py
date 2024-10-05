@@ -102,7 +102,6 @@ with profile_tab:
     p3.xaxis.axis_label_text_font_size = '12pt'
     p3.yaxis.axis_label_text_font_size = '12pt'
     p3.title.text_font_size = '18pt'
-    st.bokeh_chart(p3, use_container_width=True)
 
 
 
@@ -172,6 +171,7 @@ with profile_tab:
                      color=factor_cmap("SG_bins", 
                                        palette=palette, 
                                        factors=categories))
+    st.bokeh_chart(p3, use_container_width=True)
     st.bokeh_chart(p2, use_container_width=True)
 
 
