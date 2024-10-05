@@ -1,4 +1,4 @@
-from bokeh.models import FixedTicker, ColumnDataSource, Whisker
+from bokeh.models import FixedTicker, ColumnDataSource, Whisker, FactorRange
 from bokeh.transform import factor_cmap, jitter
 from bokeh.plotting import figure, show
 from bokeh.palettes import viridis
