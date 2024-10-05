@@ -198,7 +198,7 @@ with Comparisons_tab:
 
 
 with tab_faqs:
-            st.markdown("###🔎 Frequently Asked Questions")
+            st.markdown("### 🔎 Frequently Asked Questions")
             expand_faq3 = st.expander("What are Strokes Gained?")
             with expand_faq3:
                 st.video("https://www.youtube.com/watch?v=MeNHbGhPFzU")
