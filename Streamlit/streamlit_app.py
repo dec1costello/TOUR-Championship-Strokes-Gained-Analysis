@@ -47,20 +47,6 @@ with profile_tab:
 
     st.header("Total SG by Shot Type")
 
-
-    description_text = """
-    By subtracting Expected Strokes (xS) from the result (R) of each shot 
-    we get a player's true Strokes Gained (SG). 
-    """
-    description = st.empty()
-    description.write(description_text.format("all"))
-
-    col1, col2, col3 = st.columns(3)
-    with col2:
-        st.latex(r'''
-        SG = xS - R
-        ''')
-
     description_text_2 = """
      The plot directly below displays a players's 
     Total SG by shot type, providing a clear visualization of 
