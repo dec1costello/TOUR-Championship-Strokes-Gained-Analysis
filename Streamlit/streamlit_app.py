@@ -130,7 +130,7 @@ with profile_tab:
 
 
 with Comparisons_tab:
-    col1, col2 = st.columns(2)
+    col1, col2,col3,col4 = st.columns(4)
     with col1:
         player1 = st.selectbox("Select Golfer 1", condensed_df['last_name'].unique(), index=16)
     with col2:
