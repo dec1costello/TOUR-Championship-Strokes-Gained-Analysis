@@ -39,6 +39,17 @@ profile_tab, Comparisons_tab, tab_faqs = st.tabs(["Profiles", "Comparisons", "FA
 
 
 with profile_tab:
+
+    description_text = """
+    Discover {} Streamlit components! Most information on this page is 
+    automatically crawled from Github, PyPI, and the 
+    [Streamlit forum](https://discuss.streamlit.io/t/streamlit-components-community-tracker/4634).
+    If you build your own [custom component](https://docs.streamlit.io/library/components/create), 
+    it should appear here within a few days.
+    """
+    description = st.empty()
+    description.write(description_text.format("all"))
+    
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         golfer = st.selectbox("Select Player", condensed_df['last_name'].unique(), index=21)
