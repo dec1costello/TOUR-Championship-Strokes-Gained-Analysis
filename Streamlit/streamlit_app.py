@@ -4,6 +4,8 @@ from bokeh.palettes import viridis
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.cm as cm
+
 
 
 st.set_page_config(
@@ -21,7 +23,7 @@ st.sidebar.markdown(" ## Refrences")
 st.sidebar.markdown("""- [Mark Broadie](https://www.amazon.com/Every-Shot-Counts-Revolutionary-Performance/dp/1592407501/ref=sr_1_1?crid=E9DM6O7HRG9D&dib=eyJ2IjoiMSJ9.ri2Cv9pHNJbS3-Hpa2UgOtOsruVYD1KjGoGxwiM2eA5_0USs190JqviRHOE0y2gmt8vgod8a7KUODYMy3gYlh1C5g2FivG0gWjLCIe_9Jbh8y-pGolXl46ApjwVSd1CGsxvVfx3h5x-WEgsGNMjcDg.yMWaO41yL01r9c2Q5ietMRsgZx6Sifafgw7ABpKN4Ts&dib_tag=se&keywords=strokes+gained+book&qid=1724565764&sprefix=strokes+gained+book%2Caps%2C127&sr=8-1)""")
 st.sidebar.markdown(" ## Info")
 st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis).", icon="ℹ️")
-
+condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
 st.title("TOUR Championship Analysis")
 # left_co, cent_co,last_co = st.columns(3)
 # with cent_co:
@@ -32,11 +34,100 @@ profile_tab, Comparisons_tab, tab_faqs = st.tabs(["Profiles", "Comparisons", "FA
 
 
 with profile_tab:
-    st.title("Player Profiles")
+    col1, col2 = st.columns(2)
+    with col1:
+        player1 = st.selectbox("Select Golfer 1", condensed_df['last_name'].unique(), index=16)
+        # Define the specific order for the 'SG_bins' categories
+    df = df[df['last_name'] == player1]
+    order = ['OTT', '200+', '200-150', '150-100', '100-50', '50-0', 'Putting']
+    
+    # Convert the 'SG_bins' column to a categorical type with the specified order
+    df['SG_bins'] = pd.Categorical(df['SG_bins'], categories=order, ordered=True)
+    
+    # Define the winter palette
+    winter_palette = cm.get_cmap('winter', 8)
+    
+    # Map indices to colors
+    def index_to_color(index):
+        return tuple(int(c * 255) for c in winter_palette(index / 255)[:3])
+
+    # Define indices for colors
+    colors = {
+        'OTT': index_to_color(0),
+        '200+': index_to_color(40),
+        '200-150': index_to_color(80),
+        '150-100': index_to_color(120),
+        '100-50': index_to_color(160),
+        '50-0': index_to_color(200),
+        'Putting': index_to_color(254)
+    }
+    
+    categories = ['OTT', '200+', '200-150', '150-100', '100-50', '50-0', 'Putting']
+    palette = [colors[cat] for cat in categories]
+    
+    # Create a mapping from SG_bins to numeric values
+    sg_bins_mapping = {label: i for i, label in enumerate(categories)}
+    df['SG_bins_numeric'] = df['SG_bins'].map(sg_bins_mapping)
+    
+    # Define the plot
+    p2 = figure(height=400,width=700, title=f"{golfer}'s SG Percentile by Shot Type")
+    p2.xaxis.major_label_text_font_size = '10pt' 
+    p2.xaxis.axis_label = 'Shot Type'
+    p2.yaxis.axis_label = 'SG Percentile'
+    p2.xaxis.axis_label_text_font_size = '12pt'  # Increase x-axis label font size
+    p2.yaxis.axis_label_text_font_size = '12pt'
+    p2.title.text_font_size = '18pt'
+    ###############################
+    
+    p2.xgrid.grid_line_color = None
+    
+    # Set the x-axis ticker
+    years = sorted(df.SG_bins.unique())
+    p2.xaxis.ticker = FixedTicker(ticks=list(sg_bins_mapping.values()))
+    p2.xaxis.major_label_overrides = {i: label for label, i in sg_bins_mapping.items()}
+    
+    # Group by 'SG_bins' and calculate the quantiles
+    g = df.groupby("SG_bins")
+    upper = g['sg_binned_percentile'].quantile(0.75).reset_index()
+    lower = g['sg_binned_percentile'].quantile(0.25).reset_index()
+    
+    # Merge upper and lower quantiles
+    whisker_data = pd.merge(upper, lower, on="SG_bins", suffixes=('_upper', '_lower'))
+    whisker_data['base'] = whisker_data['SG_bins'].map(sg_bins_mapping)
+    
+    # Create ColumnDataSource for whiskers
+    source = ColumnDataSource(data=dict(base=whisker_data['base'],
+                                        upper=whisker_data['sg_binned_percentile_upper'],
+                                        lower=whisker_data['sg_binned_percentile_lower']))
+    
+    # Create Whiskers
+    error = Whisker(base="base", 
+                    upper="upper", 
+                    lower="lower", 
+                    source=source,
+                    level="annotation",
+                     line_width=2)
+    error.upper_head.size = 20
+    error.lower_head.size = 20
+    p2.add_layout(error)
+    
+    # Add scatter plot
+    p2.scatter(jitter("SG_bins_numeric", 
+                      0.3, 
+                      range=p2.x_range), 
+                     "sg_binned_percentile", 
+                     source=df, 
+                     alpha=0.3, 
+                     size=15, 
+                     line_color="white",
+                     color=factor_cmap("SG_bins", 
+                                       palette=palette, 
+                                       factors=categories))
+    st.bokeh_chart(p2, use_container_width=True)
+
 
 
 with Comparisons_tab:
-    condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
     col1, col2 = st.columns(2)
     with col1:
         player1 = st.selectbox("Select Golfer 1", condensed_df['last_name'].unique(), index=16)
