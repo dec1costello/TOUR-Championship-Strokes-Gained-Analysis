@@ -283,6 +283,17 @@ with tab_faqs:
                         SG = xS - R
                         ''')
                     st.video("https://www.youtube.com/watch?v=MeNHbGhPFzU")
+                    st.markdown("""
+                    ___
+                    ### Consider listening to these podcasts too!
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/2ppGzcN7KjeRRDGafyluDb?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/5IaFc479AbjV7u0mh4v1Uy?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/3CVF5qpuVMoI12EcXbm04N?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <br><br>
+                    """, unsafe_allow_html=True)
+
+
+    
             expand_faq2 = st.expander("What machine learning model did you use to predict Expect Strokes (xS) and how was the model trained?")
             with expand_faq2:    
                 st.write('''I ensembled the best performing [lazy predict](https://lazypredict.readthedocs.io/en/latest/) models together using a [stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html). In this project, I leveraged [optuna's](https://optuna.org/#dashboard) CMAES Sampler to not only find the best parameters for each model in the stack resulting in minimized MAE, but also [data preprocessing scalers, encoders, imputation, and feature selection methods](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/tree/main/Creating%20Model/OptimizingUtils). All trails are fed with appropriate offline training data from a [feast](https://feast.dev/) feature store. I utilized an [mlflow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) model registry to track all Optuna trials. Databricks is leveraged to store production ready models.''')
