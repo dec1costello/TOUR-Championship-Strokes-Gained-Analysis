@@ -261,18 +261,18 @@ with tab_faqs:
             expand_faq3 = st.expander("What are Strokes Gained?")
             with expand_faq3:
                     description_text = """
-                By subtracting Expected Strokes (xS) from the result (R) of each shot 
-                we get a player's true Strokes Gained (SG). 
-                """
-                description = st.empty()
-                description.write(description_text.format("all"))
-            
-                col1, col2, col3 = st.columns(3)
-                with col2:
-                    st.latex(r'''
-                    SG = xS - R
-                    ''')
-                st.video("https://www.youtube.com/watch?v=MeNHbGhPFzU")
+                    By subtracting Expected Strokes (xS) from the result (R) of each shot 
+                    we get a player's true Strokes Gained (SG). 
+                    """
+                    description = st.empty()
+                    description.write(description_text.format("all"))
+                
+                    col1, col2, col3 = st.columns(3)
+                    with col2:
+                        st.latex(r'''
+                        SG = xS - R
+                        ''')
+                    st.video("https://www.youtube.com/watch?v=MeNHbGhPFzU")
             expand_faq2 = st.expander("What machine learning model did you use and how was it trained?")
             with expand_faq2:    
                 st.write('''I ensembled the best performing [lazy predict](https://lazypredict.readthedocs.io/en/latest/) models together using a [stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html). In this project, I leveraged [optuna's](https://optuna.org/#dashboard) CMAES Sampler to not only find the best parameters for each model in the stack resulting in minimized MAE, but also [data preprocessing scalers, encoders, imputation, and feature selection methods](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/tree/main/Creating%20Model/OptimizingUtils). All trails are fed with appropriate offline training data from a [feast](https://feast.dev/) feature store. I utilized an [mlflow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) model registry to track all Optuna trials. Databricks is leveraged to store production ready models.''')
