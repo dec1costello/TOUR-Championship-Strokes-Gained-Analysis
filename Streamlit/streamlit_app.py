@@ -189,9 +189,16 @@ with profile_tab:
     p3.xaxis.axis_label_text_font_size = '12pt'
     p3.yaxis.axis_label_text_font_size = '12pt'
     p3.title.text_font_size = '18pt'
-
-    
     st.bokeh_chart(p3, use_container_width=True)
+
+    st.header("SG Percentile by Shot Type")
+    description_text_3 = """
+    By looking at a players's SG Percentile, 
+    we can see where he truly underperformed from by shot type, 
+    opposed to having one or two shots damage a bin.
+    """
+    description_3 = st.empty()
+    description_3.write(description_text_3.format("all"))
     st.bokeh_chart(p2, use_container_width=True)
 
 
