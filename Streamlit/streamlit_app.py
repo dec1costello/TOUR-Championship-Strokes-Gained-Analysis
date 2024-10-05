@@ -1,11 +1,11 @@
 from bokeh.plotting import figure, show
-from bokeh.models import ColumnDataSource
+from bokeh.models import FixedTicker, ColumnDataSource, Whisker
 from bokeh.palettes import viridis
+import matplotlib.pyplot as plt
+import matplotlib.cm as cm
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
 
 st.set_page_config(
     page_title="TOUR Championship Player Performance Dashboard", 
