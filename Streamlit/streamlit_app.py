@@ -260,6 +260,18 @@ with tab_faqs:
             st.markdown("### 🔎 Frequently Asked Questions")
             expand_faq3 = st.expander("What are Strokes Gained?")
             with expand_faq3:
+                    description_text = """
+                By subtracting Expected Strokes (xS) from the result (R) of each shot 
+                we get a player's true Strokes Gained (SG). 
+                """
+                description = st.empty()
+                description.write(description_text.format("all"))
+            
+                col1, col2, col3 = st.columns(3)
+                with col2:
+                    st.latex(r'''
+                    SG = xS - R
+                    ''')
                 st.video("https://www.youtube.com/watch?v=MeNHbGhPFzU")
             expand_faq2 = st.expander("What machine learning model did you use and how was it trained?")
             with expand_faq2:    
