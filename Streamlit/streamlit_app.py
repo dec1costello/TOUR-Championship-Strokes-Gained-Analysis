@@ -201,8 +201,9 @@ with Comparisons_tab:
     st.header("SG Progression")
 
     description_text_2 = """
-     The plot directly below displays the field's
-    progression of Strokes Gained throughout the 2011 TOUR Championship.
+     The plot directly below displays the golferss
+    progression of Strokes Gained relative to the field
+    throughout the 2011 TOUR Championship.
     """
     description_2 = st.empty()
     description_2.write(description_text_2.format("all"))
