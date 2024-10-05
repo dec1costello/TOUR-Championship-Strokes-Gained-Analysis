@@ -268,7 +268,7 @@ with Comparisons_tab:
 
 with tab_faqs:
             st.markdown("### 🔎 Frequently Asked Questions")
-            expand_faq3 = st.expander("What are Strokes Gained?")
+            expand_faq3 = st.expander("What are Strokes Gained (SG)?")
             with expand_faq3:
                     description_text = """
                     By subtracting Expected Strokes (xS) from the result (R) of each shot 
