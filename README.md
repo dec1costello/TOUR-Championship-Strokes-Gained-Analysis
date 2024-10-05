@@ -1,5 +1,7 @@
 [Twitter](https://x.com/dec1costello) | [GitHub](https://github.com/dec1costello) | [Kaggle](https://www.kaggle.com/dec1costello) | [LinkedIn](https://www.linkedin.com/in/declan-costello-7423aa137/)
 <br />
+Author: Declan Costello
+<br />
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_red.svg)](https://tour-championship-strokes-gained-analysis.streamlit.app/)
 <br />
 [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dec1costello/TOUR-Championship-Strokes-Gained-Analysis)
