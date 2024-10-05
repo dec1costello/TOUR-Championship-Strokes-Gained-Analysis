@@ -39,12 +39,14 @@ profile_tab, Comparisons_tab, tab_faqs = st.tabs(["Profiles", "Comparisons", "FA
 
 
 with profile_tab:
-    st.title("Total SG by Shot Type")
 
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         golfer = st.selectbox("Select Player", condensed_df['last_name'].unique(), index=21)
     df = df[df['last_name'] == golfer]
+
+    st.title("Total SG by Shot Type")
+
 
     description_text = """
     By subtracting Expected Strokes (xS) from the result (R) of each shot 
