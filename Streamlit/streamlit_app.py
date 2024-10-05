@@ -48,7 +48,7 @@ with profile_tab:
     df = df[df['last_name'] == golfer]
 
     description_text = """
-    By subtracting Expected Strokes (xS) from the result of each shot 
+    By subtracting Expected Strokes (xS) from the result (R) of each shot 
     we get a player's true Strokes Gained (SG). 
     """
     description = st.empty()
@@ -57,7 +57,7 @@ with profile_tab:
     col1, col2, col3 = st.columns(3)
     with col2:
         st.latex(r'''
-        xS - S = SG
+        xS - R = SG
         ''')
 
     description_text_2 = """
