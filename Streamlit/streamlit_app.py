@@ -49,12 +49,24 @@ with profile_tab:
 
     description_text = """
     By subtracting Expected Strokes (xS) from the result of each shot 
-    we get a player's true Strokes Gained (SG). The plot directly below displays a players's 
-    Total SG by shot type, providing a clear visualization of 
-    his performance across different lies and distances.
+    we get a player's true Strokes Gained (SG). 
     """
     description = st.empty()
     description.write(description_text.format("all"))
+
+    col1, col2, col3 = st.columns(3)
+    with col2:
+    st.latex(r'''
+    xS - S = SG
+    ''')
+
+    description_text_2 = """
+     The plot directly below displays a players's 
+    Total SG by shot type, providing a clear visualization of 
+    his performance across different lies and distances.
+    """
+    description_2 = st.empty()
+    description_2.write(description_text_2.format("all"))
     
     #--------------------------PLOT 2--------------------------------------------------------------------
     order = ['OTT', '200+', '200-150', '150-100', '100-50', '50-0', 'Putting']
