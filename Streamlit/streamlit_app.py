@@ -36,7 +36,7 @@ profile_tab, Comparisons_tab, tab_faqs = st.tabs(["Profiles", "Comparisons", "FA
 
 
 with profile_tab:
-    col1, col2 = st.columns(2)
+    col1, col2, col3, col4 = st.columns(4)
     with col1:
         golfer = st.selectbox("Select Player", condensed_df['last_name'].unique(), index=16)
         # Define the specific order for the 'SG_bins' categories
