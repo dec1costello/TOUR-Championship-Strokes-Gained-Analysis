@@ -194,7 +194,7 @@ with profile_tab:
     st.header("SG Percentile by Shot Type")
     description_text_3 = """
     By looking at a players's SG Percentile, 
-    we can see where he truly underperformed from by shot type, 
+    we can see where he consistently underperformed in each shot type bin, 
     opposed to having one or two shots damage a bin.
     """
     description_3 = st.empty()
