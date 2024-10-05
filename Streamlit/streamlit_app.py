@@ -272,7 +272,7 @@ with tab_faqs:
             with expand_faq3:
                     description_text = """
                     By subtracting Expected Strokes (xS) from the result (R) of each shot 
-                    we get a player's true Strokes Gained (SG). 
+                    we get a player's strokes gained or lost from that shot. 
                     """
                     description = st.empty()
                     description.write(description_text.format("all"))
@@ -283,7 +283,6 @@ with tab_faqs:
                         SG = xS - R
                         ''')
                     st.markdown("""
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1MOWgnsIWBDOcG4GIMPEkC?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/3d226zD4cKGSqkFRwkH9nw?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/0jKnJG9pSCNsNsOsoEwNrh?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     <br><br>
