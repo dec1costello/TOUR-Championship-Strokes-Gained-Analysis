@@ -283,13 +283,14 @@ with tab_faqs:
                         SG = xS - R
                         ''')
                     st.markdown("""
-                    ___""")
-                    st.video("https://www.youtube.com/watch?v=MeNHbGhPFzU")
-                    st.markdown("""
-                    ___
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1MOWgnsIWBDOcG4GIMPEkC?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/4aE0DrfBNLgKMna5oBiLlM?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/0jKnJG9pSCNsNsOsoEwNrh?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     <br><br>
                     """, unsafe_allow_html=True)
+
+                    st.video("https://www.youtube.com/watch?v=MeNHbGhPFzU")
+
 
 
     
