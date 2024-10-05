@@ -27,9 +27,6 @@ condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
 df = pd.read_csv('Streamlit/player_profiles.csv')
 
 st.title("TOUR Championship Analysis")
-"""
-[![](https://img.shields.io/twitter/follow/dec1costello?style=social)](https://twitter.com/dec1costello)
-"""
 # left_co, cent_co,last_co = st.columns(3)
 # with cent_co:
 #     st.image('https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350')
@@ -43,6 +40,7 @@ with profile_tab:
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         golfer = st.selectbox("Select Player", condensed_df['last_name'].unique(), index=21)
+        st.balloons()
     df = df[df['last_name'] == golfer]
 
     st.header("Total SG by Shot Type")
@@ -283,7 +281,7 @@ with tab_faqs:
                         SG = xS - R
                         ''')
                     st.video("https://www.youtube.com/watch?v=MeNHbGhPFzU")
-            expand_faq2 = st.expander("What machine learning model did you use and how was it trained?")
+            expand_faq2 = st.expander("What machine learning model did you use to predict Expect Strokes (xS) and how was the model trained?")
             with expand_faq2:    
                 st.write('''I ensembled the best performing [lazy predict](https://lazypredict.readthedocs.io/en/latest/) models together using a [stack](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html). In this project, I leveraged [optuna's](https://optuna.org/#dashboard) CMAES Sampler to not only find the best parameters for each model in the stack resulting in minimized MAE, but also [data preprocessing scalers, encoders, imputation, and feature selection methods](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/tree/main/Creating%20Model/OptimizingUtils). All trails are fed with appropriate offline training data from a [feast](https://feast.dev/) feature store. I utilized an [mlflow](https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-with-open-source-tools-d8bacbf4184f) model registry to track all Optuna trials. Databricks is leveraged to store production ready models.''')
                 st.image('https://github.com/user-attachments/assets/c4b0cbb0-290d-4a3a-8572-779a810cc1ed')
