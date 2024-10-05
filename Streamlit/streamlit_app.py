@@ -45,7 +45,7 @@ with profile_tab:
         golfer = st.selectbox("Select Player", condensed_df['last_name'].unique(), index=21)
     df = df[df['last_name'] == golfer]
 
-    st.title("Total SG by Shot Type")
+    st.header("Total SG by Shot Type")
 
 
     description_text = """
