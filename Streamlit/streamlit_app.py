@@ -27,6 +27,9 @@ condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
 df = pd.read_csv('Streamlit/player_profiles.csv')
 
 st.title("TOUR Championship Analysis")
+"""
+[![](https://img.shields.io/github/stars/jrieke/components-hub?style=social)](https://github.com/jrieke/components-hub) &nbsp; [![](https://img.shields.io/twitter/follow/dec1costello?style=social)](https://twitter.com/dec1costello)
+"""
 # left_co, cent_co,last_co = st.columns(3)
 # with cent_co:
 #     st.image('https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350')
