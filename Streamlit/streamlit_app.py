@@ -39,8 +39,72 @@ with profile_tab:
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         golfer = st.selectbox("Select Player", condensed_df['last_name'].unique(), index=21)
-        # Define the specific order for the 'SG_bins' categories
     df = df[df['last_name'] == golfer]
+    
+    #-----------------------PLOT 1----------------------
+
+    testdf = df.groupby(['SG_bins','from_location_scorer'])['SG'].sum()
+    testdf_df = testdf.to_frame().T
+    
+    data_dict_v2 = {'categories': [], 'counts': []}
+    
+    # Step 2: Process the DataFrame
+    for sg_bin in testdf_df.columns.levels[0]:
+        if sg_bin == 'OTT' or sg_bin == 'Putting':
+            # Include 'OTT' and 'Putting' directly without summing
+            for scorer in testdf_df[sg_bin].columns:
+                data_dict_v2['categories'].append((sg_bin, scorer))
+                data_dict_v2['counts'].append(testdf_df[sg_bin][scorer].sum())  # Sum over the rows for each column
+        else:
+            # Sum 'Fairway' and 'Other'
+            fairway_sum = testdf_df[sg_bin]['Fairway'].sum()  # Sum over the rows for 'Fairway'
+            other_sum = testdf_df[sg_bin].drop(columns='Fairway').sum().sum()  # Sum over the rows for other columns
+            data_dict_v2['categories'].append((sg_bin, 'Fairway'))
+            data_dict_v2['counts'].append(fairway_sum)
+            data_dict_v2['categories'].append((sg_bin, 'Other'))
+            data_dict_v2['counts'].append(other_sum)
+    
+    # Step 3: Convert the result dictionary to a DataFrame for verification
+    result_df = pd.DataFrame(data_dict_v2)
+    
+    
+    # Filter out zero values
+    filtered_categories = []
+    filtered_counts = []
+    for category, count in zip(data_dict_v2['categories'], data_dict_v2['counts']):
+        if count != 0:
+            filtered_categories.append(category)
+            filtered_counts.append(count)
+    
+    data_dict_v2_filtered = {'categories': filtered_categories, 'counts': filtered_counts}
+    data_dict_v2 = data_dict_v2_filtered
+
+    # Create a ColumnDataSource
+    source = ColumnDataSource(data=data_dict_v2)
+    categories = [x[1] for x in data_dict_v2['categories']]
+    
+    # Create the figure
+    p3 = figure(x_range=FactorRange(*data_dict_v2['categories']),height=500,width=700, title=f"{golfer}'s SG by Shot Type",
+               toolbar_location=None, tools="", output_backend="svg")
+    custom_colors = ['#0000ff','#00e38e','#00aaaa','#00e38e','#00aaaa','#00e38e','#00aaaa','#00e38e','#00e38e', '#00aaaa','#00fe80','#00fe80'] 
+    p3.vbar(x='categories', top='counts', width=0.9, source=source, line_color="white",alpha=0.8, 
+           fill_color=factor_cmap('categories', palette=custom_colors, factors=categories, start=1, end=11))
+    min_value = min(data_dict_v2['counts']) - 1
+    max_value = max(data_dict_v2['counts']) + 1
+    p3.y_range.start = min_value
+    p3.y_range.end = max_value
+    p3.x_range.range_padding = 0.1
+    p3.xaxis.major_label_orientation = 1
+    p3.xgrid.grid_line_color = None
+    p3.xaxis.major_label_text_font_size = '10pt'
+    p3.xaxis.axis_label = 'Shot Type'
+    p3.yaxis.axis_label = 'SG'
+    p3.xaxis.axis_label_text_font_size = '12pt'
+    p3.yaxis.axis_label_text_font_size = '12pt'
+    p3.title.text_font_size = '18pt'
+    st.bokeh_chart(p3, use_container_width=True)
+
+
 
 
 
@@ -50,7 +114,7 @@ with profile_tab:
 
     
 
-    
+    #--------------------------PLOT 2--------------------------------------------------------------------
     order = ['OTT', '200+', '200-150', '150-100', '100-50', '50-0', 'Putting']
     df['SG_bins'] = pd.Categorical(df['SG_bins'], categories=order, ordered=True)    
     winter_palette = cm.get_cmap('winter', 8)    
