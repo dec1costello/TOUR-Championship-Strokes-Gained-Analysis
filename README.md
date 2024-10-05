@@ -1,4 +1,4 @@
-[Twitter](https://x.com/dec1costello) | [GitHub](https://github.com/dec1costello) | [Kaggle](https://www.kaggle.com/dec1costello) | [LinkedIn](https://www.linkedin.com/in/declan-costello-7423aa137/)
+[GitHub](https://github.com/dec1costello) | [Kaggle](https://www.kaggle.com/dec1costello) | [LinkedIn](https://www.linkedin.com/in/declan-costello-7423aa137/)
 <br />
 Author: Declan Costello
 <br />
@@ -52,7 +52,7 @@ Author: Declan Costello
 Welcome to my analysis of the 2011 TOUR Championship at East Lake Golf Club, the primary objective of this project is to:
 > **Develop an expected strokes model to identify player performance**
 
-I hope to contribute meaningful insights to the golf community through this project. Although the 2011 TOUR Championship took place over a decade ago and the tournament's rules have since changed, its extensive shot-level dataset remains a valuable resource. If you happen to come across another complete shot-level dataset, I would greatly appreciate it if you could share it with me! I encourage you to check out the js visuals on [NBViewer](https://nbviewer.org/github/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/tree/main/) and [Streamlit!](https://tour-championship-strokes-gained-analysis-v3.streamlit.app/)
+I hope to contribute meaningful insights to the golf community through this project. Although the 2011 TOUR Championship took place over a decade ago and the tournament's rules have since changed, its extensive shot-level dataset remains a valuable resource. If you happen to come across another complete shot-level dataset, I would greatly appreciate it if you could share it with me! I encourage you to check out the js visuals on [NBViewer](https://nbviewer.org/github/dec1costello/TOUR-Championship-Strokes-Gained-Analysis/tree/main/) and [Streamlit Dashboard!](https://tour-championship-strokes-gained-analysis-v3.streamlit.app/)
 
 ## **🌵 Repo Structure**
 
