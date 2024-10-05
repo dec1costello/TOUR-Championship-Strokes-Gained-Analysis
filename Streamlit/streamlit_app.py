@@ -39,7 +39,7 @@ with profile_tab:
 
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        golfer = st.selectbox("Select Player", condensed_df['last_name'].unique(), index=21)
+        golfer = st.selectbox("Select Golfer", condensed_df['last_name'].unique(), index=21)
         st.balloons()
     df = df[df['last_name'] == golfer]
 
