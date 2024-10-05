@@ -303,5 +303,5 @@ with tab_faqs:
 
 
 st.success('''**A Brief Note on Methods:**  
-I developed an expected strokes model to identify player performance, [check it out here!](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis)''')
-st.footer()
+I developed an expected strokes model to identify player performance, 
+[check it out here!](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis)''')
