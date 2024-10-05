@@ -5,10 +5,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
 import matplotlib.cm as cm
-
-
 
 st.set_page_config(
     page_title="TOUR Championship Player Performance Dashboard", 
@@ -26,6 +23,8 @@ st.sidebar.markdown("""- [Mark Broadie](https://www.amazon.com/Every-Shot-Counts
 st.sidebar.markdown(" ## Info")
 st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis).", icon="ℹ️")
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
+df = pd.read_csv('Streamlit/player_profiles.csv')
+
 st.title("TOUR Championship Analysis")
 # left_co, cent_co,last_co = st.columns(3)
 # with cent_co:
