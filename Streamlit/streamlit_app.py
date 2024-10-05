@@ -190,8 +190,10 @@ with Comparisons_tab:
     col1, col2,col3,col4 = st.columns(4)
     with col1:
         player1 = st.selectbox("Select Golfer 1", condensed_df['last_name'].unique(), index=16)
+        st.balloons()
     with col2:
         player2 = st.selectbox("Select Golfer 2", condensed_df['last_name'].unique(), index=18)
+        st.balloons()
     desired_order = []
     desired_order.append(player1)
     desired_order.append(player2)
