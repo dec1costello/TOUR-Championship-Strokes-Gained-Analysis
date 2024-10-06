@@ -24,7 +24,7 @@ st.sidebar.info("Read more about this golf project on [Github](https://github.co
 
 
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
-# df = pd.read_csv('Streamlit/player_profiles.csv')
+df = pd.read_csv('Streamlit/player_profiles.csv')
 
 #connect to my supabase DB
 url = st.secrets["DB_NAME"]
@@ -41,8 +41,9 @@ df_2.insert(0, 'Unnamed: 0.1', df_2['Unnamed: 0'])  # Add column 'Unnamed: 0.1' 
 df_2.insert(0, 'Unnamed: 0.2', df_2['Unnamed: 0'])  # Add column 'Unnamed: 0.2' as the first column
 
 # st.dataframe(df_2)
-# st.dataframe(df)
+st.dataframe(df)
 df = df_2
+st.dataframe(df)
 
 
 
