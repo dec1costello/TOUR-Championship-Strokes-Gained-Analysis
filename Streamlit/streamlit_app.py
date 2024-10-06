@@ -21,10 +21,8 @@ st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1c
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
 df = pd.read_csv('Streamlit/player_profiles.csv')
 
+
 st.title("TOUR Championship Analysis")
-# left_co, cent_co,last_co = st.columns(3)
-# with cent_co:
-#     st.image('https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350')
 
 
 profile_tab, Comparisons_tab, tab_faqs = st.tabs(["Profiles", "Comparisons", "FAQs"])
