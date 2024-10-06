@@ -191,7 +191,7 @@ with Comparisons_tab:
     desired_order.append(player1)
     desired_order.append(player2)
 
-    st.header("SG Progression")
+    st.header("⛳ SG Progression")
 
     description_text_2 = """
     The plot directly below displays the golfers' 
