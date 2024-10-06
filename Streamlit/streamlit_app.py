@@ -32,8 +32,8 @@ conn = st.connection(name="supabase",
                      key=key,)
 
 rows = execute_query(conn.table("player_profiles").select("*"), ttl=0)
-# rows = conn.query("*", table="player_profiles", ttl="10m").execute()
-
+df_2 = pd.DataFrame(rows.data)
+st.dataframe(df2)
 
 
 
