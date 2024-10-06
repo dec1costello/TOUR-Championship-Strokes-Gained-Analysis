@@ -264,10 +264,10 @@ with tab_faqs:
             expand_faq3 = st.expander("What are Strokes Gained (SG)?")
             with expand_faq3:
                     description_text = """
-                    Strokes Gained is a golf statistic that measures how a player's performance compares 
+                    Strokes Gained (SG) is a golf statistic that measures how a player's performance compares 
                     to the average in specific areas of the game. It shows how many strokes a player gains 
-                    or loses relative to the field. To calculate Strokes Gained, you subtract the 
-                    Expected Strokes (xS) from the actual result (R) of each shot. 
+                    or loses relative to the field. To calculate Strokes Gained, you subtract the amount strokes to hole out (S) of each shot from  the 
+                    Expected Strokes (xS) to hole out. 
                     This gives the strokes gained or lost for that shot.
                     """
                     description = st.empty()
@@ -276,11 +276,12 @@ with tab_faqs:
                     col1, col2, col3 = st.columns(3)
                     with col2:
                         st.latex(r'''
-                        SG = xS - R
+                        SG = xS - S
                         ''')
                     description_text_2 = """
                     A positive strokes gained means the player performed better than average in that area, 
-                    while a negative score indicates they were worse. It helps highlight a player's strengths and areas for improvement.
+                    while a negative score indicates they were worse. 
+                    SG helps highlight a player's strengths and areas for improvement.
                     """
                     description_2 = st.empty()
                     description_2.write(description_text_2.format("all"))
