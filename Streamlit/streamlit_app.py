@@ -135,6 +135,7 @@ with profile_tab:
 
     testdf = df.groupby(['SG_bins','from_location_scorer'])['SG'].sum()
     testdf_df = testdf.to_frame().T
+    st.dataframe(testdf_df)
     
     data_dict_v2 = {'categories': [], 'counts': []}
     
