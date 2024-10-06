@@ -23,8 +23,14 @@ st.sidebar.info("Read more about this golf project on [Github](https://github.co
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
 df = pd.read_csv('Streamlit/player_profiles.csv')
 
-#test
-conn = st.connection("supabase",type=SupabaseConnection)
+#connect ot supabase
+url = st.secrets["DB_NAME"]
+key = st.secrets["DB_KEY"]
+conn = st.connection(name="supabase",
+                     type=SupabaseConnection,
+                     url=url,
+                     key=key,)
+
 rows = conn.query("*", table="player_profiles", ttl="10m").execute()
 
 
