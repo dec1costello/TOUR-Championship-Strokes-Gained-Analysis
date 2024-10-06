@@ -42,8 +42,7 @@ df_2.insert(0, 'Unnamed: 0.2', df_2['Unnamed: 0'])  # Add column 'Unnamed: 0.2' 
 
 # st.dataframe(df_2)
 st.dataframe(df)
-df = df_2
-st.dataframe(df)
+st.dataframe(df_2)
 
 
 
