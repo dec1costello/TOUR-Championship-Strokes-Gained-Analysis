@@ -15,7 +15,7 @@ st.set_page_config(
     initial_sidebar_state="expanded")
 
 st.sidebar.image('https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350')
-st.sidebar.markdown(" ## ⛳ About")
+st.sidebar.markdown(" ## ⛳ About 🏌️")
 st.sidebar.markdown("This Dashboard offers deeper insights into a golfer's true abilities during the 2011 TOUR Championship. The primary aspiration is to contribute meaningful insights to the golf community."  )  
 st.sidebar.info("Read more about my code on my [Github](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis).", icon="ℹ️")
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
@@ -36,7 +36,7 @@ with profile_tab:
         st.balloons()
     df = df[df['last_name'] == golfer]
 
-    st.header("🏌️ Total SG by Shot Type")
+    st.header("⛳ Total SG by Shot Type")
 
     description_text_2 = """
      The plot directly below displays a players's 
