@@ -24,7 +24,7 @@ st.sidebar.info("Read more about this golf project on [Github](https://github.co
 
 
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
-df = pd.read_csv('Streamlit/player_profiles.csv')
+# df = pd.read_csv('Streamlit/player_profiles.csv')
 
 #connect to my supabase DB
 url = st.secrets["DB_NAME"]
@@ -39,10 +39,10 @@ df_2 = pd.DataFrame(rows.data)
 df_2.rename(columns={'row_id': 'Unnamed: 0'}, inplace=True)
 df_2.insert(0, 'Unnamed: 0.1', df_2['Unnamed: 0'])  # Add column 'Unnamed: 0.1' as the new first column
 df_2.insert(0, 'Unnamed: 0.2', df_2['Unnamed: 0'])  # Add column 'Unnamed: 0.2' as the first column
-
+df = df_2
 # st.dataframe(df_2)
 st.dataframe(df)
-st.dataframe(df_2)
+# st.dataframe(df_2)
 
 
 
@@ -79,7 +79,8 @@ with profile_tab:
     
     #--------------------------PLOT 2--------------------------------------------------------------------
     order = ['OTT', '200+', '200-150', '150-100', '100-50', '50-0', 'Putting']
-    df['SG_bins'] = pd.Categorical(df['SG_bins'], categories=order, ordered=True)    
+    df['SG_bins'] = pd.Categorical(df['SG_bins'], categories=order, ordered=True)     
+    st.dataframe(df)   
     winter_palette = cm.get_cmap('winter', 8)    
     def index_to_color(index):
         return tuple(int(c * 255) for c in winter_palette(index / 255)[:3])
@@ -95,7 +96,9 @@ with profile_tab:
     categories = ['OTT', '200+', '200-150', '150-100', '100-50', '50-0', 'Putting']
     palette = [colors[cat] for cat in categories]    
     sg_bins_mapping = {label: i for i, label in enumerate(categories)}
-    df['SG_bins_numeric'] = df['SG_bins'].map(sg_bins_mapping)    
+    df['SG_bins_numeric'] = df['SG_bins'].map(sg_bins_mapping)
+    st.dataframe(df)
+
     p2 = figure(height=400,width=700, title=f"{golfer}'s SG Percentile by Shot Type")
     p2.xaxis.major_label_text_font_size = '10pt' 
     p2.xaxis.axis_label = 'Shot Type'
@@ -139,6 +142,7 @@ with profile_tab:
     #-----------------------PLOT 1----------------------
 
     testdf = df.groupby(['SG_bins','from_location_scorer'])['SG'].sum()
+    st.dataframe(testdf)
     testdf_df = testdf.to_frame().T
     st.dataframe(testdf_df)
     
