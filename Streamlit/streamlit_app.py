@@ -37,8 +37,8 @@ conn = st.connection(name="supabase",
 rows = execute_query(conn.table("player_profiles").select("*"), ttl=0)
 df_2 = pd.DataFrame(rows.data)
 df_2.rename(columns={'row_id': 'Unnamed: 0'}, inplace=True)
-df_2.insert(0, 'Unnamed: 0.1', df['Unnamed: 0.1'])  # Add column 'Unnamed: 0.1' as the new first column
-df_2.insert(0, 'Unnamed: 0.2', df['Unnamed: 0.2'])  # Add column 'Unnamed: 0.2' as the first column
+df_2.insert(0, 'Unnamed: 0.1', df_2['Unnamed: 0'])  # Add column 'Unnamed: 0.1' as the new first column
+df_2.insert(0, 'Unnamed: 0.2', df_2['Unnamed: 0'])  # Add column 'Unnamed: 0.2' as the first column
 
 # st.dataframe(df_2)
 # st.dataframe(df)
