@@ -1,6 +1,7 @@
 from bokeh.models import FixedTicker, ColumnDataSource, Whisker, FactorRange
-from st_supabase_connection import SupabaseConnection
+# from st_supabase_connection import SupabaseConnection
 from bokeh.transform import factor_cmap, jitter
+from supabase import create_client, Client
 from bokeh.plotting import figure, show
 from bokeh.palettes import viridis
 import matplotlib.pyplot as plt
@@ -23,8 +24,23 @@ condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
 df = pd.read_csv('Streamlit/player_profiles.csv')
 
 #test
-conn = st.connection("supabase",type=SupabaseConnection)
-rows = conn.query("*", table="player_profiles", ttl="10m").execute()
+# conn = st.connection("supabase",type=SupabaseConnection)
+# rows = conn.query("*", table="player_profiles", ttl="10m").execute()
+@st.cache_resource
+def init_connection():
+    url = st.secrets["DB_NAME "]
+    key = st.secrets["DB_KEY "]
+    return create_client(url, key)
+
+supabase = init_connection()
+
+# Perform query.
+# Uses st.cache_data to only rerun when the query changes or after 10 min.
+@st.cache_data(ttl=600)
+def run_query():
+    return supabase.table("player_profiles").select("*").execute()
+
+rows = run_query()
 
 
 st.title("TOUR Championship Analysis")
