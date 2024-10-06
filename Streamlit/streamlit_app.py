@@ -20,8 +20,11 @@ st.sidebar.image('https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-
 st.sidebar.markdown(" ## ⛳ About 🏌️")
 st.sidebar.markdown("This Dashboard offers deeper insights into a golfer's true abilities during the 2011 TOUR Championship. The primary aspiration is to contribute meaningful insights to the golf community."  )  
 st.sidebar.info("Read more about this golf project on [Github](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis).", icon="ℹ️")
+
+
+
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
-df = pd.read_csv('Streamlit/player_profiles.csv')
+# df = pd.read_csv('Streamlit/player_profiles.csv')
 
 #connect to my supabase DB
 url = st.secrets["DB_NAME"]
@@ -32,8 +35,8 @@ conn = st.connection(name="supabase",
                      key=key,)
 
 rows = execute_query(conn.table("player_profiles").select("*"), ttl=0)
-df_2 = pd.DataFrame(rows.data)
-st.dataframe(df_2)
+df = pd.DataFrame(rows.data)
+# st.dataframe(df_2)
 st.dataframe(df)
 
 
