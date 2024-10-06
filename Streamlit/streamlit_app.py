@@ -1,5 +1,5 @@
 from bokeh.models import FixedTicker, ColumnDataSource, Whisker, FactorRange
-# from st_supabase_connection import SupabaseConnection
+from st_supabase_connection import SupabaseConnection
 from bokeh.transform import factor_cmap, jitter
 from supabase import create_client, Client
 from bokeh.plotting import figure, show
