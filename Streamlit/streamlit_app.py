@@ -264,8 +264,11 @@ with tab_faqs:
             expand_faq3 = st.expander("What are Strokes Gained (SG)?")
             with expand_faq3:
                     description_text = """
-                    By subtracting Expected Strokes (xS) from the result (R) of each shot 
-                    we get a player's strokes gained or lost from that shot. 
+                    Strokes Gained is a golf statistic that measures how a player's performance compares 
+                    to the average in specific areas of the game. It shows how many strokes a player gains 
+                    or loses relative to the field. To calculate Strokes Gained, you subtract the 
+                    Expected Strokes (xS) from the actual result (R) of each shot. 
+                    This gives the strokes gained or lost for that shot.
                     """
                     description = st.empty()
                     description.write(description_text.format("all"))
@@ -275,6 +278,12 @@ with tab_faqs:
                         st.latex(r'''
                         SG = xS - R
                         ''')
+                    description_text_2 = """
+                    A positive strokes gained means the player performed better than average in that area, 
+                    while a negative score indicates they were worse. It helps highlight a player's strengths and areas for improvement.
+                    """
+                    description_2 = st.empty()
+                    description_2.write(description_text_2.format("all"))
                     st.markdown("""
                     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/3d226zD4cKGSqkFRwkH9nw?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/0jKnJG9pSCNsNsOsoEwNrh?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
