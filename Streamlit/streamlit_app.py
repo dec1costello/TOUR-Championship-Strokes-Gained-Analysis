@@ -264,7 +264,7 @@ with tab_faqs:
             expand_faq3 = st.expander("What are Strokes Gained (SG)?")
             with expand_faq3:
                     description_text = """
-                    Strokes Gained (SG) is a golf statistic that measures how a player's performance compares to the average in specific areas of the game. 
+                    Strokes Gained (SG) is a golf statistic that measures how a player's performance compares to the field in specific areas of the game. 
                     SG shows how many strokes a player gains or loses relative to the field. To calculate Strokes Gained, 
                     you subtract the number of strokes taken to hole out (S) from the Expected Strokes (xS) to hole out for a given shot. 
                     This gives the strokes gained or lost for that shot.
