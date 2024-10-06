@@ -31,7 +31,8 @@ conn = st.connection(name="supabase",
                      url=url,
                      key=key,)
 
-rows = conn.query("*", table="player_profiles", ttl="10m").execute()
+rows = execute_query(conn.table("player_profiles").select("*"), ttl=0)
+# rows = conn.query("*", table="player_profiles", ttl="10m").execute()
 
 
 
