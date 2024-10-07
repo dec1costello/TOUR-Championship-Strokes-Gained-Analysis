@@ -44,7 +44,7 @@ df = df_2
 st.dataframe(df)
 # st.dataframe(df_2)
 
-
+st.header(f"df['SG_bins'] type is {type(df['SG_bins'][0])} ")
 
 
 
