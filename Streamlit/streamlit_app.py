@@ -22,18 +22,18 @@ st.sidebar.markdown("This Dashboard offers deeper insights into a golfer's true 
 st.sidebar.info("Read more about this golf project on [Github](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis).", icon="ℹ️")
 
 
-#connect to supabase DB
-url = st.secrets["DB_NAME"]
-key = st.secrets["DB_KEY"]
-conn = st.connection(name="supabase",
-                     type=SupabaseConnection,
-                     url=url,
-                     key=key,)
-rows = execute_query(conn.table("player_profiles").select("*"), ttl=0)
-df = pd.DataFrame(rows.data)
+# #connect to supabase DB
+# url = st.secrets["DB_NAME"]
+# key = st.secrets["DB_KEY"]
+# conn = st.connection(name="supabase",
+#                      type=SupabaseConnection,
+#                      url=url,
+#                      key=key,)
+# rows = execute_query(conn.table("player_profiles").select("*"), ttl=0)
+# df = pd.DataFrame(rows.data)
 
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
-# df = pd.read_csv('Streamlit/player_profiles.csv')
+df = pd.read_csv('Streamlit/player_profiles.csv')
 
 
 st.title("TOUR Championship Analysis")
