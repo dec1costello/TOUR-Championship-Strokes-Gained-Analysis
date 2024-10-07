@@ -30,10 +30,10 @@ conn = st.connection(name="supabase",
                      url=url,
                      key=key,)
 rows = execute_query(conn.table("player_profiles").select("*"), ttl=0)
-df_2 = pd.DataFrame(rows.data)
+df = pd.DataFrame(rows.data)
 
 condensed_df = pd.read_csv('Streamlit/Rolling_SG_group_by_hole_player.csv')
-df = pd.read_csv('Streamlit/player_profiles.csv')
+# df = pd.read_csv('Streamlit/player_profiles.csv')
 
 
 st.title("TOUR Championship Analysis")
