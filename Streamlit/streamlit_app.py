@@ -44,7 +44,7 @@ df = df_2
 st.dataframe(df)
 # st.dataframe(df_2)
 
-st.header(f"df['SG_bins'] type is {type(df['SG_bins'][0])} ")
+st.header(f"df['SG_bins'] type is {df.info()} ")
 
 
 
@@ -80,7 +80,7 @@ with profile_tab:
     #--------------------------PLOT 2--------------------------------------------------------------------
     order = ['OTT', '200+', '200-150', '150-100', '100-50', '50-0', 'Putting']
     df['SG_bins'] = pd.Categorical(df['SG_bins'], categories=order, ordered=True)    
-    st.header(f"df['SG_bins'] type is {type(df['SG_bins'][0])} ")
+    st.header(f"df info is {df.info()} ")
     st.dataframe(df)   
     winter_palette = cm.get_cmap('winter', 8)    
     def index_to_color(index):
