@@ -22,7 +22,7 @@ st.sidebar.markdown("This Dashboard offers deeper insights into a golfer's true 
 st.sidebar.info("Read more about this golf project on [Github](https://github.com/dec1costello/TOUR-Championship-Strokes-Gained-Analysis).", icon="ℹ️")
 
 
-# #connect to supabase DB
+# #connect to supabase DB works, TODO: replace pd.read_csv()s
 # url = st.secrets["DB_NAME"]
 # key = st.secrets["DB_KEY"]
 # conn = st.connection(name="supabase",
