@@ -162,6 +162,7 @@ cython_debug/
 #.idea/
 
 
-Streamlit/metrics.txt 
+#Streamlit/metrics.txt 
+Streamlit/results.txt 
 Streamlit/model_results.png
 Streamlit/bank_pipeline.skops 
