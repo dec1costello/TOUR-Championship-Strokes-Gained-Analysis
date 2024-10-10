@@ -8,3 +8,4 @@ st_supabase_connection
 scikit-learn
 skops
 black
+seaborn
