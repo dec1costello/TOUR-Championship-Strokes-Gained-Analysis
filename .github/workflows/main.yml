@@ -18,10 +18,8 @@ jobs:
       - uses: iterative/setup-cml@v2
       - name: Install Packages
         run: pip install --upgrade pip && pip install -r Streamlit/requirements.txt
-      - name: Format
-        run: black *.py
       - name: Train
-        run: python train.py
+        run: python Streamlit/train.py
       - name: Evaluation
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
