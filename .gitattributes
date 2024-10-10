@@ -1,0 +1,10 @@
+* text=auto
+
+*.gitattributes text
+.gitignore      text
+*.md            text diff=markdown
+
+*.ipynb text eol=lf
+
+.gitattributes export-ignore
+.gitignore     export-ignore
