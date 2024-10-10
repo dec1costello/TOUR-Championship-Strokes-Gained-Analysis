@@ -1,33 +1,27 @@
-name: ML Workflow
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
-  
-permissions: write-all
-
+name: your-workflow-name
+on: [push]
 jobs:
-  build:
+  run:
     runs-on: ubuntu-latest
+    # container: ghcr.io/iterative/cml:0-dvc2-base1
+    #sub docker line below for users, maybe will allow for mds to show up?
+    # container: docker://ghcr.io/iterative/cml:0-dvc2-base1
     steps:
-      - uses: actions/checkout@v3
-        with:
-          lfs: true
-      - uses: iterative/setup-cml@v2
-      - name: Install Packages
-        run: pip install --upgrade pip && pip install -r Streamlit/requirements.txt
-      - name: Train
-        run: python Streamlit/train.py
-      - name: Evaluation
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: | 
-          echo "## Model Metrics" > report.md
-          cat metrics.txt >> report.md
-            
-          echo '## Confusion Matrix Plot' >> report.md
-          echo '![Confusion Matrix](model_results.png)' >> report.md
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    - uses: iterative/setup-cml@v1
+    - name: Train model
+      run: |
+        # Your ML workflow goes here
+        pip install -r Streamlit/requirements.txt
+        python Streamlit/train.py
 
-          cml comment create report.md
+    - name: Create CML report
+      env:
+        REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Post reports as comments in GitHub PRs
+        cat results.txt >> report.md
+        cml comment create report.md
