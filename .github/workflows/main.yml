@@ -3,25 +3,38 @@ on: [push]
 jobs:
   run:
     runs-on: ubuntu-latest
-    # container: ghcr.io/iterative/cml:0-dvc2-base1
-    #sub docker line below for users, maybe will allow for mds to show up?
-    # container: docker://ghcr.io/iterative/cml:0-dvc2-base1
+
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
         node-version: 20
     - uses: iterative/setup-cml@v1
+
     - name: Train model
       run: |
-        # Your ML workflow goes here
         pip install -r Streamlit/requirements.txt
         python Streamlit/train.py
-#change
+
     - name: Create CML report
       env:
         REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        # Post reports as comments in GitHub PRs
         cat Streamlit/results.txt >> report.md
         cml comment create report.md
+
+    # Optional: Add labels (example)
+    - name: Create labels
+      if: github.event_name == 'push'
+      run: |
+        gh label create "training 🧠" --description "Model training tasks" --color "123456"
+        gh label create "evaluation 📊" --description "Model evaluation and results" --color "654321"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # Optional: Disable workflow after initial run
+    - name: Disable workflow
+      run: gh workflow disable your-workflow-name
+      continue-on-error: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
