@@ -19,8 +19,11 @@ jobs:
           source venv/bin/activate
           python Streamlit/train.py
 
-      - name: Check Results File
+      - name: Check File Location After Training
         run: |
+          echo "Checking file location and contents"
+          ls -la Streamlit
+          find . -name "results.txt"
           cat Streamlit/results.txt  # Print out the contents of results.txt
 
       - name: Create report.md
@@ -35,6 +38,7 @@ jobs:
         run: |
           source venv/bin/activate
           cml comment create report.md --token ${{ secrets.GITHUB_TOKEN }}
+
 
 
 # name: model-training
