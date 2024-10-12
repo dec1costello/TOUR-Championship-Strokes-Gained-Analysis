@@ -19,14 +19,6 @@ jobs:
           source venv/bin/activate
           python Streamlit/train.py
 
-      - name: Check File Location After Training
-        run: |
-          echo "Checking file location and contents"
-          ls -la Streamlit
-          find . -name "results.txt"
-          cat Streamlit/results.txt  # Print out the contents of results.txt
-
-
       - name: Create report.md
         run: |
           cat Streamlit/results.txt > Streamlit/report.md
@@ -37,7 +29,10 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add Streamlit/results.txt Streamlit/report.md Streamlit/feature_importance.png Streamlit/residuals.png
+          git add Streamlit/results.txt 
+          git add Streamlit/report.md 
+          git add Streamlit/feature_importance.png 
+          git add Streamlit/residuals.png
           git commit -m "Add model results and report"
           git push
 
@@ -48,31 +43,18 @@ jobs:
           source venv/bin/activate
           cml comment create Streamlit/report.md --token ${{ secrets.GITHUB_TOKEN }}
 
+      # Optional: Add labels (example)
+      - name: Create labels
+        if: github.event_name == 'push'
+        run: |
+          gh label create "training 🧠" --description "Model training tasks" --color "123456"
+          gh label create "evaluation 📊" --description "Model evaluation and results" --color "654321"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
-# name: model-training
-# on: [push]
-# jobs:
-#   run:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-#       - uses: actions/setup-python@v4
-#       - uses: iterative/setup-cml@v1
-#       - name: Set up Python environment
-#         run: |
-#           python -m venv venv
-#           source venv/bin/activate
-#           pip install --upgrade pip
-#           pip install -r Streamlit/requirements.txt
-
-#       - name: Train model
-#         env:
-#           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         run: |
-#           source venv/bin/activate
-#           python Streamlit/train.py
-
-#           cat Streamlit/results.txt >> report.md
-#           echo "![](./plot.png)" >> report.md
-#           cml comment create Streamlit/report.md
+      # Optional: Disable workflow after initial run
+      - name: Disable workflow
+        run: gh workflow disable model-training
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
