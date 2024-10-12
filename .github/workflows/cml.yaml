@@ -26,6 +26,13 @@ jobs:
           find . -name "results.txt"
           cat Streamlit/results.txt  # Print out the contents of results.txt
 
+
+      - name: Create report.md
+        run: |
+          cat Streamlit/results.txt > report.md
+          echo "![](Streamlit/feature_importance.png)" >> report.md
+          echo "![](Streamlit/residuals.png)" >> report.md
+
       - name: Commit results and report
         run: |
           git config --global user.name "github-actions[bot]"
@@ -33,12 +40,6 @@ jobs:
           git add results.txt report.md feature_importance.png residuals.png
           git commit -m "Add model results and report"
           git push
-
-      - name: Create report.md
-        run: |
-          cat Streamlit/results.txt > report.md
-          echo "![](Streamlit/feature_importance.png)" >> report.md
-          echo "![](Streamlit/residuals.png)" >> report.md
 
       - name: Create CML Report
         env:
