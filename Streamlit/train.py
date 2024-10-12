@@ -32,10 +32,14 @@ train_score = regr.score(X_train, y_train) * 100
 test_score = regr.score(X_test, y_test) * 100
 
 # Write scores to a file
-#results could be metrics
-with open("Streamlit/results.txt", 'w') as outfile:
+try:
+    with open("Streamlit/results.txt", 'w') as outfile:
         outfile.write("Training variance explained: %2.1f%%\n" % train_score)
         outfile.write("Test variance explained: %2.1f%%\n" % test_score)
+    print("Successfully wrote to results.txt")
+except Exception as e:
+    print(f"Failed to write to results.txt: {e}")
+
 
 
 ##########################################
