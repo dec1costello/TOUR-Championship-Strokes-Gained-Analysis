@@ -32,7 +32,8 @@ train_score = regr.score(X_train, y_train) * 100
 test_score = regr.score(X_test, y_test) * 100
 
 # Write scores to a file
-with open("metrics.txt", 'w') as outfile:
+#results was metrics
+with open("Streamlit/results.txt", 'w') as outfile:
         outfile.write("Training variance explained: %2.1f%%\n" % train_score)
         outfile.write("Test variance explained: %2.1f%%\n" % test_score)
 
@@ -57,7 +58,7 @@ ax.set_ylabel('Feature', fontsize = axis_fs)#ylabel
 ax.set_title('Random forest\nfeature importance', fontsize = title_fs)
 
 plt.tight_layout()
-plt.savefig("feature_importance.png",dpi=120) 
+plt.savefig("Streamlit/feature_importance.png",dpi=120) 
 plt.close()
 
 
@@ -81,4 +82,4 @@ plt.ylim((2.5,8.5))
 plt.xlim((2.5,8.5))
 
 plt.tight_layout()
-plt.savefig("residuals.png",dpi=120) 
+plt.savefig("Streamlit/residuals.png",dpi=120) 
