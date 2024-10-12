@@ -40,6 +40,10 @@ try:
 except Exception as e:
     print(f"Failed to write to results.txt: {e}")
 
+with open("Streamlit/results.txt", 'r') as outfile:
+    contents = outfile.read()
+    print("Contents of results.txt:")
+    print(contents)
 
 
 ##########################################
