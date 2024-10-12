@@ -46,7 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           source venv/bin/activate
-          cml comment create report.md --token ${{ secrets.GITHUB_TOKEN }}
+          cml comment create Streamlit/report.md --token ${{ secrets.GITHUB_TOKEN }}
 
 
 
