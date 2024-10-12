@@ -15,21 +15,22 @@ jobs:
           pip install -r Streamlit/requirements.txt
 
       - name: Train model
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           source venv/bin/activate
           pwd  # Check current working directory
           ls Streamlit  # Check if Streamlit directory exists
           python Streamlit/train.py
-          
+
           cat Streamlit/results.txt >> report.md
           echo "![](./plot.png)" >> report.md
 
       - name: Create CML Report
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token from secrets
         run: |
           source venv/bin/activate
-          cml comment create Streamlit/report.md
+          cml comment create report.md --token ${{ secrets.GITHUB_TOKEN }}
+
 
 
 
