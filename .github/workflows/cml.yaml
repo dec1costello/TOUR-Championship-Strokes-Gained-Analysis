@@ -23,18 +23,19 @@ jobs:
       # Improve this .md
       - name: Create report.md
         run: |
-          cat Streamlit/results.txt > Streamlit/report.md
-          echo "![](feature_importance.png)" >> Streamlit/report.md
-          echo "![](residuals.png)" >> Streamlit/report.md
+          # cat Streamlit/results.txt > Streamlit/report.md
+          cat Streamlit/Training\ Results/results.txt > Streamlit/Training\ Results/report.md
+          echo "![](Training\ Results/feature_importance.png)" >> Streamlit/Training\ Results/report.md
+          echo "![](Training\ Results/residuals.png)" >> Streamlit/Training\ Results/report.md
 
       - name: Commit results and report
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add Streamlit/results.txt 
-          git add Streamlit/report.md 
-          git add Streamlit/feature_importance.png 
-          git add Streamlit/residuals.png
+          git add "Streamlit/Training Results/results.txt"
+          git add "Streamlit/Training Results/report.md"
+          git add "Streamlit/Training Results/feature_importance.png"
+          git add "Streamlit/Training Results/residuals.png"
           git commit -m "Add model results and report"
           git push
 
