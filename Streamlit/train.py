@@ -13,6 +13,7 @@ seed = 42
 
 # Load in the data
 df = pd.read_csv("Streamlit/wine_quality.csv")
+#connect to supabase with github secret keys
 
 # Split into train and test sections
 y = df.pop("quality")
