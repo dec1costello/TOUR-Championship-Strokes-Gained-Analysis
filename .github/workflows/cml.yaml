@@ -22,11 +22,8 @@ jobs:
       - name: Create report.md
         run: |
           cat Streamlit/results.txt > Streamlit/report.md
-          echo "![](Streamlit/feature_importance.png)" >> Streamlit/report.md
-          echo "![](Streamlit/residuals.png)" >> Streamlit/report.md
-          echo "![](Streamlit/feature_importance.png)" >> Streamlit/report.md
-          echo "![](Streamlit/residuals.png)" >> Streamlit/report.md
-
+          echo "![](feature_importance.png)" >> Streamlit/report.md
+          echo "![](residuals.png)" >> Streamlit/report.md
 
       - name: Commit results and report
         run: |
