@@ -43,10 +43,3 @@ jobs:
         run: |
           source venv/bin/activate
           cml comment create Streamlit/report.md --token ${{ secrets.GITHUB_TOKEN }}
-
-      # Optional: Disable workflow after initial run
-      - name: Disable workflow
-        run: gh workflow disable model-training
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
