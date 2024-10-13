@@ -36,16 +36,6 @@ test_score = regr.score(X_test, y_test) * 100
 with open("Streamlit/results.txt", 'w') as outfile:
         outfile.write("Training variance explained: %2.1f%%\n" % train_score)
         outfile.write("Test variance explained: %2.1f%%\n" % test_score)
-    print("Successfully wrote to results.txt")
-except Exception as e:
-    print(f"Failed to write to results.txt: {e}")
-
-
-with open("Streamlit/results.txt", 'r') as outfile:
-    contents = outfile.read()
-    print("Contents of results.txt:")
-    print(contents)
-
 
 ##########################################
 ##### PLOT FEATURE IMPORTANCE ############
