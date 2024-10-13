@@ -24,8 +24,8 @@ jobs:
       - name: Create report.md
         run: |
           cat "Streamlit/Training Report/results.txt" > "Streamlit/Training Report/report.md"
-          echo "![](Training Report/feature_importance.png)" >> "Streamlit/Training Report/report.md"
-          echo "![](Training Report/residuals.png)" >> "Streamlit/Training Report/report.md"
+          echo "![](feature_importance.png)" >> "Streamlit/Training Report/report.md"
+          echo "![](residuals.png)" >> "Streamlit/Training Report/report.md"
 
       - name: Commit results and report
         run: |
