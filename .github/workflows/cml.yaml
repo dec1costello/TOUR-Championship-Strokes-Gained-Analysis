@@ -19,6 +19,7 @@ jobs:
           source venv/bin/activate
           python Streamlit/train.py
 
+      # Improve this .md
       - name: Create report.md
         run: |
           cat Streamlit/results.txt > Streamlit/report.md
