@@ -41,7 +41,7 @@ viridis_palette = viridis(256)
 ################################
 
 # Load in the data
-df = pd.read_csv(r"Streamlit/Temp Data/light_weight_model.csv")
+result_df = pd.read_csv(r"Streamlit/Temp Data/light_weight_model.csv")
 #connect to supabase with github secret keys
 
 # Pre-processing
