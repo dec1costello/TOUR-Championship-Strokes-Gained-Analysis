@@ -24,7 +24,6 @@ jobs:
       - name: Create report.md
         run: |
           cat "Streamlit/Training Report/results.txt" > "Streamlit/Training Report/report.md"
-          echo "![](feature_importance.png)" >> "Streamlit/Training Report/report.md"
           echo "![](residuals.png)" >> "Streamlit/Training Report/report.md"
 
       - name: Commit results and report
@@ -33,7 +32,6 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add "Streamlit/Training Report/results.txt"
           git add "Streamlit/Training Report/report.md"
-          git add "Streamlit/Training Report/feature_importance.png"
           git add "Streamlit/Training Report/residuals.png"
           git commit -m "Add model results and report"
           git push
