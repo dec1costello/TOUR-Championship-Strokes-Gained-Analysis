@@ -23,18 +23,18 @@ jobs:
       # Improve this .md
       - name: Create report.md
         run: |
-          cat "Streamlit/Training Results/results.txt" > "Streamlit/Training Results/report.md"
-          echo "![](Training Results/feature_importance.png)" >> "Streamlit/Training Results/report.md"
-          echo "![](Training Results/residuals.png)" >> "Streamlit/Training Results/report.md"
+          cat "Streamlit/Training Report/results.txt" > "Streamlit/Training Report/report.md"
+          echo "![](Training Report/feature_importance.png)" >> "Streamlit/Training Report/report.md"
+          echo "![](Training Report/residuals.png)" >> "Streamlit/Training Report/report.md"
 
       - name: Commit results and report
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add "Streamlit/Training Results/results.txt"
-          git add "Streamlit/Training Results/report.md"
-          git add "Streamlit/Training Results/feature_importance.png"
-          git add "Streamlit/Training Results/residuals.png"
+          git add "Streamlit/Training Report/results.txt"
+          git add "Streamlit/Training Report/report.md"
+          git add "Streamlit/Training Report/feature_importance.png"
+          git add "Streamlit/Training Report/residuals.png"
           git commit -m "Add model results and report"
           git push
 
@@ -43,4 +43,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           source venv/bin/activate
-          cml comment create Streamlit/report.md --token ${{ secrets.GITHUB_TOKEN }}
+          cml comment create "Streamlit/Training Report/report.md" --token ${{ secrets.GITHUB_TOKEN }}
