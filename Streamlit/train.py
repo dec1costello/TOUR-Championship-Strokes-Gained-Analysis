@@ -1,18 +1,18 @@
 import numpy as np
 import pandas as pd
 
-import warnings
-warnings.filterwarnings("ignore", category=UserWarning)
-warnings.filterwarnings("ignore", category=DeprecationWarning)
-warnings.filterwarnings("ignore", category=FutureWarning, module='category_encoders.base_contrast_encoder')
-warnings.filterwarnings("ignore", category=pd.errors.SettingWithCopyWarning)
-
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from category_encoders import HashingEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+warnings.filterwarnings("ignore", category=FutureWarning, module='category_encoders.base_contrast_encoder')
+warnings.filterwarnings("ignore", category=pd.errors.SettingWithCopyWarning)
 
 import optuna
 from sklearn.datasets import make_regression
