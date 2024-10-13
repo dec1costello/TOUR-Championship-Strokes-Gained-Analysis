@@ -6,3 +6,5 @@ matplotlib==3.6
 st_supabase_connection
 scikit-learn
 seaborn
+Pillow
+selenium
