@@ -43,15 +43,6 @@ jobs:
           source venv/bin/activate
           cml comment create Streamlit/report.md --token ${{ secrets.GITHUB_TOKEN }}
 
-      # Optional: Add labels (example)
-      - name: Create labels
-        if: github.event_name == 'push'
-        run: |
-          gh label create "training 🧠" --description "Model training tasks" --color "123456"
-          gh label create "evaluation 📊" --description "Model evaluation and results" --color "654321"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       # Optional: Disable workflow after initial run
       - name: Disable workflow
         run: gh workflow disable model-training
