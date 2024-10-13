@@ -6,3 +6,9 @@ matplotlib==3.6
 st_supabase_connection
 scikit-learn
 seaborn
+
+category_encoders
+optuna
+seaborn
+bokeh
+xgboost
