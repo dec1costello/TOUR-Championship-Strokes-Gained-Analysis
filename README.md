@@ -267,7 +267,7 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
 ## 🗺️ Future Roadmap
 
 - [ ] Model Refinement
-    - [ ] [CI Orchestration](https://cml.dev/)
+    - [x] [CI Orchestration](https://cml.dev/)
     - [x] [Model Registry](https://community.cloud.databricks.com/?o=5379878152283690)
     - [ ] [Drift Detection](https://www.youtube.com/watch?v=L4Pv6ExBQPM)
     - [ ] [Feature Store](https://feast.dev/) 
