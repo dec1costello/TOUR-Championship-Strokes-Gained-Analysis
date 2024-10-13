@@ -111,7 +111,7 @@ def objective(trial):
 
 # Create an Optuna study and optimize the objective function
 study = optuna.create_study(direction="minimize")
-study.optimize(objective, n_trials=50)
+study.optimize(objective, n_trials=500)
 
 # Output the best parameters found
 print("Best hyperparameters: ", study.best_params)
