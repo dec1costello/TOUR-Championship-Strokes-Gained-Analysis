@@ -29,8 +29,6 @@ from bokeh.plotting import figure, show
 from bokeh.io import export_png
 from bokeh.layouts import column
 from bokeh.palettes import viridis, cividis
-import xgboost as xgb
-from xgboost import plot_importance
 
 # Create viridis palette
 viridis_palette = viridis(256)
