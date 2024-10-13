@@ -32,8 +32,8 @@ st.sidebar.info("Read more about this golf project on [Github](https://github.co
 # rows = execute_query(conn.table("player_profiles").select("*"), ttl=0)
 # df = pd.DataFrame(rows.data)
 
-condensed_df = pd.read_csv('Streamlit/Temp Data/Rolling_SG_group_by_hole_player.csv')
-df = pd.read_csv('Streamlit/Temp Data/player_profiles.csv')
+condensed_df = pd.read_csv(r'Streamlit/Temp Data/Rolling_SG_group_by_hole_player.csv')
+df = pd.read_csv(r'Streamlit/Temp Data/player_profiles.csv')
 
 
 st.title("TOUR Championship Analysis")
