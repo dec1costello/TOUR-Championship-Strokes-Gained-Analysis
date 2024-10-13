@@ -1,0 +1,46 @@
+name: model-training
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - uses: iterative/setup-cml@v1
+      
+      - name: Set up Python environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r Streamlit/requirements.txt
+
+      - name: Train model
+        run: |
+          source venv/bin/activate
+          python Streamlit/train.py
+
+      # Improve this .md
+      - name: Create report.md
+        run: |
+          cat Streamlit/results.txt > Streamlit/report.md
+          echo "![](feature_importance.png)" >> Streamlit/report.md
+          echo "![](residuals.png)" >> Streamlit/report.md
+
+      - name: Commit results and report
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add Streamlit/results.txt 
+          git add Streamlit/report.md 
+          git add Streamlit/feature_importance.png 
+          git add Streamlit/residuals.png
+          git commit -m "Add model results and report"
+          git push
+
+      - name: Create CML Report
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          source venv/bin/activate
+          cml comment create Streamlit/report.md --token ${{ secrets.GITHUB_TOKEN }}
