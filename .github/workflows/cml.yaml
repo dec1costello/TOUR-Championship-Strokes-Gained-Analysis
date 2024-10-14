@@ -1,37 +1,10 @@
-name: PR Comment
+name: model-training
 on:
-  issue_comment:
-    types: [created]
+  schedule:
+    - cron: '0 9 * * 1'  # Runs every Monday at 9:00 AM UTC
 
 jobs:
-  debug:
-    runs-on: ubuntu-latest
-    steps:
-      - name: See payload
-        run: echo "$PAYLOAD"
-        env:
-          PAYLOAD: ${{ toJSON(github.event) }}
-
-  retrain-trigger:
-    if: contains(github.event.comment.body, 'retrain')
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Post comment confirmation
-        uses: actions/github-script@v3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '🚀 Starting the model retraining process!'
-            })
-
   setup-and-train:
-    if: contains(github.event.comment.body, 'retrain')
-    needs: retrain-trigger
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -51,9 +24,8 @@ jobs:
           python Streamlit/train.py
 
   report-and-commit:
-    if: contains(github.event.comment.body, 'retrain')
-    needs: setup-and-train
     runs-on: ubuntu-latest
+    needs: setup-and-train
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python environment for report
@@ -84,110 +56,3 @@ jobs:
         run: |
           source venv/bin/activate
           cml comment create "Streamlit/Training Report/report.md" --token ${{ secrets.GITHUB_TOKEN }}
-
-
-
-
-
-# name: model-training
-# on: [push]
-# jobs:
-#   setup-and-train:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-#       - uses: actions/setup-python@v4
-#       - uses: iterative/setup-cml@v1
-
-#       - name: Set up Python environment
-#         run: |
-#           python -m venv venv
-#           source venv/bin/activate
-#           pip install --upgrade pip
-#           pip install -r Streamlit/requirements.txt
-
-#       - name: Train model
-#         run: |
-#           source venv/bin/activate
-#           python Streamlit/train.py
-
-#   report-and-commit:
-#     runs-on: ubuntu-latest
-#     needs: setup-and-train
-#     steps:
-#       - uses: actions/checkout@v3
-#       - name: Set up Python environment for report
-#         run: |
-#           python -m venv venv
-#           source venv/bin/activate
-#           pip install --upgrade pip
-#           pip install -r Streamlit/requirements.txt
-
-#       - name: Create report.md
-#         run: |
-#           cat "Streamlit/Training Report/results.txt" > "Streamlit/Training Report/report.md"
-#           echo "![](residuals.png)" >> "Streamlit/Training Report/report.md"
-
-#       - name: Commit results and report
-#         run: |
-#           git config --global user.name "github-actions[bot]"
-#           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-#           git add "Streamlit/Training Report/results.txt"
-#           git add "Streamlit/Training Report/report.md"
-#           git add "Streamlit/Training Report/residuals.png"
-#           git commit -m "Add model results and report"
-#           git push
-
-#       - name: Create CML Report
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         run: |
-#           source venv/bin/activate
-#           cml comment create "Streamlit/Training Report/report.md" --token ${{ secrets.GITHUB_TOKEN }}
-
-
-
-# name: model-training
-# on: [push]
-# jobs:
-#   run:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-#       - uses: actions/setup-python@v4
-#       - uses: iterative/setup-cml@v1
-      
-#       - name: Set up Python environment
-#         run: |
-#           python -m venv venv
-#           source venv/bin/activate
-#           pip install --upgrade pip
-#           pip install -r Streamlit/requirements.txt
-
-#       - name: Train model
-#         run: |
-#           source venv/bin/activate
-#           python Streamlit/train.py
-
-#       # Improve this .md
-#       - name: Create report.md
-#         run: |
-#           cat "Streamlit/Training Report/results.txt" > "Streamlit/Training Report/report.md"
-#           echo "![](residuals.png)" >> "Streamlit/Training Report/report.md"
-
-#       - name: Commit results and report
-#         run: |
-#           git config --global user.name "github-actions[bot]"
-#           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-#           git add "Streamlit/Training Report/results.txt"
-#           git add "Streamlit/Training Report/report.md"
-#           git add "Streamlit/Training Report/residuals.png"
-#           git commit -m "Add model results and report"
-#           git push
-
-#       - name: Create CML Report
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         run: |
-#           source venv/bin/activate
-#           cml comment create "Streamlit/Training Report/report.md" --token ${{ secrets.GITHUB_TOKEN }}
