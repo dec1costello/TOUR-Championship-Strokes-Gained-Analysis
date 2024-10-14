@@ -10,3 +10,4 @@ category_encoders
 optuna
 seaborn
 bokeh
+pickle
