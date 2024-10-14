@@ -29,6 +29,8 @@ from bokeh.plotting import figure, show
 from bokeh.io import export_png
 from bokeh.layouts import column
 from bokeh.palettes import viridis, cividis
+import pickle
+
 
 # Create viridis palette
 viridis_palette = viridis(256)
@@ -111,7 +113,7 @@ def objective(trial):
 
 # Create an Optuna study and optimize the objective function
 study = optuna.create_study(direction="minimize")
-study.optimize(objective, n_trials=500)
+study.optimize(objective, n_trials=50)
 
 # Output the best parameters found
 print("Best hyperparameters: ", study.best_params)
@@ -119,6 +121,8 @@ print("Best hyperparameters: ", study.best_params)
 # Train the GradientBoostingRegressor using the best hyperparameters
 best_model = GradientBoostingRegressor(**study.best_params, random_state=42)
 best_model.fit(X_train_transformed, y_train)
+with open('light_weight_expected_strokes.pkl', 'wb') as file:
+    pickle.dump(best_model, file)
 
 # Evaluate the model on the validation set
 y_pred = best_model.predict(X_valid_transformed)
