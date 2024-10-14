@@ -4,7 +4,7 @@ on:
     - cron: '0 9 * * 1'  # Runs every Monday at 9:00 AM UTC
 
 jobs:
-  setup-and-train:
+  retrain-and-commit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,18 +23,6 @@ jobs:
           source venv/bin/activate
           python Streamlit/train.py
 
-  report-and-commit:
-    runs-on: ubuntu-latest
-    needs: setup-and-train
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python environment for report
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-          pip install --upgrade pip
-          pip install -r Streamlit/requirements.txt
-
       - name: Create report.md
         run: |
           cat "Streamlit/Training Report/results.txt" > "Streamlit/Training Report/report.md"
@@ -50,6 +38,14 @@ jobs:
           git add "Streamlit/light_weight_expected_strokes.pkl"
           git commit -m "Add model, results, and report"
           git push
+
+  CML-report:
+    runs-on: ubuntu-latest
+    needs: retrain-and-commit
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - uses: iterative/setup-cml@v1
 
       - name: Create CML Report
         env:
