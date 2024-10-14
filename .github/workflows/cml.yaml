@@ -47,7 +47,8 @@ jobs:
           git add "Streamlit/Training Report/results.txt"
           git add "Streamlit/Training Report/report.md"
           git add "Streamlit/Training Report/residuals.png"
-          git commit -m "Add model results and report"
+          git add "Streamlit/light_weight_expected_strokes.pkl"
+          git commit -m "Add model, results, and report"
           git push
 
       - name: Create CML Report
