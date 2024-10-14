@@ -40,14 +40,6 @@ jobs:
           git commit -m "Add model, results, and report"
           git push
 
-  CML-report:
-    runs-on: ubuntu-latest
-    needs: retrain-and-commit
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-      - uses: iterative/setup-cml@v1
-
       - name: Create CML Report
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
