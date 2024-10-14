@@ -121,7 +121,7 @@ print("Best hyperparameters: ", study.best_params)
 # Train the GradientBoostingRegressor using the best hyperparameters
 best_model = GradientBoostingRegressor(**study.best_params, random_state=42)
 best_model.fit(X_train_transformed, y_train)
-with open('light_weight_expected_strokes.pkl', 'wb') as file:
+with open('Streamlit/light_weight_expected_strokes.pkl', 'wb') as file:
     pickle.dump(best_model, file)
 
 # Evaluate the model on the validation set
