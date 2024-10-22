@@ -193,5 +193,6 @@ p.line(x,
 p.x_range.start = -1.25
 p.x_range.end = 1.25
 p.y_range.start = 0
+p.legend.location = "top_left" 
 
 export_png(p, filename=r"Streamlit/Training Report/residuals.png")
