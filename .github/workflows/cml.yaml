@@ -27,7 +27,7 @@ jobs:
       - name: Create report.md
         run: |
           cat "Streamlit/Training Report/results.txt" > "Streamlit/Training Report/README.md"
-          echo "<div align='center'> ![](residuals.png) </div>" >> "Streamlit/Training Report/README.md"
+          echo "<p align='center'> <img src='residuals.png' alt='Residuals'> </p>" >> "Streamlit/Training Report/README.md"
           
       - name: Commit results and update README
         env:
