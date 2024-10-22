@@ -47,4 +47,4 @@ jobs:
       
           source venv/bin/activate
           ls -al "Streamlit/Training Report"  # Verify that the report file exists
-          cml comment create "'Streamlit/Training Report/report.md'" --token ${{ secrets.GITHUB_TOKEN }}
+          cml comment create "Streamlit/Training Report/report.md" --token ${{ secrets.GITHUB_TOKEN }}
