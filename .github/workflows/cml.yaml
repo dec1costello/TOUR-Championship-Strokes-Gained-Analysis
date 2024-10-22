@@ -28,8 +28,10 @@ jobs:
         run: |
           cat "Streamlit/Training Report/results.txt" > "Streamlit/Training Report/report.md"
           echo "![](residuals.png)" >> "Streamlit/Training Report/report.md"
-
-      - name: Commit results and report
+          
+      - name: Commit results and create CML Report
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -42,10 +44,7 @@ jobs:
           git add "Streamlit/light_weight_expected_strokes.pkl"
           git commit -m "Add model, results, and report"
           git push origin main
-
-      - name: Create CML Report
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
+      
           source venv/bin/activate
-          cml comment create "Streamlit/Training Report/report.md" --token ${{ secrets.GITHUB_TOKEN }}
+          ls -al "Streamlit/Training Report"  # Verify that the report file exists
+          cml comment create "Streamlit/Training\ Report/report.md" --token ${{ secrets.GITHUB_TOKEN }}
