@@ -33,12 +33,15 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git checkout main
+          git pull origin main 
           git add "Streamlit/Training Report/results.txt"
           git add "Streamlit/Training Report/report.md"
           git add "Streamlit/Training Report/residuals.png"
           git add "Streamlit/light_weight_expected_strokes.pkl"
           git commit -m "Add model, results, and report"
-          git push
+          git push origin main
 
       - name: Create CML Report
         env:
