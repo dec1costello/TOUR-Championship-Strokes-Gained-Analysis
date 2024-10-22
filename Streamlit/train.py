@@ -129,7 +129,10 @@ y_pred = best_model.predict(X_valid_transformed)
 mse = mean_squared_error(y_valid, y_pred)
 print(f"Mean Squared Error on validation set: {mse:.4f}")
 
-Mean_Squared_Error = f"Mean Squared Error on validation set: {mse:.4f}"
+Mean_Squared_Error = f"""
+## Mean Squared Error on validation set: {mse:.4f}
+
+"""
 
 # Write scores to a file
 with open(r"Streamlit/Training Report/results.txt", 'w') as outfile:
