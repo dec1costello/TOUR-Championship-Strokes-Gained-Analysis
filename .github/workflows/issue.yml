@@ -26,6 +26,7 @@ jobs:
           body: |
             Thanks **@${{ github.event.issue.user.login }}** for opening this issue. We will take a look into it ASAP.
             - Please make sure enough details are provided. :sparkles:
+          reactions: '+1'
 
 
       - name: "Create a comment on newly edited Issue title"
@@ -36,6 +37,7 @@ jobs:
           body: |
             Thanks **@${{ github.event.issue.user.login }}** for editing this issue. We will take a look into it ASAP.
             - Please make sure the title is descriptive. :sparkles:
+          reactions: '+1'
 
 
       - name: "Finished checking out the payload"
