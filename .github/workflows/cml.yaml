@@ -26,10 +26,10 @@ jobs:
 
       - name: Create report.md
         run: |
-          cat "Streamlit/Training Report/results.txt" > "Streamlit/Training Report/report.md"
-          echo "![](residuals.png)" >> "Streamlit/Training Report/report.md"
+          cat "Streamlit/Training Report/results.txt" > "Streamlit/Training Report/README.md"
+          echo "![](residuals.png)" >> "Streamlit/Training Report/README.md"
           
-      - name: Commit results and create CML Report
+      - name: Commit results and update README
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -39,12 +39,8 @@ jobs:
           git checkout main
           git pull origin main 
           git add "Streamlit/Training Report/results.txt"
-          git add "Streamlit/Training Report/report.md"
+          git add "Streamlit/Training Report/README.md"
           git add "Streamlit/Training Report/residuals.png"
           git add "Streamlit/light_weight_expected_strokes.pkl"
           git commit -m "Add model, results, and report"
           git push origin main
-      
-          source venv/bin/activate
-          ls -al "Streamlit/Training Report"  # Verify that the report file exists
-          cml comment create "Streamlit/Training Report/report.md" --token ${{ secrets.GITHUB_TOKEN }}
