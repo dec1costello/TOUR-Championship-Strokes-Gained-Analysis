@@ -1,4 +1,4 @@
 
-## Mean Squared Error on validation set: 0.2487
+## Mean Squared Error on validation set: 0.2490
 
-![](residuals.png)
+<div align='center'> ![](residuals.png) </div>
