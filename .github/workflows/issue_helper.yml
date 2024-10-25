@@ -1,0 +1,45 @@
+name: Displaying commenter's name under new issue
+
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened, edited, deleted]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  Comment:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: "Step 1 - Dumping Github Event Payload"
+        run: echo '${{ toJSON(github.event) }}' | jq
+        shell: bash
+      - name: "Step 2 - Print type of event - open vs edit"
+        run: echo $(expr ${{ github.event.action }} = 'edited')
+        shell: bash
+      - name: "Create a comment on newly opened Issue"
+        if: ${{ github.event.action == 'opened' }}
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Thanks **@${{ github.event.issue.user.login }}** for opening this issue. We will take a look into it ASAP.
+            - Please make sure enough details are provided. :sparkles:
+          reactions: '+1'
+
+
+      - name: "Create a comment on newly edited Issue title"
+        if: ${{ github.event.action == 'edited'}}
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Thanks **@${{ github.event.issue.user.login }}** for editing this issue. We will take a look into it ASAP.
+            - Please make sure the title is descriptive. :sparkles:
+          reactions: '+1'
+
+
+      - name: "Finished checking out the payload"
+        run: echo 'Thank you. Thats all.'
+        shell: bash
