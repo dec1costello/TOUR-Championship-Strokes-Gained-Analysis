@@ -270,7 +270,8 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [x] [CI Orchestration](https://cml.dev/)
     - [x] [Model Registry](https://community.cloud.databricks.com/?o=5379878152283690)
     - [ ] [Drift Detection](https://www.youtube.com/watch?v=L4Pv6ExBQPM)
-    - [ ] [Feature Store](https://feast.dev/) 
+    - [ ] [Feature Store](https://feast.dev/)
+    - [ ] [Refactor](https://www.youtube.com/watch?v=_gaAoJBMJ_Q)
     - [ ] [Deploy](https://sagemaker-examples.readthedocs.io/en/latest/sagemaker-python-sdk/scikit_learn_randomforest/Sklearn_on_SageMaker_end2end.html)
 - [ ] External Data
     - [ ] Player Course History
