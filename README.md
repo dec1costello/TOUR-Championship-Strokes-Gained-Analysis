@@ -300,6 +300,7 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [ ]  more eda stuff, make time the index and expand to rob mulas time features like hour minute day month to see patterns or straight up when the tourny was played, like pairings, and eventuall weather mappings
     - [ ]  link supa base to model regirst so i can finally so feast
     - [ ]  Rolling mean per hole, per shot.... in SG ENRICHMENT
+    - [ ]  make blurb comment in markdowns like baseball project
     - [ ]  dif mesa project where shots are nodes edges are xs sg, mesa where lies like green and rough are nodes
 <p align="center">
 <img height="63" width="139" src="https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350"/>
