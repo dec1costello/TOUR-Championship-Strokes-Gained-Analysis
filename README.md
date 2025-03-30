@@ -285,6 +285,9 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [x] [Refer To](https://colab.research.google.com/github/AllenDowney/ThinkBayes2/blob/master/examples/hockey.ipynb#scrollTo=B-c6bb9wO-Cs)
     - [x] [Watch](https://www.youtube.com/watch?v=Zi6N3GLUJmw)
     - [ ] [Utilize](https://colab.research.google.com/github/AllenDowney/ThinkBayes2/)
+- [ ] EDA
+    - [ ]  for numerical feaures look at skewed ones to see if bot needed
+    - [ ]  
 <p align="center">
 <img height="63" width="139" src="https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350"/>
 </p>
