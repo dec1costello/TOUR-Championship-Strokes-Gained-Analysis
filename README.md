@@ -299,6 +299,7 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [ ]  use prettifiy to do this with greens: https://marclamberts.medium.com/correlation-between-shooting-angles-and-expected-goals-xg-68db6f2e6045#:~:text=The%20correlation%20between%20xG%20and,it%20is%20a%20critical%20factor.
     - [ ]  more eda stuff, make time the index and expand to rob mulas time features like hour minute day month to see patterns or straight up when the tourny was played, like pairings, and eventuall weather mappings
     - [ ]  link supa base to model regirst so i can finally so feast
+    - [ ]  https://www.kaggle.com/competitions/web-traffic-time-series-forecasting/discussion/43795
     - [ ]  Rolling mean per hole, per shot.... in SG ENRICHMENT
     - [ ]  make blurb comment in markdowns like baseball project
     - [ ]  dif mesa project where shots are nodes edges are xs sg, mesa where lies like green and rough are nodes
