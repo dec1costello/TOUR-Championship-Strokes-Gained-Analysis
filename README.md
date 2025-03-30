@@ -286,8 +286,20 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [x] [Watch](https://www.youtube.com/watch?v=Zi6N3GLUJmw)
     - [ ] [Utilize](https://colab.research.google.com/github/AllenDowney/ThinkBayes2/)
 - [ ] EDA
-    - [ ]  for numerical feaures look at skewed ones to see if bot needed
-    - [ ]  
+    - [ ]  for numerical feaures look at skewed ones to see if bot needed box cox or np log
+    - [ ]  clarify in readme base models round 1+2 meta model round 3 and round 4 for predictions aka holdouts, redo the arch viz to show this as well
+    - [ ]  make another notebooks or empahszie in existing i do not want base models that look like cat scatter plots like xgboost, i need more regression loooking results
+    - [ ]  so because of this going more into nns
+    - [ ]  nn i need to build:
+    - [ ]  use  keras / tensor flow to combine (in nns dif ways to ensmble 2 nns" concatenation, additive fusion, weighted fusion, ) combine a CNN for space distance x y and a LSTM for sequential data like order dependent shots
+    - [ ]  elo ratings? like chess dot com
+    - [ ]  nfl: gini coeffiecent for dif teams spending in dif areas like wsj mlb post... this randm...
+    - [ ]  also use base model outputs and og distance to be fed into meta model, redo this in arch as well
+    - [ ]  redo optuna whl with env req files and dev containers
+    - [ ]  use prettifiy to do this with greens: https://marclamberts.medium.com/correlation-between-shooting-angles-and-expected-goals-xg-68db6f2e6045#:~:text=The%20correlation%20between%20xG%20and,it%20is%20a%20critical%20factor.
+    - [ ]  more eda stuff, make time the index and expand to rob mulas time features like hour minute day month to see patterns or straight up when the tourny was played, like pairings, and eventuall weather mappings
+    - [ ]  link supa base to model regirst so i can finally so feast
+    - [ ]  dif mesa project where shots are nodes edges are xs sg, mesa where lies like green and rough are nodes
 <p align="center">
 <img height="63" width="139" src="https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350"/>
 </p>
