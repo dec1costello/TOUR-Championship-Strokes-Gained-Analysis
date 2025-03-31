@@ -301,6 +301,7 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [ ]  link supa base to model regirst so i can finally so feast
     - [ ]  https://www.kaggle.com/competitions/web-traffic-time-series-forecasting/discussion/43795
     - [ ]  Rolling mean per hole, per shot.... in SG ENRICHMENT
+    - [ ]  make whole thing a timeseries prob instead?
     - [ ]  make blurb comment in markdowns like baseball project
     - [ ]  dif mesa project where shots are nodes edges are xs sg, mesa where lies like green and rough are nodes
 <p align="center">
