@@ -273,6 +273,19 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [ ] [Feature Store](https://feast.dev/)
     - [ ] [Refactor](https://www.youtube.com/watch?v=_gaAoJBMJ_Q)
     - [ ] [Deploy](https://sagemaker-examples.readthedocs.io/en/latest/sagemaker-python-sdk/scikit_learn_randomforest/Sklearn_on_SageMaker_end2end.html)
+    - [ ] Check numerical features for skewness → apply Box-Cox or np.log if needed
+    - [ ] Clarify in Training Data:
+      - Base models: Round 1 + Round 2
+      - Meta model: Round 3 + Round 4 (for holdout predictions)
+      - Update architecture visualization to reflect this
+    - [ ] Build additional NN base model:
+      - Use Keras / TensorFlow to ensemble 2 NNs:
+        - Concatenation
+        - Additive fusion
+        - Weighted fusion
+      - Combine:
+        - CNN for spatial distance (X, Y)
+        - LSTM for sequential shot/order data
 - [ ] External Data
     - [ ] Player Course History
     - [ ] [Career Earnings](https://www.spotrac.com/pga/rankings/date/2011-01-01/2011-09-20/)
@@ -285,15 +298,9 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [x] [Refer To](https://colab.research.google.com/github/AllenDowney/ThinkBayes2/blob/master/examples/hockey.ipynb#scrollTo=B-c6bb9wO-Cs)
     - [x] [Watch](https://www.youtube.com/watch?v=Zi6N3GLUJmw)
     - [ ] [Utilize](https://colab.research.google.com/github/AllenDowney/ThinkBayes2/)
-- [ ] EDA
-    - [ ]  for numerical feaures look at skewed ones to see if bot needed box cox or np log
-    - [ ]  clarify in readme base models round 1+2 meta model round 3 and round 4 for predictions aka holdouts, redo the arch viz to show this as well
-    - [ ]  make another notebooks or empahszie in existing i do not want base models that look like cat scatter plots like xgboost, i need more regression loooking results
-    - [ ]  so because of this going more into nns
-    - [ ]  nn i need to build:
-    - [ ]  use  keras / tensor flow to combine (in nns dif ways to ensmble 2 nns" concatenation, additive fusion, weighted fusion, ) combine a CNN for space distance x y and a LSTM for sequential data like order dependent shots
-    - [ ]  elo ratings? like chess dot com
-    - [ ]  nfl: gini coeffiecent for dif teams spending in dif areas like wsj mlb post... this randm...
+- [ ] Experimental Ideas 🔥
+    - [ ] Explore Elo ratings (like chess.com) for player ranking system
+    - [ ] Explore Gini coefficient ideas (NFL spending vs MLB style analysis)
     - [ ]  also use base model outputs and og distance to be fed into meta model, redo this in arch as well
     - [ ]  add shap and lime plots
     - [ ]  looks at tae's emailed suggestions / review to add stuff
