@@ -304,6 +304,7 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [ ]  also use base model outputs and og distance to be fed into meta model, redo this in arch as well
     - [ ]  add shap and lime plots
     - [ ]  looks at tae's emailed suggestions / review to add stuff
+    - [ ]  sharpe ratios
     - [ ]  redo optuna whl with env req files and dev containers
     - [ ]  use prettifiy to do this with greens: https://marclamberts.medium.com/correlation-between-shooting-angles-and-expected-goals-xg-68db6f2e6045#:~:text=The%20correlation%20between%20xG%20and,it%20is%20a%20critical%20factor.
     - [ ]  more eda stuff, make time the index and expand to rob mulas time features like hour minute day month to see patterns or straight up when the tourny was played, like pairings, and eventuall weather mappings
