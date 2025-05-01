@@ -274,16 +274,12 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [ ] [Refactor](https://www.youtube.com/watch?v=_gaAoJBMJ_Q)
     - [ ] [Deploy](https://sagemaker-examples.readthedocs.io/en/latest/sagemaker-python-sdk/scikit_learn_randomforest/Sklearn_on_SageMaker_end2end.html)
     - [ ] Check numerical features for skewness → apply Box-Cox or np.log if needed
-    - [ ] Clarify in Training Data:
+    - [ ] Update Training Data:
       - Base models: Round 1 + Round 2
       - Meta model: Round 3 + Round 4 (for holdout predictions)
       - Update architecture visualization to reflect this
-    - [ ] Build additional NN base model:
-      - Use Keras / TensorFlow to ensemble 2 NNs:
-        - Concatenation
-        - Additive fusion
-        - Weighted fusion
-      - Combine:
+    - [ ] Build additional PyTorch base model:
+      - Fusion:
         - CNN for spatial distance (X, Y)
         - LSTM for sequential shot/order data
 - [ ] External Data
@@ -306,7 +302,7 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [ ]  looks at tae's emailed suggestions / review to add stuff
     - [ ]  sharpe ratios
     - [ ]  redo optuna whl with env req files and dev containers
-    - [ ]  use prettifiy to do this with greens: https://marclamberts.medium.com/correlation-between-shooting-angles-and-expected-goals-xg-68db6f2e6045#:~:text=The%20correlation%20between%20xG%20and,it%20is%20a%20critical%20factor.
+    - [ ]  use prettifiy to account for angle into [greens](https://marclamberts.medium.com/correlation-between-shooting-angles-and-expected-goals-xg-68db6f2e6045#:~:text=The%20correlation%20between%20xG%20and,it%20is%20a%20critical%20factor)
     - [ ]  more eda stuff, make time the index and expand to rob mulas time features like hour minute day month to see patterns or straight up when the tourny was played, like pairings, and eventuall weather mappings
     - [ ]  link supa base to model regirst so i can finally so feast
     - [ ]  https://www.kaggle.com/competitions/web-traffic-time-series-forecasting/discussion/43795
