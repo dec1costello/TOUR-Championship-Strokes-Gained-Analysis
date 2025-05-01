@@ -311,6 +311,13 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [ ]  make whole thing a timeseries prob instead?
     - [ ]  make blurb comment in markdowns like baseball project
     - [ ]  dif mesa project where shots are nodes edges are xs sg, mesa where lies like green and rough are nodes
+    - [ ]  # **SG Sequencing**
+
+- A graph per hole of connected shots True SG values by 
+- then encapisulate in another graph for each hole, 
+- graph of graphs
+
+mesa model for lies to holes aka teebox to hole
 <p align="center">
 <img height="63" width="139" src="https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350"/>
 </p>
