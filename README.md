@@ -272,16 +272,7 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [ ] [Drift Detection](https://www.youtube.com/watch?v=L4Pv6ExBQPM)
     - [ ] [Feature Store](https://feast.dev/)
     - [ ] [Refactor](https://www.youtube.com/watch?v=_gaAoJBMJ_Q)
-    - [ ] [Deploy](https://sagemaker-examples.readthedocs.io/en/latest/sagemaker-python-sdk/scikit_learn_randomforest/Sklearn_on_SageMaker_end2end.html)
-    - [ ] Check numerical features for skewness → apply Box-Cox or np.log if needed
-    - [ ] Update Training Data:
-      - Base models: Round 1 + Round 2
-      - Meta model: Round 3 + Round 4 (for holdout predictions)
-      - Update architecture visualization to reflect this
-    - [ ] Build additional PyTorch base model:
-      - Fusion:
-        - CNN for spatial distance (X, Y)
-        - LSTM for sequential shot/order data
+    - [ ] [Deploy](https://sagemaker-examples.readthedocs.io/en/latest/sagemaker-python-sdk/scikit_learn_randomforest/Sklearn_on_SageMaker_end2end.html)  
 - [ ] External Data
     - [ ] Player Course History
     - [ ] [Career Earnings](https://www.spotrac.com/pga/rankings/date/2011-01-01/2011-09-20/)
@@ -294,30 +285,7 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [x] [Refer To](https://colab.research.google.com/github/AllenDowney/ThinkBayes2/blob/master/examples/hockey.ipynb#scrollTo=B-c6bb9wO-Cs)
     - [x] [Watch](https://www.youtube.com/watch?v=Zi6N3GLUJmw)
     - [ ] [Utilize](https://colab.research.google.com/github/AllenDowney/ThinkBayes2/)
-- [ ] Experimental Ideas 🔥
-    - [ ] Explore Elo ratings (like chess.com) for player ranking system
-    - [ ] Explore Gini coefficient ideas (NFL spending vs MLB style analysis)
-    - [ ] also use base model outputs and og distance to be fed into meta model, redo this in arch as well
-    - [ ] add shap and lime plots
-    - [ ] looks at tae's emailed suggestions / review to add stuff
-    - [ ] sharpe ratios
-    - [ ] squarify sgs over time
-    - [ ] redo optuna whl with env req files and dev containers
-    - [ ] [Prettymap](https://github.com/marceloprates/prettymaps) course to account for [angle into greens](https://marclamberts.medium.com/correlation-between-shooting-angles-and-expected-goals-xg-68db6f2e6045#:~:text=The%20correlation%20between%20xG%20and,it%20is%20a%20critical%20factor)
-    - [ ]  more eda stuff, make time the index and expand to rob mulas time features like hour minute day month to see patterns or straight up when the tourny was played, like pairings, and eventuall weather mappings
-    - [ ]  link supa base to model regirst so i can finally so feast
-    - [ ]  https://www.kaggle.com/competitions/web-traffic-time-series-forecasting/discussion/43795
-    - [ ]  Rolling mean per hole, per shot.... in SG ENRICHMENT
-    - [ ]  make whole thing a timeseries prob instead?
-    - [ ]  make blurb comment in markdowns like baseball project
-    - [ ]  dif mesa project where shots are nodes edges are xs sg, mesa where lies like green and rough are nodes
-    - [ ]  # **SG Sequencing**
 
-- A graph per hole of connected shots True SG values by 
-- then encapisulate in another graph for each hole, 
-- graph of graphs
-
-mesa model for lies to holes aka teebox to hole
 <p align="center">
 <img height="63" width="139" src="https://github.com/dec1costello/Golf/assets/79241861/0f9673d0-36c6-4d6f-928b-34d171a19350"/>
 </p>
