@@ -9,3 +9,4 @@
     - Meta model: Round 3
     - Holdout predictions: Round 4
 - [ ] Feed OG Distance into Meta Input
+- [ ] Load MLFow output to [SupaBase](https://supabase.com/)
