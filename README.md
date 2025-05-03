@@ -135,7 +135,7 @@ In this analysis, I investigate the distribution of Strokes Gained for each hole
 * Poorly performing players seem to give up come the back 9 of round 3
 
 <div align="center">
-    <img src="https://github.com/dec1costello/Golf/assets/79241861/5fb76665-1de7-4d00-a42d-370c6fc5a987" alt="Event Scatter" style="width:100%">
+    <img src="https://github.com/user-attachments/assets/d5f5e586-6da8-49c6-808c-8e59c57a3059" alt="Event Scatter" style="width:100%">
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
