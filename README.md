@@ -105,7 +105,7 @@ This dataset consists of shot level data from the PGA TOUR Championship. The TOU
 
 I analyze the data, focusing on feature engineering to understand, clean, and refine the dataset. This process guides model selection and validates assumptions, while also uncovering insights through visualization. By addressing data quality and recognizing patterns early on, I establish a solid foundation for the project. For instance, exploring Strokes Gained (SG) at the round, hole, and drive levels helps us make assumptions for building a model to examine SG on a shot-level basis later.
 
-<img align="left" alt="scipi" width="32px" style="padding-right:3px;" src="https://github.com/dec1costello/Golf/assets/79241861/8c1b62d0-b4cb-46ba-82f0-a858508911ae" />
+<img align="left" alt="scipi" width="32px" style="padding-right:3px;" src="https://github.com/user-attachments/assets/0215dc0d-7f5b-43ad-a0b9-08cd4c6e6108" />
 <img align="left" alt="bokeh" width="34px" style="padding-right:1px;" src="https://github.com/dec1costello/dec1costello/assets/79241861/bfbeaf3f-663e-4191-9e90-a70c322b0bd8" />
 
 <br />
