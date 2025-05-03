@@ -149,7 +149,7 @@ Here I explore the distribution of Strokes Gained vs Driving Distance Gained and
 * Driving Distance has only a slight correlation to Strokes Gained per Hole
 
 <div align="center">
-    <img src="https://github.com/dec1costello/Golf/assets/79241861/2eabd308-cee6-4f72-af2b-6dcea8e6bd86" alt="Event Scatter" style="width:100%">
+    <img src="https://github.com/user-attachments/assets/c28502e0-9038-4d59-97ad-64f6e8b7a4d4" alt="Event Scatter" style="width:100%">
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
