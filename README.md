@@ -213,7 +213,7 @@ I attempted to prevent [bias](https://towardsdatascience.com/a-quickstart-guide-
 * "Downhill Slope" and "Elevation Below Ball" are distinct features; Despite their seemingly similar title, they are not the same. To confirm this, a pairwise correlation was done
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/2e745d80-0962-4cb7-8c52-1d6c59070b4d" alt="Event Scatter" style="width:100%">
+    <img src="https://github.com/user-attachments/assets/fe3e23e5-ecfe-4f2e-8dc1-63e517aa1e95" alt="Event Scatter" style="width:100%">
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
