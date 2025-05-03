@@ -226,7 +226,7 @@ This chart helps evaluate the model by showing how predicted values compare to a
 * Excited to see the residuals have a low standard deviation with a mean hovering around 0
 
 <div align="center">
-    <img src="https://github.com/dec1costello/Golf/assets/79241861/7b95ecab-a449-4770-a57e-eea884f1468b" alt="Event Scatter" style="width:100%">
+    <img src="https://github.com/user-attachments/assets/fce0235c-f978-406b-81f1-21e0c02bbf1d" alt="Event Scatter" style="width:100%">
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
