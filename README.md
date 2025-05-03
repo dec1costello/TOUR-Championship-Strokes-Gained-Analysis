@@ -121,7 +121,7 @@ I analyze the Strokes Gained distribution for each round of the Championship, re
 * Round 3 seemed to be the most chaotic, as there was a significant variance in player performance throughout the day
 
 <div align="center">
-    <img src="https://github.com/dec1costello/Golf/assets/79241861/275e7705-7748-49e2-b9c1-e7b24d40066d" alt="Event Scatter" style="width80%">
+    <img src="https://github.com/user-attachments/assets/7acf369e-823c-4c6d-a6e4-43757d585306" alt="Event Scatter" style="width80%">
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
