@@ -105,7 +105,7 @@ This dataset consists of shot level data from the PGA TOUR Championship. The TOU
 
 I analyze the data, focusing on feature engineering to understand, clean, and refine the dataset. This process guides model selection and validates assumptions, while also uncovering insights through visualization. By addressing data quality and recognizing patterns early on, I establish a solid foundation for the project. For instance, exploring Strokes Gained (SG) at the round, hole, and drive levels helps us make assumptions for building a model to examine SG on a shot-level basis later.
 
-<img align="left" alt="scipi" width="32px" style="padding-right:3px;" src="https://github.com/dec1costello/Golf/assets/79241861/8c1b62d0-b4cb-46ba-82f0-a858508911ae" />
+<img align="left" alt="scipi" width="32px" style="padding-right:3px;" src="https://github.com/user-attachments/assets/0215dc0d-7f5b-43ad-a0b9-08cd4c6e6108" />
 <img align="left" alt="bokeh" width="34px" style="padding-right:1px;" src="https://github.com/dec1costello/dec1costello/assets/79241861/bfbeaf3f-663e-4191-9e90-a70c322b0bd8" />
 
 <br />
@@ -121,7 +121,7 @@ I analyze the Strokes Gained distribution for each round of the Championship, re
 * Round 3 seemed to be the most chaotic, as there was a significant variance in player performance throughout the day
 
 <div align="center">
-    <img src="https://github.com/dec1costello/Golf/assets/79241861/275e7705-7748-49e2-b9c1-e7b24d40066d" alt="Event Scatter" style="width80%">
+    <img src="https://github.com/user-attachments/assets/7acf369e-823c-4c6d-a6e4-43757d585306" alt="Event Scatter" style="width80%">
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -135,7 +135,7 @@ In this analysis, I investigate the distribution of Strokes Gained for each hole
 * Poorly performing players seem to give up come the back 9 of round 3
 
 <div align="center">
-    <img src="https://github.com/dec1costello/Golf/assets/79241861/5fb76665-1de7-4d00-a42d-370c6fc5a987" alt="Event Scatter" style="width:100%">
+    <img src="https://github.com/user-attachments/assets/d5f5e586-6da8-49c6-808c-8e59c57a3059" alt="Event Scatter" style="width:100%">
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -149,7 +149,7 @@ Here I explore the distribution of Strokes Gained vs Driving Distance Gained and
 * Driving Distance has only a slight correlation to Strokes Gained per Hole
 
 <div align="center">
-    <img src="https://github.com/dec1costello/Golf/assets/79241861/2eabd308-cee6-4f72-af2b-6dcea8e6bd86" alt="Event Scatter" style="width:100%">
+    <img src="https://github.com/user-attachments/assets/c28502e0-9038-4d59-97ad-64f6e8b7a4d4" alt="Event Scatter" style="width:100%">
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -213,7 +213,7 @@ I attempted to prevent [bias](https://towardsdatascience.com/a-quickstart-guide-
 * "Downhill Slope" and "Elevation Below Ball" are distinct features; Despite their seemingly similar title, they are not the same. To confirm this, a pairwise correlation was done
 
 <div align="center">
-    <img src="https://github.com/dec1costello/Golf/assets/79241861/06baf5fd-bce3-4135-abe3-d9ba3b178d33" alt="Event Scatter" style="width:100%">
+    <img src="https://github.com/user-attachments/assets/fe3e23e5-ecfe-4f2e-8dc1-63e517aa1e95" alt="Event Scatter" style="width:100%">
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -226,7 +226,7 @@ This chart helps evaluate the model by showing how predicted values compare to a
 * Excited to see the residuals have a low standard deviation with a mean hovering around 0
 
 <div align="center">
-    <img src="https://github.com/dec1costello/Golf/assets/79241861/7b95ecab-a449-4770-a57e-eea884f1468b" alt="Event Scatter" style="width:100%">
+    <img src="https://github.com/user-attachments/assets/fce0235c-f978-406b-81f1-21e0c02bbf1d" alt="Event Scatter" style="width:100%">
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
