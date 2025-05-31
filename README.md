@@ -12,7 +12,7 @@ Author: Declan Costello
 <a name="readme-top"></a>
 
 <p align="center">
-<img height="150" width="800" src="https://github-production-user-asset-6210df.s3.amazonaws.com/79241861/320693680-f6f27eb6-5943-4e56-88b1-303248913ed1.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250502%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250502T035329Z&X-Amz-Expires=300&X-Amz-Signature=488e49d15648ae1df732e8821df2cc7501b9638ceedcac0f7bd1318b43000c5d&X-Amz-SignedHeaders=host"/>  
+<img height="150" width="800" src="https://github.com/user-attachments/assets/5e8b050e-486c-4f87-a604-7b74bc7e11db"/>  
 </p>
 
 <h1 align="center">TOUR Championship Analysis</h1>
