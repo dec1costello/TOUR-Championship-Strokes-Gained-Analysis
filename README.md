@@ -286,10 +286,4 @@ Looking back, I wish I had known about Strokes Gained during my time as a caddy.
     - [x] [Watch](https://www.youtube.com/watch?v=Zi6N3GLUJmw)
     - [ ] [Utilize](https://colab.research.google.com/github/AllenDowney/ThinkBayes2/)
 
-<p align="center">
-<img height="63" width="139" src="https://github-production-user-asset-6210df.s3.amazonaws.com/79241861/321453892-0f9673d0-36c6-4d6f-928b-34d171a19350.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250502%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250502T035358Z&X-Amz-Expires=300&X-Amz-Signature=bbd670e0085b2a6c91f82b5517db76a437fd04e80b2d1a6ef78aaef2026f8922&X-Amz-SignedHeaders=host"/>
-</p>
-<p align="center">
-<img height="375" width="100%" src="https://github-production-user-asset-6210df.s3.amazonaws.com/79241861/321809563-506e2aa2-64e9-4383-83d9-d6e81f4dd5f7.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250502%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250502T035353Z&X-Amz-Expires=300&X-Amz-Signature=ccdc913b356c289b2c3ad9bd8c4fe3018a5e5f1686623cd0ea759dbbd2c56e91&X-Amz-SignedHeaders=host"/>
-</p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
