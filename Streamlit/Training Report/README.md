@@ -1,4 +1,4 @@
 
-## Mean Squared Error on validation set: 0.2487
+## Mean Squared Error on validation set: 0.2489
 
 <p align='center'> <img src='residuals.png' alt='Residuals'> </p>
