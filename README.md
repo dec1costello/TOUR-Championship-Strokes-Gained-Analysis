@@ -71,19 +71,19 @@ This repo is organized as follows:
     │   ├── SGperRound.ipynb
     │   ├── SGperDrive.ipynb
     │   ├── FeatureEngineering.ipynb
-    │   └── 📂 EDAUtils
+    │   └── 📦 EDAUtils
     │
     ├── 📂 Creating Model
     │   ├── LazyPredict.ipynb 
     │   ├── PuttingModel.ipynb
     │   ├── ApproachModel.ipynb 
-    │   └── 📂 OptimizingUtils
+    │   └── 📦 OptimizingUtils
     │
     ├── 📂 Applying Model
     │   ├── SGCreation.ipynb 
     │   └── SGAnalysis.ipynb
     │
-    └── 📂 Streamlit Dashboard
+    └── ❄️ Streamlit Dashboard
 
 ## **⭐ Code Quality**
 
