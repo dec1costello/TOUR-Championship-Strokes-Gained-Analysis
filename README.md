@@ -60,7 +60,6 @@ This repo is organized as follows:
 
     📂 TOUR-Championship-Strokes-Gained-Analysis 📍
     │
-    ├── 📂 Data
     ├── CITATION
     ├── README.md
     ├── CODE_OF_CONDUCT.md
@@ -83,7 +82,7 @@ This repo is organized as follows:
     │   ├── SGCreation.ipynb 
     │   └── SGAnalysis.ipynb
     │
-    └── ❄️ Streamlit Dashboard
+    └── ❄️ Snowflake Streamlit Dashboard
 
 ## **⭐ Code Quality**
 
