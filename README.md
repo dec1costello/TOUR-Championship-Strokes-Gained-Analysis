@@ -12,7 +12,7 @@ Author: Declan Costello
 <a name="readme-top"></a>
 
 <p align="center">
-<img height="150" width="800" src="https://github.com/user-attachments/assets/5e8b050e-486c-4f87-a604-7b74bc7e11db"/>  
+<img height="150" width="150" src="https://github.com/user-attachments/assets/5e8b050e-486c-4f87-a604-7b74bc7e11db"/>  
 </p>
 
 <h1 align="center">TOUR Championship Analysis</h1>
